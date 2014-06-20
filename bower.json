@@ -1,0 +1,15 @@
+{
+  "name": "sikre",
+  "private": true,
+  "dependencies": {
+    "modernizr": "latest",
+    "jquery": "latest",
+    "foundation": "latest",
+    "foundation-icon-fonts": "latest",
+    "angular": "latest",
+    "scut": "latest"
+  },
+  "devDependencies": {
+    "scut": "~0.10.4"
+  }
+}

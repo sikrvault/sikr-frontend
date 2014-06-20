@@ -1,0 +1,14 @@
+How to install the sikre frontend
+---------------------------------
+
+The sikre frontend has the following dependencies:
+
+- Angular.JS
+- Grunt
+- Compass
+- Bower
+
+First of all you should install grunt and compass into the project. At the project level execute:
+
+`$ npm install grunt compass`
+

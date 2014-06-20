@@ -1,0 +1,21 @@
+// Foundation Font Icons
+// Change the default path
+$fi-path: "/static/fonts" !default;
+[class*="fi-"] {
+  display: inline;
+  font-size: rem-calc(24);
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+
+[class*="fi-"]:before {
+  font-family: "[set]Foundicons";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+}
