@@ -2,6 +2,17 @@ body,html{
     height:100%;
     width:100%;
     //overflow: auto;
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: 'Signika';
+    font-weight: 400;
+}
+
+p {
+    font-weight: 300;
 }
 
 .main-section {
