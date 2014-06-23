@@ -1,0 +1,16 @@
+.off-canvas-wrap,.inner-wrap{
+    height:100%;
+}
+
+.page{
+    height:100%;
+}
+
+// Stylize off canvas icons
+.right-off-canvas-toggle i, .left-off-canvas-toggle i {
+    @include scut-center-transform;
+}
+
+a.right-off-canvas-toggle , a.left-off-canvas-toggle {
+    color: #CCC;
+}

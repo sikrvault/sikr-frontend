@@ -13,7 +13,7 @@
 # Require any additional compass plugins here.
 additional_import_paths = [
                             "bower_components/foundation/scss",
-                            "bower_components/foundation-icons-fonts",
+                            "bower_components/foundation-icon-fonts",
                             "bower_components/scut/dist",
                         ]
 

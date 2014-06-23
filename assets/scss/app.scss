@@ -1,10 +1,9 @@
-
 // Foundation CSS
+// If you want to load only the needed modules uncomment them and comment
+// foundation
 
 @import "foundation";
 @import "settings";
-
-//   "foundation";
 //   "foundation/components/accordion",
 //   "foundation/components/alert-boxes",
 //   "foundation/components/block-grid";
@@ -41,33 +40,8 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
-// Fonts
-@import "fonts";
-
-// Scut
-@import "scut";
-
-body,html{
-    height:100%;
-    width:100%;
-}
-
-.main-section {
-    width: 100%;
-}
-
-.row {
-    max-width: 100%;
-}
-
-.off-canvas-wrap,.inner-wrap{
-    height:100%;
-}
-.page{
-    height:100%;
-}
-
-.right-off-canvas-toggle i, .left-off-canvas-toggle i {
-    @include scut-center-transform;
-}
-
+@import "fonts";            // Load foundation icons modifications and extra fonts
+@import "foundation-icons"; // Foundation icons (surprise!)
+@import "scut";             // Scut is a module for styling the elements
+@import "general";          // Modifications that affect the whole page
+@import "offcanvas";        // Foundation off canvas modifications
