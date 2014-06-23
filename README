@@ -21,7 +21,7 @@ How to install sikre-frontend
 
 If not, and assuming you have a debian-based linux distro like Ubuntu, run these commands to install everything. Please thake in mind that "#" means a root shell and "$" means a regular user shell.
 
-# sudo aptitude install nodejs ruby
+# sudo aptitude install nodejs npm ruby
 
 # npm install -g bower grunt grunt-cli
 
