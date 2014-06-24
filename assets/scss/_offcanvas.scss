@@ -20,3 +20,18 @@
 a.right-off-canvas-toggle , a.left-off-canvas-toggle {
     color: #CCC;
 }
+
+.off-canvas-footer {
+    bottom: 0;
+    position: absolute;
+    color: #666;
+    font-size: 0.6rem;
+    margin: 10px;
+    font-family: sans-serif;
+
+    a {
+        color: #666;
+        text-decoration: none;
+        &:hover { color: #FFF; }
+    }
+}
