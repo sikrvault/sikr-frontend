@@ -1,0 +1,11 @@
+<ul class="off-canvas-list">
+    <li><label>Filter by...</label></li>
+    <li><label>Groups</label></li>
+    <li ng-repeat="group in groups">
+        <a href="/search/{{ group.slug }}">{{ group.name }}</a>
+    </li>
+    <li><label>Tags</label></li>
+    <li ng-repeat="tag in tags">
+        <a href="/search/{{ tag.slug }}">{{ tag.name }}</a>
+    </li>
+</ul>

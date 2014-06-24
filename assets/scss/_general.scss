@@ -22,3 +22,7 @@ p {
 .row {
     max-width: 100%;
 }
+
+.tabs dd.active a, .tabs .tab-title.active a {
+    background: #AAA;
+}

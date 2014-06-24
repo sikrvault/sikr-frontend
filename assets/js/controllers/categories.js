@@ -1,1 +1,1 @@
-app.controller('CategoryController');
+//app.controller('CategoryController');

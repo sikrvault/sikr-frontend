@@ -1,0 +1,16 @@
+<dl class="accordion" data-accordion>
+    <dd class="accordion-navigation" ng-repeat="item in items">
+        <a href="#panel{{$index}}">{{ item.name }}</a>
+        <div id="panel{{$index}}" class="content" ng-class="{active:$first}">
+            <dl class="tabs" data-tab>
+                <dd ng-class="{active:$first}" ng-repeat="service in item.services">
+                    <a href="#panel{{$parent.$index}}-{{$index}}">{{ service.name }}</a>
+                </dd>
+            </dl>
+            <div class="tabs-content" services>
+            </div>
+            <h3>Information</h3>
+            <p>{{ item.description }}</p>
+        </div>
+    </dd>
+</dl>

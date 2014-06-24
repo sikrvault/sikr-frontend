@@ -1,0 +1,29 @@
+{
+    "services": [
+        {
+            "url": "thisismyurl",
+            "username": "myusername",
+            "password": "damnpassword"
+        },
+        {
+            "url": "thisismyurl",
+            "username": "myusername",
+            "password": "damnpassword"
+        },
+        {
+            "url": "thisismyurl",
+            "username": "myusername",
+            "password": "damnpassword"
+        },
+        {
+            "url": "thisismyurl",
+            "username": "myusername",
+            "password": "damnpassword"
+        },
+        {
+            "url": "thisismyurl",
+            "username": "myusername",
+            "password": "damnpassword"
+        }
+    ]
+}

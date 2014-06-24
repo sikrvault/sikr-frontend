@@ -62,26 +62,7 @@
                 </nav>
 
                 <aside class="left-off-canvas-menu">
-                    <ul class="off-canvas-list">
-                        <li><label>Filter by...</label></li>
-                        <li><label>Groups</label></li>
-                        <li><a href="#">Tip Exchange</a></li>
-                        <li><a href="#">Havas Worldwide</a></li>
-                        <li><a href="#">Castello Cheese</a></li>
-                        <li><a href="#">Maggies</a></li>
-                        <li><a href="#">Castello Book Club</a></li>
-                        <li><a href="#">Chivas</a></li>
-                        <li><a href="#">Citroen Prototype</a></li>
-                        <li><a href="#">Ella's Kitchen</a></li>
-                        <li><a href="#">Heathrow Hub</a></li>
-                        <li><label>Tags</label></li>
-                        <li><a href="#">PostgreSQL</a></li>
-                        <li><a href="#">MySQL</a></li>
-                        <li><a href="#">SSH</a></li>
-                        <li><a href="#">FTP</a></li>
-                        <li><a href="#">SMTP</a></li>
-                        <li><a href="#">DNS</a></li>
-                    </ul>
+                    <group-tags></group-tags>
                 </aside>
 
                 <aside class="right-off-canvas-menu">
@@ -102,101 +83,7 @@
                 <section class="main-section">
                     <!-- only if filtered -->
                     <h3 style="margin:20px;">Tip Exchange</h3>
-                    <div class="row">
-                        <dl class="accordion" data-accordion>
-                            <dd class="accordion-navigation round">
-                                <a href="#panel1">Vanish Tip Exchange 1.0 Live</a>
-                                <div id="panel1" class="content active">
-                                    <dl class="tabs" data-tab>
-                                        <dd class="active"><a href="#panel1-1">Information</a></dd>
-                                        <dd><a href="#panel1-2">Admin panel</a></dd>
-                                        <dd><a href="#panel1-3">SSH</a></dd>
-                                        <dd><a href="#panel1-4">MySQL</a></dd>
-                                        <dd><a href="#panel1-5">PostgreSQL</a></dd>
-                                        <dd><a href="#panel1-6">SMTP</a></dd>
-                                    </dl>
-                                    <div class="tabs-content">
-                                        <div class="content active" id="panel1-1">
-                                            <p>Here goes basic information about the data contained in the services</p>
-                                        </div>
-                                        <div class="content" id="panel1-2">
-                                            <p>First panel contenere...</p>
-                                        </div>
-                                        <div class="content" id="panel1-3">
-                                            <p>First panel content goes here...</p>
-                                        </div>
-                                        <div class="content" id="panel1-4">
-                                            <p>Second panel content goes here...</p>
-                                        </div>
-                                        <div class="content" id="panel1-5">
-                                            <p>Third panel content goes here...</p>
-                                        </div>
-                                        <div class="content" id="panel1-6">
-                                            <p>Fourth panel content goes here...</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </dd>
-                            <dd class="accordion-navigation">
-                                <a href="#panel2">Vanish Tip Exchange 1.3 Live</a>
-                                <div id="panel2" class="content">
-                                    <dl class="tabs" data-tab>
-                                        <dd class="active"><a href="#panel1-1">Information</a></dd>
-                                        <dd><a href="#panel1-2">SSH</a></dd>
-                                        <dd><a href="#panel1-3">MySQL</a></dd>
-                                        <dd><a href="#panel1-4">PostgreSQL</a></dd>
-                                        <dd><a href="#panel1-5">SMTP</a></dd>
-                                    </dl>
-                                    <div class="tabs-content">
-                                        <div class="content active" id="panel1-1">
-                                            <p>Here goes basic information about the data contained in the services</p>
-                                        </div>
-                                        <div class="content" id="panel1-2">
-                                            <p>First panel content goes here...</p>
-                                        </div>
-                                        <div class="content" id="panel1-3">
-                                            <p>Second panel content goes here...</p>
-                                        </div>
-                                        <div class="content" id="panel1-4">
-                                            <p>Third panel content goes here...</p>
-                                        </div>
-                                        <div class="content" id="panel1-5">
-                                            <p>Fourth panel content goes here...</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </dd>
-                            <dd class="accordion-navigation">
-                                <a href="#panel3">Vanish Tip Exchange 1.3 Staging</a>
-                                <div id="panel3" class="content">
-                                    <dl class="tabs" data-tab>
-                                        <dd class="active"><a href="#panel1-1">Information</a></dd>
-                                        <dd><a href="#panel1-2">SSH</a></dd>
-                                        <dd><a href="#panel1-3">MySQL</a></dd>
-                                        <dd><a href="#panel1-4">PostgreSQL</a></dd>
-                                        <dd><a href="#panel1-5">SMTP</a></dd>
-                                    </dl>
-                                    <div class="tabs-content">
-                                        <div class="content active" id="panel1-1">
-                                            <p>Here goes basic information about the data contained in the services</p>
-                                        </div>
-                                        <div class="content" id="panel1-2">
-                                            <p>First panel content goes here...</p>
-                                        </div>
-                                        <div class="content" id="panel1-3">
-                                            <p>Second panel content goes here...</p>
-                                        </div>
-                                        <div class="content" id="panel1-4">
-                                            <p>Third panel content goes here...</p>
-                                        </div>
-                                        <div class="content" id="panel1-5">
-                                            <p>Fourth panel content goes here...</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </dd>
-                        </dl>
-                    </div>
+                    <div class="row" item-list></div>
                 </section>
 
                 <a class="exit-off-canvas"></a>
