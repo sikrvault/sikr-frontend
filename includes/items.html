@@ -1,13 +1,21 @@
 <dl class="accordion" data-accordion>
     <dd class="accordion-navigation" ng-repeat="item in items">
+        <div class="toolbar">
+        <a href="#" class="button tiny left" data-reveal-id="addObject">
+            <i class="fi-pencil"></i>
+        </a>
+        <a href="#" class="button alert tiny left" data-reveal-id="addObject">
+            <i class="fi-minus"></i>
+        </a>
+        </div>
         <a href="#panel{{$index}}">{{ item.name }}</a>
         <div id="panel{{$index}}" class="content" ng-class="{active:$first}">
             <dl class="tabs" data-tab>
-                <dd ng-class="{active:$first}" ng-repeat="service in item.services">
+                <dd ng-class="{active : $first}" ng-repeat="service in item.services">
                     <a href="#panel{{$parent.$index}}-{{$index}}">{{ service.name }}</a>
                 </dd>
             </dl>
-            <div class="tabs-content" services>
+            <div class="tabs-content" service-list>
             </div>
             <h3>Information</h3>
             <p>{{ item.description }}</p>

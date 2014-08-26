@@ -1,14 +1,14 @@
-// This directive is meant to return the tab data that was clicked
+// This directive is meant to add the modal dialog and manage it
 
-app.directive("serviceList", function(){
+app.directive("modalDialog", function(){
     return {
         restrict: 'A',
-        templateUrl: 'includes/services.html',
-        controllerAs: 'services',
+        templateUrl: 'includes/add-object.html',
+        controllerAs: 'addobject',
         controller: function($http, $scope) {
-            $http.get('http://localhost:8080/v1/services')
+            $http.get('http://localhost:8080/v1/add')
             .success(function(data, status, headers, config) {
-                $scope.services = data.services;
+                alert("Data saved successfully.");
             })
             .error(function(data, status, headers, config) {
                 alert("ERROR: Couldn't get the services list from the server.");
