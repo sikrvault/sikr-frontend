@@ -7,7 +7,8 @@
     "foundation": "latest",
     "foundation-icon-fonts": "latest",
     "angular": "latest",
-    "scut": "latest"
+    "scut": "latest",
+    "notifyjs": "latest"
   },
   "devDependencies": {
     "scut": "~0.10.4"

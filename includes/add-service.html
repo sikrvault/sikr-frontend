@@ -1,7 +1,15 @@
 <div id="addObject" class="reveal-modal" data-reveal>
-    <h2>Create a new object</h2>
-    <p class="lead">Select the type of data and fill in the form</p>
-    <ul class="tabs" data-tab role="tablist">
+    <p class="lead">Create a new service</p>
+    <form id="add-sshkey" method="post">
+        <div class="row">
+            <div class="small-12 large-4 columns">
+                <label>Service name
+                    <input type="text" placeholder="Insert a name here" />
+                </label>
+            </div>
+        </div>
+    </form>
+    <ul class="tabs addmodal" data-tab role="tablist">
         <li class="tab-title active" role="presentational" ><a href="#panel99-1" role="tab" tabindex="0" aria-selected="true" controls="panel99-1">SSH Key</a></li>
         <li class="tab-title" role="presentational" ><a href="#panel99-2" role="tab" tabindex="0"aria-selected="false" controls="panel99-2">SSL file</a></li>
         <li class="tab-title" role="presentational"><a href="#panel99-3" role="tab" tabindex="0" aria-selected="false" controls="panel99-3">Password</a></li>
@@ -20,13 +28,6 @@
                     <div class="small-12 large-4 columns">
                         <label>Key
                             <textarea rows="10" placeholder="Insert the contents of your key files here"></textarea>
-                        </label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="small-12 large-4 columns">
-                        <label>Tags
-                            <input type="text" placeholder="Insert your tags, separated by a comma with no spaces" />
                         </label>
                     </div>
                 </div>
@@ -49,13 +50,6 @@
                         </label>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="small-12 large-4 columns">
-                        <label>Tags
-                            <input type="text" placeholder="Insert your tags, separated by a comma with no spaces" />
-                        </label>
-                    </div>
-                </div>
                 <button class="button tiny">Save</button>
             </form>
         </section>
@@ -64,9 +58,9 @@
                 <div class="row">
                     <div class="small-12 large-4 columns">
                         <div class="row collapse">
-                            <label>URL / IP address</label>
+                            <label>URL / IP / Hostname</label>
                             <div class="small-9 columns">
-                                <input type="text" placeholder="Insert an URL or IP address if you need one" />
+                                <input type="text" placeholder="Insert an URL, IP address or hostname" />
                             </div>
                             <div class="small-3 columns">
                                 <span class="postfix">
@@ -94,13 +88,6 @@
                     <div class="small-12 large-4 columns">
                         <label>Extra information
                             <textarea rows="10" placeholder="Write here any extra information that you want to add"></textarea>
-                        </label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="small-12 large-4 columns">
-                        <label>Tags
-                            <input type="text" placeholder="Insert your tags, separated by a comma with no spaces" />
                         </label>
                     </div>
                 </div>

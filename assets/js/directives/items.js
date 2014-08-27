@@ -12,7 +12,7 @@ app.directive("itemList", function(){
                 $scope.items = data.items;
             })
             .error(function(data, status, headers, config) {
-                alert("ERROR: Couldn't get the items list from the server.");
+                $.notify("Can't access the API to get the items.", "error");
             });
         }
     };

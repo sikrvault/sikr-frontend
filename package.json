@@ -37,7 +37,7 @@
   "readmeFilename": "README",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/clione/sikre-frontend"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
