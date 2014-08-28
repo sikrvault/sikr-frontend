@@ -12,7 +12,7 @@ app.directive("serviceList", function(){
                     $scope.services = data.services;
                 })
                 .error(function(data, status, headers, config) {
-                    alert("ERROR: Couldn't get the services list from the server.");
+                    $.notify("Couldn't get the service data", "error");
                 });
             };
         }

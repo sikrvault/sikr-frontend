@@ -4,7 +4,7 @@ app.directive("modalDialog", function(){
     return {
         restrict: 'A',
         templateUrl: 'includes/add-item.html',
-        controllerAs: 'addobject',
+        controllerAs: 'addiotem',
         controller: function($http, $scope) {
             $http.get('http://localhost:8080/v1/add')
             .success(function(data, status, headers, config) {
