@@ -1,0 +1,27 @@
+body {
+    background: #F5F5F5;
+}
+
+.login-panel {
+    left: 50%;
+    top: 30%;
+    position: absolute;
+    margin-left: -250px;
+    margin-top: -150px;
+    height: 300px;
+    width: 500px;
+}
+
+.center {
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+}
+
+.github-login {
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="sikre">
+    <head itemscope itemtype="http://schema.org/WebPage">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="initial-scale=1">
+        <title>Sikre: The secure password tool</title>
+        <meta name="description" content="Sikre is an online password vault for storing your passwords. It features high security encryption systems and it's open source." />
+        <meta name="keywords" content="sikre, passwords, storing, security encryption, high security, security encryption systems, systems open, encryption systems, vault, online, open, systems, security, source, high, password, features, encryption" />
+
+        <!-- Schema.org markup for Google+ -->
+        <meta itemprop="name " content="Sikre: The secure password tool">
+        <meta itemprop="description " content="Sikre is an online password vault for storing your passwords. It features high security encryption systems and it's open source.">
+        <meta itemprop="image " content=" {{social_image}} ">
+
+        <!-- Twitter Card data -->
+        <meta name="twitter:card " content="Sikre is an online password vault for storing your passwords. It features high security encryption systems and it's open source.">
+        <meta name="twitter:site " content=" ">
+        <meta name="twitter:title " content="Sikre: The secure password tool">
+        <meta name="twitter:description " content="Sikre is an online password vault for storing your passwords. It features high security encryption systems and it's open source.">
+        <meta name="twitter:creator " content="">
+        <!-- Twitter summary card with large image must be at least 280x150px -->
+        <meta name="twitter:image:src " content=" {{social_image}} ">
+
+        <!-- Open Graph data -->
+        <meta property="og:title " content="Sikre: The secure password tool" />
+        <meta property="og:type " content="  " />
+        <meta property="og:url " content=" {{site_url}} " />
+        <meta property="og:image " content=" {{social_image}} " />
+        <meta property="og:description " content="Sikre is an online password vault for storing your passwords. It features high security encryption systems and it's open source." />
+        <meta property="og:site_name " content="  " />
+        <meta property="fb:admins " content="Facebook numberic ID" />
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="/static/css/app.css" type="text/css" />
+        <!-- <link rel="stylesheet" href="/static/css/fonts.css" type="text/css" /> -->
+
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100|Signika:400' rel='stylesheet' type='text/css'>
+        <!-- Header JS -->
+        <script src="/static/js/modernizr.min.js"></script>
+    </head>
+
+    <body>
+        <div class="login-panel">
+            <div class="row">
+                <img class="logo" src="/static/images/havaslogo.jpg" />
+            </div>
+            <form>
+                <div class="row">
+                    <div class="small-offset-2 small-8 columns">
+                        <input type="text" name="login-username" class="radius" placeholder="Username" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-offset-2 small-8 columns">
+                        <input type="password" name="login-password" class="radius" placeholder="Password" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-offset-8 small-1 columns">
+                        <a href="#" class="button tiny radius">Go</a>
+                    </div>
+                </div>
+                <div class="row center"><br>
+                    <div class="small-12 columns login-title">
+                        <p>...or use a social login (it's safer! <a href="/safetyfirst.html">why?</a>)</p>
+                    </div>
+                </div>
+                <div class="row center">
+                    <div class="small-12 columns">
+                        <button id="facebook-login" type="button" class="facebook-login button tiny radius">Facebook</button>
+                        <button id="google-login" type="button" class="google-login button tiny radius alert">Google+</button>
+                        <button id="github-login" type="button" class="github-login button tiny radius">GitHub</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer JS -->
+        <script src="/static/js/app.js"></script>
+    </body>
+</html>
