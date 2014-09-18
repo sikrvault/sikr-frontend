@@ -1,12 +1,12 @@
 <dl class="accordion" data-accordion>
     <dd class="accordion-navigation" ng-repeat="item in items">
         <div class="toolbar">
-        <a href="#" class="button tiny left" data-reveal-id="addObject">
-            <i class="fi-pencil"></i>
-        </a>
-        <a href="#" class="button alert tiny left" data-reveal-id="addObject">
-            <i class="fi-minus"></i>
-        </a>
+            <a href="#" class="button tiny left" data-reveal-id="addObject">
+                <i class="fi-pencil"></i>
+            </a>
+            <a href="#" class="button alert tiny left" data-reveal-id="addObject">
+                <i class="fi-minus"></i>
+            </a>
         </div>
         <a href="#panel{{$index}}">{{ item.name }}</a>
         <div id="panel{{$index}}" class="content" ng-class="{active:$first}">

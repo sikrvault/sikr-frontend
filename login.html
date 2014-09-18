@@ -40,24 +40,43 @@
     </head>
 
     <body>
-        <div class="login-panel">
+        <div class="login-panel" ng-controller="LoginCtrl">
             <div class="row">
                 <img class="logo" src="/static/images/havaslogo.jpg" />
             </div>
             <form>
                 <div class="row">
                     <div class="small-offset-2 small-8 columns">
-                        <input type="text" name="login-username" class="radius" placeholder="Username" />
+                        <div class="row collapse prefix-radius">
+                            <div class="small-2 columns">
+                                <span class="prefix"><i class="fi-at-sign"></i></span>
+                            </div>
+                            <div class="small-10 columns">
+                                <input type="text" name="login-email" placeholder="E-Mail" />
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="small-offset-2 small-8 columns">
-                        <input type="password" name="login-password" class="radius" placeholder="Password" />
+                        <div class="row collapse prefix-radius">
+                            <div class="small-2 columns">
+                                <span class="prefix"><i class="fi-key"></i></span>
+                            </div>
+                            <div class="small-10 columns">
+                                <input type="text" name="login-password" placeholder="Password" />
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="small-offset-8 small-1 columns">
-                        <a href="#" class="button tiny radius">Go</a>
+                <div class="small-offset-2 small-8 columns">
+                    <div class="row collapse">
+                        <div class="small-10 columns tinytext">
+                            <a href="#">forgot your password?</a>
+                        </div>
+                        <div class="small-2 columns">
+                            <a href="#" class="button tiny radius">Go</a>
+                        </div>
                     </div>
                 </div>
                 <div class="row center"><br>
@@ -67,14 +86,19 @@
                 </div>
                 <div class="row center">
                     <div class="small-12 columns">
-                        <button id="facebook-login" type="button" class="facebook-login button tiny radius">Facebook</button>
-                        <button id="google-login" type="button" class="google-login button tiny radius alert">Google+</button>
-                        <button id="github-login" type="button" class="github-login button tiny radius">GitHub</button>
+                        <a href="#" ng-click="authenticate('facebook')" alt="Login with Facebook" title="Login with Facebook" class="facebook-login tiny radius"><i class="fi-social-facebook"></i></a>
+                        <a href="#" ng-click="authenticate('google')" alt="Login with Google Plus" title="Login with Google+" class="google-login tiny radius"><i class="fi-social-google-plus"></i></a>
+                        <a href="#" ng-click="authenticate('github')" alt="Login with GitHub" title="Login with GitHub" class="github-login tiny radius"><i class="fi-social-github"></i></a>
+                        <a href="#" ng-click="authenticate('linkedin')" alt="Login with LinkedIn" title="Login with LinkedIn" class="linkedin-login tiny radius"><i class="fi-social-linkedin"></i></a>
+                        <a href="#" ng-click="authenticate('twitter')" alt="Login with Twitter" title="Login with Twitter" class="twitter-login tiny radius"><i class="fi-social-twitter"></i></a>
                     </div>
                 </div>
             </form>
         </div>
 
+        <div class="footer tinytext">
+            GitHub | Created by: Clione Software
+        </div>
         <!-- Footer JS -->
         <script src="/static/js/app.js"></script>
     </body>

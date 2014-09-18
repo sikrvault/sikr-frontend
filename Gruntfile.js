@@ -25,6 +25,7 @@ module.exports = function(grunt) {
           '<%= pkg.project_paths.bower_folder %>foundation/js/foundation.js',
           '<%= pkg.project_paths.bower_folder %>angular/angular.js',
           '<%= pkg.project_paths.bower_folder %>notifyjs/dist/notify-combined.min.js',
+          '<%= pkg.project_paths.bower_folder %>satellizer/satellizer.min.js',
           '<%= pkg.src_paths.js %>**/*.js'
         ],
         dest: '<%= pkg.dest_paths.js %>app.js'

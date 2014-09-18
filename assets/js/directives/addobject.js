@@ -13,8 +13,8 @@ app.directive("modalDialog", function(){
             .error(function(data, status, headers, config) {
                 $.notify("Can't access the API. We will disable the add functionality", "error");
                 // TODO: Decide if disabling the button or remove it completely
-                $(".additem").addClass("disabled");
-                $(".additem").prop("disabled", true);
+                //$(".additem").addClass("disabled");
+                //$(".additem").prop("disabled", true);
                 // This removes the button
                 //$(".additem").remove();
             });

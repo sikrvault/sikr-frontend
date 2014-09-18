@@ -22,6 +22,26 @@ body {
 }
 
 .github-login {
-    background-color: black;
-    color: white;
+//    background-color: black;
+    color: black;
+    :hover {
+        color: #666;
+    }
 }
+
+[class*="-login"] i {
+    font-size: 3rem;
+    margin: 10px;
+}
+
+.google-login {
+    color: #E65151;
+    :hover {
+        color: #FF7474;
+    }
+}
+
+.fi-at-sign, .fi-key {
+    color: #A7A7A7;
+}
+
