@@ -45,3 +45,18 @@ p {
     padding: 10px;
     color: #AAA;
 }
+
+.toolbar-button {
+    height: 30px;
+    width: 30px;
+    padding: 3px;
+    i {
+        font-size: 1rem;
+    }
+}
+
+.toolbar {
+    display: hidden;
+    float: right;
+    margin-top: -57px;
+}
