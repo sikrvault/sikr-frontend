@@ -28,7 +28,7 @@ app.directive("addService", function(){
         templateUrl: 'includes/add-service.html',
         controllerAs: 'addobject',
         controller: function($http, $scope) {
-            $http.get('http://localhost:8080/v1/add')
+            $http.get('http://localhost:8080/v1/services')
             .success(function(data, status, headers, config) {
                 //$.notify("Data saved successfully", "success");
             })
