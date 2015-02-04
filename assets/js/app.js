@@ -1,5 +1,9 @@
 // Load the angular application
-var app = angular.module('sikre', ['satellizer']);
+var app = angular.module('sikre', [
+    'satellizer',
+    'sikre.services',
+    'sikre.controllers',
+    'sikre.directives']);
 
 app.config(function($authProvider) {
 
