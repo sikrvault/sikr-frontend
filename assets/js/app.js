@@ -2,8 +2,7 @@
 var app = angular.module('sikre', [
     'satellizer',
     'sikre.services',
-    'sikre.controllers',
-    'sikre.directives']);
+    'sikre.controllers']);
 
 app.config(function($authProvider) {
 
