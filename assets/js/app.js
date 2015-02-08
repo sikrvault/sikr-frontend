@@ -6,7 +6,7 @@ app.config(function($authProvider) {
     // Facebook
     $authProvider.facebook({
         clientId: '971498276209878',
-        url: 'sikre.clione.io/api/v1/auth/facebook/login',
+        url: '/api/v1/auth/facebook/login',
         authorizationEndpoint: 'https://www.facebook.com/dialog/oauth',
         redirectUri: window.location.origin + '/',
         scope: 'email',
