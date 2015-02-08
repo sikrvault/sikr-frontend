@@ -44,7 +44,7 @@
             <div class="row">
                 <img class="logo" src="/static/images/havaslogo.jpg" />
             </div>
-            <form>
+            <form method="post" ng-submit="login()">
                 <div class="row">
                     <div class="small-offset-2 small-8 columns">
                         <div class="row collapse prefix-radius">
@@ -52,7 +52,7 @@
                                 <span class="prefix"><i class="fi-at-sign"></i></span>
                             </div>
                             <div class="small-10 columns">
-                                <input type="text" name="login-email" placeholder="E-Mail" autocomplete="off" />
+                                <input type="text" name="email" ng-model="email" placeholder="E-Mail" autocomplete="off" />
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                                 <span class="prefix"><i class="fi-key"></i></span>
                             </div>
                             <div class="small-10 columns">
-                                <input type="password" name="login-password" placeholder="Password" autocomplete="off" />
+                                <input type="password" name="password" ng-model="password" placeholder="Password" autocomplete="off" />
                             </div>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                             <a href="#">forgot your password?</a>
                         </div>
                         <div class="small-2 columns">
-                            <a href="#" class="button tiny radius">Go</a>
+                            <button type="submit" class="button tiny radius">Go</button>
                         </div>
                     </div>
                 </div>

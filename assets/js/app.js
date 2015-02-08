@@ -1,7 +1,23 @@
 // Load the angular application
-var app = angular.module('sikre', ['satellizer']);
+var app = angular.module('sikre', [
+    'satellizer',
+    'sikre.services',
+    'sikre.controllers']);
 
 app.config(function($authProvider) {
+
+    // Settings for authentication
+    $authProvider.loginOnSignup = true;
+    $authProvider.loginRedirect = '/';
+    $authProvider.logoutRedirect = '/';
+    $authProvider.signupRedirect = '/login';
+    $authProvider.loginUrl = 'http://localhost:8080/v1/auth/login';
+    $authProvider.signupUrl = '/auth/signup';
+    $authProvider.loginRoute = '/login';
+    $authProvider.signupRoute = '/signup';
+    $authProvider.tokenName = 'token';
+    $authProvider.tokenPrefix = 'satellizer'; // Local storage name prefix
+    $authProvider.unlinkUrl = '/auth/unlink/';
 
     // Facebook
     $authProvider.facebook({

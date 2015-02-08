@@ -7,7 +7,7 @@ app.directive("itemList", function(){
         controllerAs: 'items',
         controller: function($http, $scope) {
             //$http.get('/items.json')
-            $http.get('http://127.0.0.1:8080/v1/items/')
+            $http.get('http://localhost:8080/v1/items/')
             .success(function(data, status, headers, config) {
                 $scope.items = data.items;
             })
