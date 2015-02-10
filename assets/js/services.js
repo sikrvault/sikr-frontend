@@ -1,7 +1,6 @@
 angular.module('sikre.services', [])
 
   .factory('sikreAPIservice', function ($http) {
-    console.log('mine!');
     //var mainAPIUrl = 'https://api.sikr.io/v1/';
     var sikreAPI = {};
 
