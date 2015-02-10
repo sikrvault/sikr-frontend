@@ -1,8 +1,11 @@
 // Load the angular application
+var mainAPIUrl = 'https://api.sikr.io/v1/';
+
 var app = angular.module('sikre', [
     'satellizer',
     'sikre.services',
-    'sikre.controllers']);
+    'sikre.controllers',
+    'sikre.directives']);
 
 app.config(function($authProvider) {
 

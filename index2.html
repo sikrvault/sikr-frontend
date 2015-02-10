@@ -102,11 +102,10 @@
                                 <div id="panel{{$index}}" class="content" ng-class="{active:$first}">
                                     <dl class="tabs" data-tab>
                                         <dd ng-class="{active : $first}" ng-repeat="service in item.services">
-                                            <a href="#panel{{$parent.$index}}-{{$index}}" ng-click="getData(service.id)">{{ service.name }}</a>
+                                            <a href="#panel{{$parent.$index}}-{{$index}}" ng-click="getService(service.id)">{{ service.name }}</a>
                                         </dd>
                                     </dl>
-                                    <div class="tabs-content" service-list>
-                                    </div>
+                                    <div class="tabs-content" service-list></div>
                                     <h3>Information</h3>
                                     <p>{{ item.description }}</p>
                                 </div>
