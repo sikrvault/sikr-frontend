@@ -1,6 +1,10 @@
 // Load the angular application
 var mainAPIUrl = 'https://api.sikr.io/v1/';
 
+// Timeouts. When reached, the content dissapears.
+var serviceTimeout = 30000; // 30 seconds
+var itemTimeout = 300000; // 5 minutes
+
 var app = angular.module('sikre', [
     'satellizer',
     'sikre.services',
@@ -14,7 +18,7 @@ app.config(function($authProvider) {
     $authProvider.loginRedirect = '/';
     $authProvider.logoutRedirect = '/';
     $authProvider.signupRedirect = '/login';
-    $authProvider.loginUrl = 'http://localhost:8080/v1/auth/login';
+    $authProvider.loginUrl = mainAPIUrl + '/auth/login';
     $authProvider.signupUrl = '/auth/signup';
     $authProvider.loginRoute = '/login';
     $authProvider.signupRoute = '/signup';
@@ -95,6 +99,16 @@ $(document).foundation();
 // will stop working inside ng-repeat
 app.run(function($timeout){
     $timeout(function() {
-        $(document).foundation();
+        $(document).foundation({
+              offcanvas : {
+                // Sets method in which offcanvas opens.
+                // [ move | overlap_single | overlap ]
+                open_method: 'move',
+                // Should the menu close when a menu link is clicked?
+                // [ true | false ]
+                close_on_click : false
+              }
+            });
+        $('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
     }, 500);
 });

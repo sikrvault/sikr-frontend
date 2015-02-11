@@ -4,13 +4,12 @@ angular.module('sikre.services', [])
     //var mainAPIUrl = 'https://api.sikr.io/v1/';
     var sikreAPI = {};
 
-    // Return the service data for a specific service
-    // sikreAPI.getService = function (serviceID) {
-    //   return $http({
-    //     method: "GET",
-    //     url: mainAPIUrl + 'services/' + serviceID
-    //   });
-    // };
+    sikreAPI.getGroups = function (serviceID) {
+      return $http({
+        method: "GET",
+        url: mainAPIUrl + 'groups/'
+      });
+    };
 
     // Return the list of items tha the user has access to
     sikreAPI.getItems = function () {

@@ -66,7 +66,17 @@
                 </nav>
 
                 <aside class="left-off-canvas-menu">
-                    <group-tags></group-tags>
+                    <ul class="off-canvas-list" ng-controller="groupsController">
+                        <!--<li><label>Filter by...</label></li>-->
+                        <li><label>Groups</label></li>
+                        <li ng-repeat="group in groupList">
+                            <a href="#">{{ group.name }}</a>
+                        </li>
+                        <!--<li><label>Services</label></li>
+                        <li ng-repeat="tag in tags">
+                            <a href="/search/{{ tag.slug }}">{{ tag.name }}</a>
+                        </li>-->
+                    </ul>
                 </aside>
 
                 <aside class="right-off-canvas-menu">
@@ -83,12 +93,11 @@
                     </div>
                 </aside>
 
-                <section class="main-section">
+                <section class="main-section" ng-controller="itemsController">
                     <!-- only if filtered -->
-                    <h3 style="margin:20px;">Tip Exchange</h3>
+                    <h3 style="margin:20px;">{{ groupName }}</h3>
                     <div class="row">
-
-                        <dl class="accordion" ng-controller="itemsController" data-accordion>
+                        <dl class="accordion" data-accordion>
                             <dd class="accordion-navigation" ng-repeat="item in itemList">
                                 <a href="#panel{{$index}}">{{ item.name }}</a>
                                 <div class="toolbar">
@@ -111,9 +120,6 @@
                                 </div>
                             </dd>
                         </dl>
-
-
-
                     </div>
                 </section>
 
