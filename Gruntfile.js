@@ -17,16 +17,27 @@ module.exports = function(grunt) {
     // Concatanation of JS
     concat: {
       options: {
-        separator: ';'
+        separator: ';;\n\n'
       },
       dist: {
         src: [
           '<%= pkg.project_paths.bower_folder %>jquery/dist/jquery.min.js',
-          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation.min.js',
-          '<%= pkg.project_paths.bower_folder %>angular/angular.min.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.accordion.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.alert.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.offcanvas.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.tab.js',
           '<%= pkg.project_paths.bower_folder %>notifyjs/dist/notify-combined.min.js',
           '<%= pkg.project_paths.bower_folder %>satellizer/satellizer.min.js',
-          '<%= pkg.src_paths.js %>**/*.js'
+
+        ],
+        dest: '<%= pkg.dest_paths.js %>base.js'
+      },
+      angular: {
+        src: [
+          '<%= pkg.project_paths.bower_folder %>angular/angular.min.js',
+          '<%= pkg.dest_paths.js %>base.js',
+          '<%= pkg.src_paths.js %>**/*.js',
         ],
         dest: '<%= pkg.dest_paths.js %>app.js'
       }
@@ -38,7 +49,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          '<%= pkg.dest_paths.js %>app.js': ['<%= concat.dist.dest %>'],
+          '<%= pkg.dest_paths.js %>base.js': ['<%= concat.dist.dest %>'],
         }
       },
       dev: {
@@ -152,7 +163,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', 'build');
   grunt.registerTask('build', ['jshint', 'concat', 'uglify:dev', 'compass', 'copy']);
-  grunt.registerTask('dist', ['jshint', 'concat', 'uglify', 'compass', 'cssmin', 'copy']);
+  grunt.registerTask('dist', ['jshint', 'concat:dist', 'uglify', 'concat:angular', 'compass', 'cssmin', 'copy']);
   grunt.registerTask('doc', 'docco');
 
 };
