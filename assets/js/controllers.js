@@ -23,4 +23,11 @@ angular.module('sikre.controllers', [])
       .error(function(data, status, headers, config) {
         $.notify("Can't access the API to get the groups.", "error");
       });
+  })
+
+  .controller('LoginCtrl', function($scope, $auth) {
+
+    $scope.authenticate = function(provider) {
+      $auth.authenticate(provider);
+    };
   });

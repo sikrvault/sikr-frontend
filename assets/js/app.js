@@ -13,6 +13,10 @@ var app = angular.module('sikre', [
 
 app.config(function($authProvider) {
 
+    // // Routes
+    // $routeProvider
+    //     .when("/login", {templateUrl: "partials/login.html", controller: "loginController"})
+    //     .when("/app", {templateUrl: "partials/app.html", controller: "groupController"});
     // Settings for authentication
     $authProvider.loginOnSignup = true;
     $authProvider.loginRedirect = '/';

@@ -42,7 +42,7 @@ angular.module('sikre.directives', [])
       controllerAs: 'items',
       controller: function($http, $scope) {
 
-        $scope.getService = function(serviceId) {
+        $scope.getItems = function(serviceId) {
           $http.get(mainAPIUrl + 'items/' + groupId)
           .success(function(data, status, headers, config) {
               $scope.services = data;
