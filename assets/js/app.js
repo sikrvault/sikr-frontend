@@ -87,7 +87,6 @@ app.config(function($authProvider) {
         url: '/auth/github/login',
         redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
         authorizationEndpoint: 'https://github.com/login/oauth/authorize',
-        redirectUri: window.location.origin,
         scope: [],
         scopeDelimiter: ' ',
         type: '2.0',
