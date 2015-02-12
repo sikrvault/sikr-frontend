@@ -83,9 +83,9 @@ app.config(function($authProvider) {
     // GitHub
     $authProvider.github({
         clientId: '2d769d69d5106d8838ee',
-        //name: 'github',
+        name: 'Sikre',
         url: '/auth/github/login',
-        redirectUri: 'https://sikr.io/auth/github/login',
+        redirectUri: 'https://api.sikr.io/auth/github/login',
         //redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
         authorizationEndpoint: 'https://github.com/login/oauth/authorize',
         scope: [],
