@@ -29,7 +29,7 @@
         <meta property="og:description " content="Sikre is an online password vault for storing your passwords. It features high security encryption systems and it's open source." />
         <meta property="og:site_name " content="  " />
         <meta property="fb:admins " content="Facebook numberic ID" />
-
+        <link rel="icon" type="image/png" href="/static/images/favicon.png" />
         <!-- Stylesheets -->
         <link rel="stylesheet" href="/static/css/app.css" type="text/css" />
         <!-- <link rel="stylesheet" href="/static/css/fonts.css" type="text/css" /> -->
@@ -42,10 +42,10 @@
     <body>
         <div class="login-panel" ng-controller="LoginCtrl">
             <div class="row">
-                <img class="logo" src="/static/images/havaslogo.png" />
+                <img class="logo" src="/static/images/logo.png" />
             </div>
-            <form method="post" ng-submit="login()">
-                <div class="row">
+            <!-- <form method="post" ng-submit="login()"> -->
+<!--                 <div class="row">
                     <div class="small-offset-2 small-8 columns">
                         <div class="row collapse prefix-radius">
                             <div class="small-2 columns">
@@ -83,6 +83,9 @@
                     <div class="small-12 columns login-title">
                         <p>...or use a social login (it's safer! <a href="/safetyfirst.html">why?</a>)</p>
                     </div>
+                </div> -->
+                <div class="row center">
+                    <strong>Login with...</strong>
                 </div>
                 <div class="row center">
                     <div class="small-12 columns">
@@ -93,7 +96,7 @@
                         <a href="#" ng-click="authenticate('twitter')" alt="Login with Twitter" title="Login with Twitter" class="twitter-login tiny radius"><i class="fi-social-twitter"></i></a>
                     </div>
                 </div>
-            </form>
+            <!-- </form> -->
         </div>
 
         <div class="footer tinytext">
