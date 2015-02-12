@@ -21,9 +21,9 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [
-          '<%= pkg.project_paths.bower_folder %>jquery/dist/jquery.js',
-          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation.js',
-          '<%= pkg.project_paths.bower_folder %>angular/angular.js',
+          '<%= pkg.project_paths.bower_folder %>jquery/dist/jquery.min.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation.min.js',
+          '<%= pkg.project_paths.bower_folder %>angular/angular.min.js',
           '<%= pkg.project_paths.bower_folder %>notifyjs/dist/notify-combined.min.js',
           '<%= pkg.project_paths.bower_folder %>satellizer/satellizer.min.js',
           '<%= pkg.src_paths.js %>**/*.js'
