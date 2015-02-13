@@ -11,13 +11,19 @@ var app = angular.module('sikre', [
     'sikre.controllers',
     'sikre.directives']);
 
-app.config(function($authProvider) {
+app.config(function($httpProvider, $authProvider) {
 
     // // Routes
     // $routeProvider
     //     .when("/login", {templateUrl: "partials/login.html", controller: "loginController"})
     //     .when("/app", {templateUrl: "partials/app.html", controller: "groupController"});
     // Settings for authentication
+
+    // CORS
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
+    // Auth
     $authProvider.loginOnSignup = true;
     $authProvider.loginRedirect = '/';
     $authProvider.logoutRedirect = '/';
