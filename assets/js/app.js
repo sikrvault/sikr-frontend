@@ -53,7 +53,7 @@ app.config(function($httpProvider, $authProvider) {
 
     // Google+
     $authProvider.google({
-        clientId: '1075871883509-gqm88vara6jqf58a11rs1jb38qbsps6v.apps.googleusercontent.com',
+        clientId: '1075871883509-hgan7d0sa90kot6redk939t7dcbk8gqh.apps.googleusercontent.com',
         url: 'https://api.sikr.io/v1/auth/google/login',
         authorizationEndpoint: 'https://accounts.google.com/o/oauth2/auth',
         redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
