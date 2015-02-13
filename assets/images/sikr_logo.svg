@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg3441"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="sikr_logo.svg">
+  <defs
+     id="defs3443" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="439.28571"
+     inkscape:cy="142.94873"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1147"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3446">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       transform="matrix(6.3308713,0,0,6.3308713,-3724.8897,-1572.6025)"
+       data-item-type="text"
+       data-item="Business"
+       id="logo__item--business"
+       class="logo__item">
+      <g
+         class="logo__item__inner"
+         transform="translate(599.5,411.07378)"
+         id="g9">
+        <text
+           data-part-id="logo__item--business__0"
+           dy="1.4012985e-45"
+           dominant-baseline="text-after-edge"
+           alignment-baseline="text-after-edge"
+           font-size="32px"
+           letter-spacing="0"
+           font-weight="normal"
+           font-style="normal"
+           data-font-family="Montserrat"
+           data-font-weight="bold"
+           data-font-style="normal"
+           data-ttf-url="/builder_assets/fontsttf/font-montserrat-bold-normal.ttf"
+           data-font-filename="montserrat-bold-normal"
+           id="text11"
+           x="-1.8241526"
+           style="font-style:normal;font-weight:normal;font-size:32px;font-family:Montserrat--bold--normal;letter-spacing:0;fill:#ec1c24"
+           y="-1.9343218">
+          <tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold'"
+             id="tspan3366">sikr.io</tspan>
+        </text>
+      </g>
+    </g>
+    <path
+       d="M 378.10972,583.27042 696.17984,398.43961 c 10.84701,-40.40976 18.83909,-84.68774 23.07743,-133.14241 l -341.14755,198.29492 0,119.6783 z"
+       data-part-id="logo__item--logo_0__0"
+       id="path20"
+       inkscape:connector-curvature="0"
+       style="fill:#ec1c24" />
+    <path
+       d="M 378.10972,403.91157 663.4538,238.05192 C 632.26097,227.32831 591.22564,210.50707 548.28696,185.28841 l -170.17724,98.92715 0,119.69601 z"
+       data-part-id="logo__item--logo_0__1"
+       id="path22"
+       inkscape:connector-curvature="0"
+       style="fill:#231f20" />
+    <path
+       d="m 378.10972,642.95983 0,139.98892 c 0,0 197.55471,-70.53641 293.50356,-310.56273 L 378.10972,642.95983 Z"
+       data-part-id="logo__item--logo_0__2"
+       id="path24"
+       inkscape:connector-curvature="0"
+       style="fill:#231f20" />
+    <path
+       d="M 500.11428,153.65502 C 455.41333,120.84084 411.82268,78.201769 378.10972,23.244173 l 0,201.308497 122.00456,-70.89765 z"
+       data-part-id="logo__item--logo_0__3"
+       id="path26"
+       inkscape:connector-curvature="0"
+       style="fill:#ec1c24" />
+    <path
+       style="fill:#231f20"
+       inkscape:connector-curvature="0"
+       id="path28"
+       data-part-id="logo__item--logo_0__4"
+       d="m 185.55113,640.06959 192.32067,-111.79198 0,-119.70474 -252.79422,146.90597 c 18.91835,32.16208 39.4933,60.21804 60.47355,84.59075 z" />
+    <path
+       style="fill:#ec1c24"
+       inkscape:connector-curvature="0"
+       id="path30"
+       data-part-id="logo__item--logo_0__5"
+       d="M 100.85464,509.91435 377.863,348.90111 l 0,-119.68715 -314.263575,182.63678 c 10.39763,35.81013 23.08622,68.41278 37.255215,98.06361 z" />
+    <path
+       style="fill:#231f20"
+       inkscape:connector-curvature="0"
+       id="path32"
+       data-part-id="logo__item--logo_0__6"
+       d="m 377.863,169.54222 0,-146.298047 C 263.58616,209.62593 35.772585,254.25636 35.772585,254.25636 c 2.80204,37.62526 7.92157,72.74804 14.82102,105.51822 L 377.863,169.54222 Z" />
+    <path
+       style="fill:#ec1c24"
+       inkscape:connector-curvature="0"
+       id="path34"
+       data-part-id="logo__item--logo_0__7"
+       d="M 221.96043,678.54964 C 302.30406,755.94138 377.863,782.94875 377.863,782.94875 l 0,-194.99938 -155.90257,90.60027 z" />
+  </g>
+</svg>
