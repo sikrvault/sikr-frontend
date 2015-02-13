@@ -83,10 +83,17 @@ app.config(function($authProvider) {
     // GitHub
     $authProvider.github({
         clientId: '2d769d69d5106d8838ee',
-        //name: 'Sikre',
-        url: '/v1/auth/github/login',
-        //redirectUri: 'https://api.sikr.io/v1/auth/github/login',
+        url: 'https://api.sikr.io/v1/auth/github',
+        authorizationEndpoint: 'https://github.com/login/oauth/authorize',
         redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
+        scope: [],
+        scopeDelimiter: ' ',
+        type: '2.0',
+        popupOptions: { width: 1020, height: 618 }
+        //name: 'Sikre',
+        //url: '/v1/auth/github/login',
+        //redirectUri: 'https://api.sikr.io/v1/auth/github/login',
+        //redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
         //authorizationEndpoint: 'https://github.com/login/oauth/authorize',
         //scope: [],
         //scopeDelimiter: ' ',
