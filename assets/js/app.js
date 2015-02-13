@@ -20,7 +20,7 @@ app.config(function($httpProvider, $authProvider) {
     // Settings for authentication
 
     // CORS
-    $httpProvider.defaults.withCredentials = false;
+    $httpProvider.defaults.withCredentials = true;
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
