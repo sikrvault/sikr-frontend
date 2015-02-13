@@ -40,9 +40,9 @@ app.config(function($httpProvider, $authProvider) {
     // Facebook
     $authProvider.facebook({
         clientId: '971498276209878',
-        url: '/auth/facebook/login',
+        url: 'https://api.sikr.io/v1/auth/facebook/login',
         authorizationEndpoint: 'https://www.facebook.com/dialog/oauth',
-        redirectUri: 'https://api.sikr.io/auth/facebook/login',
+        redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host + '/',
         scope: 'email',
         scopeDelimiter: ',',
         requiredUrlParams: ['display', 'scope'],
@@ -97,15 +97,6 @@ app.config(function($httpProvider, $authProvider) {
         scopeDelimiter: ' ',
         type: '2.0',
         popupOptions: { width: 1020, height: 618 }
-        //name: 'Sikre',
-        //url: '/v1/auth/github/login',
-        //redirectUri: 'https://api.sikr.io/v1/auth/github/login',
-        //redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
-        //authorizationEndpoint: 'https://github.com/login/oauth/authorize',
-        //scope: [],
-        //scopeDelimiter: ' ',
-        //type: '2.0',
-        //popupOptions: { width: 1020, height: 618 }
     });
 });
 
