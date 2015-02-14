@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html ng-app="sikre">
+    <head itemscope itemtype="//schema.org/WebPage">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="initial-scale=1">
+        <title>Sikre: The secure password tool</title>
+        <meta name="description" content="Sikre is an online password vault for storing your passwords. It features high security encryption systems and it's open source." />
+        <meta name="keywords" content="sikre, passwords, storing, security encryption, high security, security encryption systems, systems open, encryption systems, vault, online, open, systems, security, source, high, password, features, encryption" />
+
+        <!-- Schema.org markup for Google+ -->
+        <meta itemprop="name " content="Sikre: The secure password tool">
+        <meta itemprop="description " content="Sikre is an online password vault for storing your passwords. It features high security encryption systems and it's open source.">
+        <meta itemprop="image " content=" {{social_image}} ">
+
+        <!-- Twitter Card data -->
+        <meta name="twitter:card " content="Sikre is an online password vault for storing your passwords. It features high security encryption systems and it's open source.">
+        <meta name="twitter:site " content=" ">
+        <meta name="twitter:title " content="Sikre: The secure password tool">
+        <meta name="twitter:description " content="Sikre is an online password vault for storing your passwords. It features high security encryption systems and it's open source.">
+        <meta name="twitter:creator " content="">
+        <!-- Twitter summary card with large image must be at least 280x150px -->
+        <meta name="twitter:image:src " content=" {{social_image}} ">
+
+        <!-- Open Graph data -->
+        <meta property="og:title " content="Sikre: The secure password tool" />
+        <meta property="og:type " content="  " />
+        <meta property="og:url " content=" {{site_url}} " />
+        <meta property="og:image " content=" {{social_image}} " />
+        <meta property="og:description " content="Sikre is an online password vault for storing your passwords. It features high security encryption systems and it's open source." />
+        <meta property="og:site_name " content="  " />
+        <meta property="fb:admins " content="Facebook numberic ID" />
+        <link rel="icon" type="image/png" href="/static/images/favicon.png" />
+        <!-- Stylesheets -->
+        <link async rel="stylesheet" href="/static/css/app.css" type="text/css" />
+        <!-- <link rel="stylesheet" href="/static/css/fonts.css" type="text/css" /> -->
+
+        <link async href='//fonts.googleapis.com/css?family=Roboto:400,300,100|Signika:400' rel='stylesheet' type='text/css'>
+        <!-- Header JS -->
+        <!--<script src="/static/js/modernizr.min.js"></script>-->
+    </head>
+
+    <body>
+
+        <div class="row" modal-dialog></div>
+        <div class="row" add-service></div>
+
+        <div class="off-canvas-wrap" data-offcanvas>
+            <div class="inner-wrap">
+                <nav class="tab-bar">
+                    <section class="left-small">
+                        <a class="left-off-canvas-toggle" href="#">
+                            <i class="fi-list-thumbnails"></i>
+                        </a>
+                    </section>
+
+                    <section class="middle tab-bar-section">
+                        <h1 class="title">Sikre</h1>
+                        <button href="#" class="button tiny right additem" data-reveal-id="addItem"><i class="fi-plus"></i></button>
+                    </section>
+
+                    <section class="right-small">
+                        <a class="right-off-canvas-toggle" href="#">
+                            <i class="fi-widget"></i>
+                        </a>
+                    </section>
+                </nav>
+
+                <aside class="left-off-canvas-menu">
+                    <ul class="off-canvas-list" ng-controller="groupsController">
+                        <!--<li><label>Filter by...</label></li>-->
+                        <li><label>Groups</label></li>
+                        <li ng-repeat="group in groupList">
+                            <a href="#">{{ group.name }}</a>
+                        </li>
+                        <!--<li><label>Services</label></li>
+                        <li ng-repeat="tag in tags">
+                            <a href="/search/{{ tag.slug }}">{{ tag.name }}</a>
+                        </li>-->
+                    </ul>
+                </aside>
+
+                <aside class="right-off-canvas-menu">
+                    <ul class="off-canvas-list">
+                        <li><label>Oscar Carballal Prego</label></li>
+                        <li><a href="#">My settings</a></li>
+                        <li><a href="#">Logout</a></li>
+                        <li><label>Actions</label></li>
+                    </ul>
+                    <div class="off-canvas-footer">
+                        &copy; 2014<br>
+                        <a href="http://clione.io" target="_blank">Clione Software</a><br>
+                        <a href="http://havasworldwide.co.uk" target="_blank">Havas Worldwide London</a>
+                    </div>
+                </aside>
+
+                <section class="main-section" ng-controller="itemsController">
+                    <!-- only if filtered -->
+                    <h3 style="margin:20px;">{{ groupName }}</h3>
+                    <div class="row">
+                        <dl class="accordion" data-accordion>
+                            <dd class="accordion-navigation" ng-repeat="item in itemList">
+                                <a href="#panel{{$index}}">{{ item.name }}</a>
+                                <div class="toolbar">
+                                    <a href="#" class="button left toolbar-button addobject" data-reveal-id="addObject">
+                                        <i class="fi-plus"></i>
+                                    </a>
+                                    <a href="#" class="button alert left toolbar-button" data-reveal-id="deleteObject">
+                                        <i class="fi-trash"></i>
+                                    </a>
+                                </div>
+                                <div id="panel{{$index}}" class="content" ng-class="{active:$first}">
+                                    <dl class="tabs" data-tab>
+                                        <dd ng-class="{active : $first}" ng-repeat="service in item.services">
+                                            <a href="#panel{{$parent.$index}}-{{$index}}" ng-click="getService(service.id)">{{ service.name }}</a>
+                                        </dd>
+                                    </dl>
+                                    <div class="tabs-content" service-list></div>
+                                    <h3>Information</h3>
+                                    <p>{{ item.description }}</p>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </section>
+
+                <a class="exit-off-canvas"></a>
+            </div>
+        </div>
+
+        <!-- Footer JS -->
+        <script async src="/static/js/app.js"></script>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-43195813-4', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+    </body>
+</html>

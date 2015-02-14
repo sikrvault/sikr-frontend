@@ -39,93 +39,25 @@
         <!--<script src="/static/js/modernizr.min.js"></script>-->
     </head>
 
-    <body>
+    <body class="index-page">
 
-        <div class="row" modal-dialog></div>
-        <div class="row" add-service></div>
+        <nav class="top-bar" data-topbar role="navigation">
+          <ul class="title-area">
+            <li class="name">
+              <h1><a href="#">sikr.io</a></h1>
+            </li>
+          </ul>
+        </nav>
 
-        <div class="off-canvas-wrap" data-offcanvas>
-            <div class="inner-wrap">
-                <nav class="tab-bar">
-                    <section class="left-small">
-                        <a class="left-off-canvas-toggle" href="#">
-                            <i class="fi-list-thumbnails"></i>
-                        </a>
-                    </section>
-
-                    <section class="middle tab-bar-section">
-                        <h1 class="title">Sikre</h1>
-                        <button href="#" class="button tiny right additem" data-reveal-id="addItem"><i class="fi-plus"></i></button>
-                    </section>
-
-                    <section class="right-small">
-                        <a class="right-off-canvas-toggle" href="#">
-                            <i class="fi-widget"></i>
-                        </a>
-                    </section>
-                </nav>
-
-                <aside class="left-off-canvas-menu">
-                    <ul class="off-canvas-list" ng-controller="groupsController">
-                        <!--<li><label>Filter by...</label></li>-->
-                        <li><label>Groups</label></li>
-                        <li ng-repeat="group in groupList">
-                            <a href="#">{{ group.name }}</a>
-                        </li>
-                        <!--<li><label>Services</label></li>
-                        <li ng-repeat="tag in tags">
-                            <a href="/search/{{ tag.slug }}">{{ tag.name }}</a>
-                        </li>-->
-                    </ul>
-                </aside>
-
-                <aside class="right-off-canvas-menu">
-                    <ul class="off-canvas-list">
-                        <li><label>Oscar Carballal Prego</label></li>
-                        <li><a href="#">My settings</a></li>
-                        <li><a href="#">Logout</a></li>
-                        <li><label>Actions</label></li>
-                    </ul>
-                    <div class="off-canvas-footer">
-                        &copy; 2014<br>
-                        <a href="http://clione.io" target="_blank">Clione Software</a><br>
-                        <a href="http://havasworldwide.co.uk" target="_blank">Havas Worldwide London</a>
-                    </div>
-                </aside>
-
-                <section class="main-section" ng-controller="itemsController">
-                    <!-- only if filtered -->
-                    <h3 style="margin:20px;">{{ groupName }}</h3>
-                    <div class="row">
-                        <dl class="accordion" data-accordion>
-                            <dd class="accordion-navigation" ng-repeat="item in itemList">
-                                <a href="#panel{{$index}}">{{ item.name }}</a>
-                                <div class="toolbar">
-                                    <a href="#" class="button left toolbar-button addobject" data-reveal-id="addObject">
-                                        <i class="fi-plus"></i>
-                                    </a>
-                                    <a href="#" class="button alert left toolbar-button" data-reveal-id="deleteObject">
-                                        <i class="fi-trash"></i>
-                                    </a>
-                                </div>
-                                <div id="panel{{$index}}" class="content" ng-class="{active:$first}">
-                                    <dl class="tabs" data-tab>
-                                        <dd ng-class="{active : $first}" ng-repeat="service in item.services">
-                                            <a href="#panel{{$parent.$index}}-{{$index}}" ng-click="getService(service.id)">{{ service.name }}</a>
-                                        </dd>
-                                    </dl>
-                                    <div class="tabs-content" service-list></div>
-                                    <h3>Information</h3>
-                                    <p>{{ item.description }}</p>
-                                </div>
-                            </dd>
-                        </dl>
-                    </div>
-                </section>
-
-                <a class="exit-off-canvas"></a>
+        <header class="hero-section">
+            <div class="row main-message">
+                <h1>We're working on something!</h1>
+                <p>
+                    <div class="createsend-button" style="height:27px;display:inline-block;" data-listid="t/16/515/41A/5BA64AA879223023"></div>
+                    <script type="text/javascript">(function () { var e = document.createElement('script'); e.type = 'text/javascript'; e.async = true; e.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://btn.createsend1.com/js/sb.min.js?v=3'; e.className = 'createsend-script'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s); })();</script>
+                </p>
             </div>
-        </div>
+        </header>
 
         <!-- Footer JS -->
         <script async src="/static/js/app.js"></script>

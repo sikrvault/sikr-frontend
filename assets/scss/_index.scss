@@ -1,0 +1,29 @@
+.hero-section {
+    background-image: url("/static/images/indexbg.png");
+    background-size: cover;
+    height: 86%;
+}
+
+.top-bar {
+    background: #000;
+}
+
+.top-bar .name h1 a {
+    font-size: 1.6rem;
+}
+
+.main-message {
+    top: 100px;
+    margin: auto;
+    position: relative;
+    text-align: center;
+}
+
+.main-message h1 {
+    color: #FFF;
+}
+
+.index-page {
+    background: #111;
+    color: #FFF;
+}

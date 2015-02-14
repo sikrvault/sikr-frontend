@@ -35,7 +35,7 @@
 @import "foundation/components/tabs";
 //   "foundation/components/thumbs",
 //   "foundation/components/tooltips",
-//   "foundation/components/top-bar",
+@import "foundation/components/top-bar";
 //   "foundation/components/type";
 @import "foundation/components/offcanvas";
 //   "foundation/components/visibility";
@@ -47,3 +47,4 @@
 @import "offcanvas";        // Foundation off canvas modifications
 @import "accordion";        // Accordion modifications
 @import "login";            // Login page styles
+@import "index";            // Index page styles
