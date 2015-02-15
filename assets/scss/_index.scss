@@ -5,11 +5,20 @@
 }
 
 .top-bar {
-    background: #000;
+    background: #F5F5F5;
+    color: #222;
+    -webkit-box-shadow: 0px -4px 17px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -4px 17px 5px rgba(0,0,0,0.75);
+    box-shadow: 0px -4px 17px 5px rgba(0,0,0,0.75);
+}
+
+.top-bar .name {
+    width: 500px;
 }
 
 .top-bar .name h1 a {
     font-size: 1.6rem;
+    color: #666;
 }
 
 .main-message {
@@ -21,9 +30,25 @@
 
 .main-message h1 {
     color: #FFF;
+    font-size: 4rem;
+}
+
+.main-message p {
+    font-size: 1.5rem;
 }
 
 .index-page {
     background: #111;
     color: #FFF;
+}
+
+.index-introducing {
+    background: #F5F5F5;
+    color: #333;
+}
+
+.introduction {
+    width: 50%;
+    margin: auto;
+    color: #666;
 }
