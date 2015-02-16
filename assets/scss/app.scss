@@ -20,7 +20,7 @@
 //   "foundation/components/joyride",
 //   "foundation/components/keystrokes",
 //   "foundation/components/labels";
-//   "foundation/components/magellan",
+//@import "foundation/components/magellan";
 //   "foundation/components/orbit",
 //   "foundation/components/pagination";
 //   "foundation/components/panels";
@@ -29,7 +29,7 @@
 @import "foundation/components/reveal";
 //   "foundation/components/side-nav",
 //   "foundation/components/split-buttons",
-//   "foundation/components/sub-nav",
+@import "foundation/components/sub-nav";
 //   "foundation/components/switch",
 //   "foundation/components/tables",
 @import "foundation/components/tabs";
@@ -42,7 +42,6 @@
 
 @import "fonts";            // Load foundation icons modifications and extra fonts
 @import "foundation-icons"; // Foundation icons (surprise!)
-@import "scut";             // Scut is a module for styling the elements
 @import "general";          // Modifications that affect the whole page
 @import "offcanvas";        // Foundation off canvas modifications
 @import "accordion";        // Accordion modifications

@@ -27,6 +27,8 @@ module.exports = function(grunt) {
           '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.alert.js',
           '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.offcanvas.js',
           '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.tab.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.reveal.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.topbar.js',
           '<%= pkg.project_paths.bower_folder %>notifyjs/dist/notify-combined.min.js',
           '<%= pkg.project_paths.bower_folder %>satellizer/satellizer.min.js',
 

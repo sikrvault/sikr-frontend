@@ -1,15 +1,14 @@
 .hero-section {
     background-image: url("/static/images/indexbg.jpg");
     background-size: cover;
-    height: 86%;
+    height: 400px;
 }
 
 .top-bar {
-    background: #F5F5F5;
-    color: #222;
-    -webkit-box-shadow: 0px -4px 17px 5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px -4px 17px 5px rgba(0,0,0,0.75);
-    box-shadow: 0px -4px 17px 5px rgba(0,0,0,0.75);
+    background: #333;
+    color: #F5F5F5;
+    height: 70px;
+    padding: 12px;
 }
 
 .top-bar .name {
@@ -18,7 +17,7 @@
 
 .top-bar .name h1 a {
     font-size: 1.6rem;
-    color: #666;
+    color: #F5F5F5;
 }
 
 .main-message {
@@ -38,7 +37,7 @@
 }
 
 .index-page {
-    background: #111;
+    background: #F5F5F5;
     color: #FFF;
 }
 
@@ -48,7 +47,25 @@
 }
 
 .introduction {
-    width: 50%;
+    width: 90%;
     margin: auto;
     color: #666;
+}
+
+.index-when {
+    background: #333;
+}
+
+.index-when * {
+    color: #f5f5f5;
+}
+
+footer * {
+    background: #333;
+    font-size: 0.81rem;
+    color: #F5F5F5;
+}
+
+footer p a {
+    margin-left: 15px;
 }

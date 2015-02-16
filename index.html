@@ -34,20 +34,13 @@
         <link async rel="stylesheet" href="/static/css/app.css" type="text/css" />
         <!-- <link rel="stylesheet" href="/static/css/fonts.css" type="text/css" /> -->
 
-        <link async href='//fonts.googleapis.com/css?family=Roboto:400,300,100|Signika:400' rel='stylesheet' type='text/css'>
+<!--         <link async href='//fonts.googleapis.com/css?family=Roboto:400,300,100|Signika:400' rel='stylesheet' type='text/css'> -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800|Signika:400' rel='stylesheet' type='text/css'>
         <!-- Header JS -->
         <!--<script src="/static/js/modernizr.min.js"></script>-->
     </head>
 
     <body class="index-page">
-
-        <nav class="top-bar" data-topbar role="navigation">
-          <ul class="title-area">
-            <li class="name">
-              <h1><img src="/static/images/google_applogo.png" style="width:25px;margin:10px;float:left;"><a href="#">sikr.io</a></h1>
-            </li>
-          </ul>
-        </nav>
 
         <header class="hero-section">
             <div class="row main-message">
@@ -60,16 +53,71 @@
             </div>
         </header>
 
+        <div class="contain-to-grid sticky" style="clear:both;">
+            <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+                <ul class="title-area">
+                    <li class="name">
+                      <h1><img src="/static/images/google_applogo.png" style="width:25px;margin:10px;float:left;"><a href="#">sikr.io</a></h1>
+                    </li>
+                </ul>
+                <section class="top-bar-section">
+                    <!-- Right Nav Section -->
+                    <ul class="right">
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">Introduction</a></li>
+                      <li><a href="#">Why</a></li>
+                      <li><a href="#">When?</a></li>
+                    </ul>
+                </section>
+            </nav>
+        </div>
+
         <div class="row center index-introducing">
-            <h2 style="margin-top:40px;">Introducing <span style="color:#ec1c24;">sikr.io</span><h2>
-            <div class="introduction">
-            <p>sikr.io is a password storage service, focused on keeping your most secure data really secure, that includes really sensitive data like SSL and SSH keys, wich you should keep always safe and at hand.</p>
+            <h2 style="margin-top:40px;">Introducing <span style="color:#cacaca;text-shadow: 2px 2px 2px rgba(0,0,0,0.5);">sikr.io</span><h2>
+            <div class="small-8 large-8 small-centered large-centered columns introduction">
+            <p>sikr.io is a password storage service, focused on keeping your most secure data really secure, that includes really sensitive data like SSL and SSH keys, wich you should keep always safe and at hand. If we have private data is for a reason, and we don't want anyone peeking on it, even under more than plausible excuses.</p>
+            </div>
+            <div class="small-12 large-offset-2 large-4 columns">
+                <div style="width:150px;height:150px;margin:auto;">
+                    <i class="fi-lock" style="font-size:8rem;"></i>
+                </div>
+                <h1>Secure</h1>
+                <p>Such a big word nowadays, sikr is as secure as we could make it, you don't have
+                username or password to login, instead we rely on a two phased authentication with
+                you social network of choice, and since we don't trust them either, we generate a
+                second code that will be stored on your browser, so the server will never contain
+                data about you that can compromise anything.</p>
+            </div>
+            <div class="small-12 large-4 end columns">
+                <div style="width:150px;height:150px;margin:auto;">
+                    <i class="fi-social-github" style="font-size:8rem;"></i>
+                </div>
+                <h1>Open Source</h1>
+                <p>You should probably ask yourself, why should I trust you? The answer is simple:
+                don't. If you're asking that question you probably want your own password manager,
+                or to check what do we do to protect your data. Here you go, our platform is free
+                and open source, because why not, and if you feel paranoid, just clone the code and deploy it on you own server!</p>
+            </div>
+        </div>
+
+        <div class="row center index-when">
+            <h2 style="margin-top:40px;">When?<h2>
+            <div class="small-8 large-8 small-centered large-centered columns introduction">
+            <p>We expect to have a fist functional alpha really soon, and to release the first public
+            version around mid or end 2015, now that's good news! Also, if you have spare time and you
+            are interested, you can contribute with the project!.</p>
             </div>
         </div>
 
         <footer class="index-footer">
             <div class="row">
-            <p style="margin: 20px auto 20px 100px;">2014-2015 <a href="https://github.com/clione" style="color:#666">Clione Software</a></p>
+            <p style="float:left;margin: 20px auto 20px 100px;">&copy;2014-2015 <a href="https://github.com/clione">Clione Software</a></p>
+            <p style="float:right;margin: 20px 100px 20px auto;">
+                <a href="https://github.com/clione/sikre">Source code</a>
+                <a href="https://groups.google.com/forum/#!forum/sikrio">Mailing list</a>
+                <a href="https://api.sikr.io">API</a>
+                <a href="https://docs.sikr.io">Documentation</a>
+            </p>
             </div>
         </footer>
         <!-- Footer JS -->
