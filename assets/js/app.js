@@ -42,7 +42,7 @@ app.config(function($httpProvider, $authProvider) {
         clientId: '971498276209878',
         url: 'https://api.sikr.io/v1/auth/facebook/login',
         authorizationEndpoint: 'https://www.facebook.com/dialog/oauth',
-        redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host + '/',
+        redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
         scope: 'email',
         scopeDelimiter: ',',
         requiredUrlParams: ['display', 'scope'],
