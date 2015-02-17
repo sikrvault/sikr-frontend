@@ -69,7 +69,7 @@ app.config(function($httpProvider, $authProvider) {
 
     // LinkedIn
     $authProvider.linkedin({
-        url: '/auth/linkedin/login',
+        url: 'https://api.sikr.io/v1/auth/linkedin/login',
         authorizationEndpoint: 'https://www.linkedin.com/uas/oauth2/authorization',
         redirectUri: window.location.origin,
         requiredUrlParams: ['state'],
@@ -82,7 +82,7 @@ app.config(function($httpProvider, $authProvider) {
 
     // Twitter
     $authProvider.twitter({
-        url: '/auth/twitter/login',
+        url: 'https://api.sikr.io/v1/auth/twitter/login',
         type: '1.0',
         popupOptions: { width: 495, height: 645 }
     });
