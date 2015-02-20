@@ -8,6 +8,7 @@ angular.module('sikre.controllers', [])
         $scope.serviceList = response.services;
       })
       .error(function(data, status, headers, config) {
+        alert(data, status, headers, config);
         $.notify("Can't access the API to get the items.", "error");
       });
   })
