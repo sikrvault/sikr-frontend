@@ -29,13 +29,13 @@ app.config(function($httpProvider, $authProvider) {
     $authProvider.loginRedirect = '/';
     $authProvider.logoutRedirect = '/';
     $authProvider.signupRedirect = '/login';
-    $authProvider.loginUrl = mainAPIUrl + '/auth/login';
-    $authProvider.signupUrl = '/auth/signup';
+    $authProvider.loginUrl = mainAPIUrl + '/login';
+    $authProvider.signupUrl = '/login';
     $authProvider.loginRoute = '/login';
-    $authProvider.signupRoute = '/signup';
+    $authProvider.signupRoute = '/login';
     $authProvider.tokenName = 'token';
     $authProvider.tokenPrefix = 'satellizer'; // Local storage name prefix
-    $authProvider.unlinkUrl = '/auth/unlink/';
+    $authProvider.unlinkUrl = '/unlink/';
 
     // Facebook
     $authProvider.facebook({
