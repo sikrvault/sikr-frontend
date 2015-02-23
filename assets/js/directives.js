@@ -49,6 +49,7 @@ angular.module('sikre.directives', [])
               $scope.lockedItem = false;
               $timeout(function () {
                 $scope.lockedItem = true;
+                $.notify("View time expired. Locking...", "info");
                 $scope.getTemplateUrl();
               }, itemTimeout);
           })
