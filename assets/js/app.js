@@ -9,7 +9,8 @@ var app = angular.module('sikre', [
   'satellizer',
   'sikre.services',
   'sikre.controllers',
-  'sikre.directives']);
+  'sikre.directives',
+  'ngRoute']);
 
 app.config(function ($routeProvider, $httpProvider, $authProvider) {
 
