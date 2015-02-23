@@ -1,7 +1,5 @@
 angular.module('sikre.controllers', [])
 
-  .controller('itemsController', function ($scope, sikreAPIservice) {
-
   // We REALLY shouldn't be using rootScope for this...
   .controller('groupsController', function ($scope, $rootScope, sikreAPIservice) {
 

@@ -1,23 +1,26 @@
-<dl class="accordion" data-accordion>
-    <dd class="accordion-navigation" ng-repeat="item in items">
-        <a href="#panel{{$index}}">{{ item.name }}</a>
-        <div class="toolbar">
-            <a href="#" class="button left toolbar-button addobject" data-reveal-id="addObject">
-                <i class="fi-plus"></i>
-            </a>
-            <a href="#" class="button alert left toolbar-button" data-reveal-id="deleteObject">
-                <i class="fi-trash"></i>
-            </a>
-        </div>
-        <div id="panel{{$index}}" class="content" ng-class="{active:$first}">
-            <dl class="tabs" data-tab>
-                <dd ng-class="{active : $first}" ng-repeat="service in item.services">
-                    <a href="#panel{{$parent.$index}}-{{$index}}" ng-click="getService(service.id)">{{ service.name }}</a>
-                </dd>
-            </dl>
-            <div class="tabs-content" service-list></div>
-            <h3>Information</h3>
-            <p>{{ item.description }}</p>
-        </div>
-    </dd>
-</dl>
+<h3 style="margin:20px;">{{ item.group }}</h3>
+<div class="row" item-list>
+    <dl class="accordion" data-accordion>
+        <dd class="accordion-navigation" ng-repeat="item in items">
+            <a href="#panel{{$index}}">{{ item.name }}</a>
+            <div class="toolbar">
+                <a href="#" class="button left toolbar-button addobject" data-reveal-id="addObject">
+                    <i class="fi-plus"></i>
+                </a>
+                <a href="#" class="button alert left toolbar-button" data-reveal-id="deleteObject">
+                    <i class="fi-trash"></i>
+                </a>
+            </div>
+            <div id="panel{{$index}}" class="content" ng-class="{active:$first}">
+                <dl class="tabs" data-tab>
+                    <dd ng-class="{active : $first}" ng-repeat="service in item.services">
+                        <a href="#panel{{$parent.$index}}-{{$index}}" ng-click="getService(service.id)">{{ service.name }}</a>
+                    </dd>
+                </dl>
+                <div class="tabs-content" service-list></div>
+                <h3>Information</h3>
+                <p>{{ item.description }}</p>
+            </div>
+        </dd>
+    </dl>
+</div>
