@@ -11,19 +11,19 @@ var app = angular.module('sikre', [
     'sikre.controllers',
     'sikre.directives']);
 
-app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
+app.config(function($routeProvider, $httpProvider, $authProvider) {
 
-    $stateProvider
-      .state('home', {
+    $routeProvider
+      .when('home', {
         url: '/',
         templateUrl: 'index.html'
       })
-      .state('login', {
+      .when('login', {
         url: '/login',
         templateUrl: 'login.html',
         controller: 'LoginCtrl'
       })
-      .state('logout', {
+      .when('logout', {
         url: '/logout',
         template: null,
         controller: 'LogoutCtrl'
