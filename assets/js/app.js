@@ -9,24 +9,9 @@ var app = angular.module('sikre', [
   'satellizer',
   'sikre.services',
   'sikre.controllers',
-  'sikre.directives',
-  'ngRoute']);
+  'sikre.directives']);
 
-app.config(function ($routeProvider, $httpProvider, $authProvider) {
-
-  // Routes
-  $routeProvider
-    .when('/', {
-      templateUrl: 'index.html'
-    })
-    .when('/login', {
-      templateUrl: 'login.html',
-      controller: LoginCtrl,
-    })
-    .when('/logout', {
-      templateUrl: null,
-      controller: LogoutCtrl,
-    });
+app.config(function ($httpProvider, $authProvider) {
 
   // CORS
   $httpProvider.defaults.withCredentials = true;
