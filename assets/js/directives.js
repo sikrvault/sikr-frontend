@@ -45,7 +45,7 @@ angular.module('sikre.directives', [])
         $scope.getItem = function(groupId) {
           $http.get(mainAPIUrl + 'items?group=' + groupId)
           .success(function(data, status, headers, config) {
-              $scope.services = data;
+              $scope.items = data;
               $scope.lockedItem = false;
               $timeout(function () {
                 $scope.lockedItem = true;
@@ -53,7 +53,7 @@ angular.module('sikre.directives', [])
               }, itemTimeout);
           })
           .error(function(data, status, headers, config) {
-              $.notify("Couldn't get the service data", "error");
+              $.notify("Couldn't get the item data", "error");
           });
         };
 

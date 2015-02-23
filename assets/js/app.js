@@ -34,7 +34,7 @@ app.config(function($httpProvider, $authProvider) {
     $authProvider.loginRoute = '/login';
     $authProvider.signupRoute = '/login';
     $authProvider.tokenName = 'token';
-    $authProvider.tokenPrefix = 'satellizer'; // Local storage name prefix
+    $authProvider.tokenPrefix = 'sikr'; // Local storage name prefix
     $authProvider.unlinkUrl = '/unlink/';
 
     // Facebook
