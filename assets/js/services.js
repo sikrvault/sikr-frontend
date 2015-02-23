@@ -11,5 +11,12 @@ angular.module('sikre.services', [])
       });
     };
 
+    sikreAPI.saveItem = function (data) {
+      return $http({
+        method: "POST",
+        url: mainAPIUrl + 'items/'
+      });
+    };
+
     return sikreAPI;
   });

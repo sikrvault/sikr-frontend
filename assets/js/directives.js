@@ -67,48 +67,48 @@ angular.module('sikre.directives', [])
         };
       },
     };
-  })
-
-  .directive("addItem", function () {
-    return {
-      restrict: 'A',
-      templateUrl: 'includes/add-item.html',
-      controllerAs: 'additem',
-      controller: function ($http, $scope) {
-        $http.post(mainAPIUrl + 'items/')
-          .success(function (data, status) {
-            $.notify("Data saved successfully", "success");
-          })
-          .error(function (data, status) {
-            $.notify("Can't access the API. We will disable the add functionality", "error");
-            // TODO: Decide if disabling the button or remove it completely
-            $(".additem").addClass("disabled");
-            $(".additem").prop("disabled", true);
-            // This removes the button
-            //$(".additem").remove();
-          });
-      }
-    };
-  })
-
-  .directive("addService", function () {
-    return {
-      restrict: 'A',
-      templateUrl: 'includes/add-service.html',
-      controllerAs: 'addservice',
-      controller: function ($http) {
-        $http.post(mainAPIUrl + 'services/')
-          .success(function (data, status) {
-            $.notify("Data saved successfully", "success");
-          })
-          .error(function (data, status) {
-            $.notify("Can't access the API. We will disable the add functionality", "error");
-              // TODO: Decide if disabling the button or remove it completely
-            $(".additem").addClass("disabled");
-            $(".additem").prop("disabled", true);
-              // This removes the button
-              //$(".additem").remove();
-          });
-      }
-    };
   });
+
+  // .directive("addItem", function () {
+  //   return {
+  //     restrict: 'A',
+  //     templateUrl: 'includes/add-item.html',
+  //     controllerAs: 'additem',
+  //     controller: function ($http, $scope) {
+  //       $http.post(mainAPIUrl + 'items/')
+  //         .success(function (data, status) {
+  //           $.notify("Data saved successfully", "success");
+  //         })
+  //         .error(function (data, status) {
+  //           $.notify("Can't access the API. We will disable the add functionality", "error");
+  //           // TODO: Decide if disabling the button or remove it completely
+  //           $(".additem").addClass("disabled");
+  //           $(".additem").prop("disabled", true);
+  //           // This removes the button
+  //           //$(".additem").remove();s
+  //         });
+  //     }
+  //   };
+  // })
+
+  // .directive("addService", function () {
+  //   return {
+  //     restrict: 'A',
+  //     templateUrl: 'includes/add-service.html',
+  //     controllerAs: 'addservice',
+  //     controller: function ($http) {
+  //       $http.post(mainAPIUrl + 'services/')
+  //         .success(function (data, status) {
+  //           $.notify("Data saved successfully", "success");
+  //         })
+  //         .error(function (data, status) {
+  //           $.notify("Can't access the API. We will disable the add functionality", "error");
+  //             // TODO: Decide if disabling the button or remove it completely
+  //           $(".additem").addClass("disabled");
+  //           $(".additem").prop("disabled", true);
+  //             // This removes the button
+  //             //$(".additem").remove();
+  //         });
+  //     }
+  //   };
+  // });

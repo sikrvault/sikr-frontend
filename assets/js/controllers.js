@@ -25,4 +25,20 @@ angular.module('sikre.controllers', [])
       $auth.logout();
       $.notify("You have been logged out", "error");
     };
+  })
+
+  .controller('addItem', function ($scope, sikreAPIservice) {
+    $scope.master = {};
+
+    $scope.update = function (item) {
+      $scope.master = angular.copy(item);
+      sikreAPIservice.saveItem($scope.master)
+        .success(function (response) {
+          $.notify("Data saved successfully", "success");
+        });
+    };
+
+    $scope.reset = function () {
+      $scope.user = angular.copy($scope.master);
+    };
   });
