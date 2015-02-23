@@ -11,9 +11,9 @@ angular.module('sikre.directives', [])
           $http.get(mainAPIUrl + 'services/' + serviceId)
           .success(function(data, status, headers, config) {
               $scope.services = data;
-              $scope.locked = false;
+              $scope.lockedService = false;
               $timeout(function () {
-                $scope.locked = true;
+                $scope.lockedService = true;
                 $.notify("View time expired. Locking...", "info");
                 $scope.getTemplateUrl();
               }, serviceTimeout);
@@ -46,11 +46,11 @@ angular.module('sikre.directives', [])
           $http.get(mainAPIUrl + 'items?group=' + groupId)
           .success(function(data, status, headers, config) {
               $scope.services = data;
-              $scope.locked = false;
+              $scope.lockedItem = false;
               $timeout(function () {
-                $scope.locked = true;
+                $scope.lockedItem = true;
                 $scope.getTemplateUrl();
-              }, serviceTimeout);
+              }, itemTimeout);
           })
           .error(function(data, status, headers, config) {
               $.notify("Couldn't get the service data", "error");
