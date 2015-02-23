@@ -7,24 +7,24 @@ angular.module('sikre.controllers', [])
       .success(function (response) {
         $scope.groupList = response;
       })
-      .error(function(data, status, headers, config) {
+      .error(function () {
         $.notify("Can't access the API to get the groups.", "error");
       });
   })
 
-  .controller('LoginCtrl', function($scope, $auth) {
+  .controller('LoginCtrl', function ($scope, $auth) {
 
-    $scope.authenticate = function(provider) {
+    $scope.authenticate = function (provider) {
       $auth.authenticate(provider);
     };
-  });
+  })
 
-  .controller('LogoutCtrl', function($auth) {
+  .controller('LogoutCtrl', function ($auth) {
     if (!$auth.isAuthenticated()) {
-        return;
+      return;
     }
     $auth.logout()
-      .then(function() {
+      .then(function () {
         $.notify("You have been logged out", "error");
       });
   });
