@@ -74,11 +74,16 @@
                         </li>
                         <li><label>Actions</label></li>
                         <li><a href="#">Settings</a></li>
-                        <li><a href="/logout">Logout</a></li>
+                        <li><a href="#" ng-click="logout">Logout</a></li>
                         <!--<li><label>Services</label></li>
                         <li ng-repeat="tag in tags">
                             <a href="/search/{{ tag.slug }}">{{ tag.name }}</a>
                         </li>-->
+                    </ul>
+                    <ul class="off-canvas-list" ng-controller="LogoutCtrl">
+                        <li><label>Me</label></li>
+                        <li><a href="#" ng-click="logout">Logout</a></li>
+                        <li><label>Actions (+)</label></li>
                     </ul>
                     <div class="off-canvas-footer">
                         &copy; 2014<br>
