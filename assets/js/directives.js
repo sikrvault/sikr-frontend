@@ -61,7 +61,7 @@ angular.module('sikre.directives', [])
           if ($scope.locked) {
             return '';
           } else {
-            return 'includes/services.html';
+            return 'includes/items.html';
           }
         };
       },
