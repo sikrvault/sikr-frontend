@@ -11,13 +11,25 @@ var app = angular.module('sikre', [
     'sikre.controllers',
     'sikre.directives']);
 
-app.config(function($httpProvider, $authProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
 
-    // // Routes
-    // $routeProvider
-    //     .when("/login", {templateUrl: "partials/login.html", controller: "loginController"})
-    //     .when("/app", {templateUrl: "partials/app.html", controller: "groupController"});
-    // Settings for authentication
+    $stateProvider
+      .state('home', {
+        url: '/',
+        templateUrl: 'index.html'
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'login.html',
+        controller: 'LoginCtrl'
+      })
+      .state('logout', {
+        url: '/logout',
+        template: null,
+        controller: 'LogoutCtrl'
+      });
+
+    $urlRouterProvider.otherwise('/');
 
     // CORS
     $httpProvider.defaults.withCredentials = true;
