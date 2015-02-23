@@ -67,4 +67,26 @@ angular.module('sikre.directives', [])
         };
       },
     };
+  })
+
+  .directive("addItem", function(){
+      return {
+          restrict: 'A',
+          templateUrl: 'includes/add-item.html',
+          controllerAs: 'additem',
+          controller: function($http, $scope) {
+              $http.post(mainAPIUrl + 'items/')
+              .success(function(data, status, headers, config) {
+                  $.notify("Data saved successfully", "success");
+              })
+              .error(function(data, status, headers, config) {
+                  $.notify("Can't access the API. We will disable the add functionality", "error");
+                  // TODO: Decide if disabling the button or remove it completely
+                  $(".additem").addClass("disabled");
+                  $(".additem").prop("disabled", true);
+                  // This removes the button
+                  //$(".additem").remove();
+              });
+          }
+      };
   });
