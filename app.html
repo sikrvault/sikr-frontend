@@ -58,11 +58,11 @@
                         <button href="#" class="button tiny right additem" data-reveal-id="addItem"><i class="fi-plus"></i></button>
                     </section>
 
-                    <section class="right-small">
+<!--                     <section class="right-small">
                         <a class="right-off-canvas-toggle" href="#">
                             <i class="fi-widget"></i>
                         </a>
-                    </section>
+                    </section> -->
                 </nav>
 
                 <aside class="left-off-canvas-menu">
@@ -72,14 +72,22 @@
                         <li ng-repeat="group in groupList">
                             <a href="#" ng-click="getItem(group.id)">{{ group.name }}</a>
                         </li>
+                        <li><label>Actions</label></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Logout</a></li>
                         <!--<li><label>Services</label></li>
                         <li ng-repeat="tag in tags">
                             <a href="/search/{{ tag.slug }}">{{ tag.name }}</a>
                         </li>-->
                     </ul>
+                    <div class="off-canvas-footer">
+                        &copy; 2014<br>
+                        <a href="http://clione.io" target="_blank">Clione Software</a><br>
+                        <a href="http://havasworldwide.co.uk" target="_blank">Havas Worldwide London</a>
+                    </div>
                 </aside>
 
-                <aside class="right-off-canvas-menu">
+<!--                 <aside class="right-off-canvas-menu">
                     <ul class="off-canvas-list">
                         <li><label>Me</label></li>
                         <li><a href="#">Settings</a></li>
@@ -91,7 +99,7 @@
                         <a href="http://clione.io" target="_blank">Clione Software</a><br>
                         <a href="http://havasworldwide.co.uk" target="_blank">Havas Worldwide London</a>
                     </div>
-                </aside>
+                </aside> -->
 
                 <section class="main-section" item-list></section>
 
