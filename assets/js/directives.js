@@ -1,15 +1,15 @@
 angular.module('sikre.directives', [])
-  .directive("serviceList", function($timeout){
+  .directive("serviceList", function ($timeout) {
     return {
       restrict: 'A',
       template: "<ng-include src='getTemplateUrl()'/>",
       replace: true,
       controllerAs: 'services',
-      controller: function($http, $scope) {
+      controller: function ($http, $scope) {
 
-        $scope.getService = function(serviceId) {
+        $scope.getService = function (serviceId) {
           $http.get(mainAPIUrl + 'services/' + serviceId)
-          .success(function(data, status, headers, config) {
+            .success(function (data, status) {
               $scope.services = data;
               $scope.lockedService = false;
               $timeout(function () {
@@ -17,13 +17,13 @@ angular.module('sikre.directives', [])
                 $.notify("View time expired. Locking...", "info");
                 $scope.getTemplateUrl();
               }, serviceTimeout);
-          })
-          .error(function(data, status, headers, config) {
+            })
+            .error(function (data, status) {
               $.notify("Couldn't get the service data", "error");
-          });
+            });
         };
 
-        $scope.getTemplateUrl = function() {
+        $scope.getTemplateUrl = function () {
           if ($scope.lockedService) {
             return '';
           } else {
@@ -34,17 +34,17 @@ angular.module('sikre.directives', [])
     };
   })
 
-  .directive("itemList", function($timeout){
+  .directive("itemList", function ($timeout) {
     return {
       restrict: 'A',
       template: "<ng-include src='getTemplateUrl()'/>",
       replace: true,
       controllerAs: 'items',
-      controller: function($http, $scope) {
+      controller: function ($http, $scope) {
 
-        $scope.getItem = function(groupId) {
+        $scope.getItem = function (groupId) {
           $http.get(mainAPIUrl + 'items?group=' + groupId)
-          .success(function(data, status, headers, config) {
+            .success(function (data, status) {
               $scope.items = data;
               $scope.lockedItem = false;
               $timeout(function () {
@@ -52,13 +52,13 @@ angular.module('sikre.directives', [])
                 $.notify("View time expired. Locking...", "info");
                 $scope.getTemplateUrl();
               }, itemTimeout);
-          })
-          .error(function(data, status, headers, config) {
+            })
+            .error(function (data, status) {
               $.notify("Couldn't get the item data", "error");
-          });
+            });
         };
 
-        $scope.getTemplateUrl = function() {
+        $scope.getTemplateUrl = function () {
           if ($scope.lockedItem) {
             return '';
           } else {
@@ -67,4 +67,4 @@ angular.module('sikre.directives', [])
         };
       },
     };
-});
+  });
