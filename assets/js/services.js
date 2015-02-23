@@ -11,21 +11,5 @@ angular.module('sikre.services', [])
       });
     };
 
-    // Return the list of items tha the user has access to
-    sikreAPI.getItems = function () {
-      return $http({
-        method: "GET",
-        url: mainAPIUrl + 'items/'
-      });
-    };
-
-    // Return the list of items tha the user has access to
-    sikreAPI.getItemsPerGroup = function (groupId) {
-      return $http({
-        method: "GET",
-        url: mainAPIUrl + 'items?group=' + groupId
-      });
-    };
-
     return sikreAPI;
   });

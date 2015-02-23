@@ -24,7 +24,7 @@ angular.module('sikre.directives', [])
         };
 
         $scope.getTemplateUrl = function() {
-          if ($scope.locked) {
+          if ($scope.lockedService) {
             return '';
           } else {
             return 'includes/services.html';
@@ -58,7 +58,7 @@ angular.module('sikre.directives', [])
         };
 
         $scope.getTemplateUrl = function() {
-          if ($scope.locked) {
+          if ($scope.lockedItem) {
             return '';
           } else {
             return 'includes/items.html';

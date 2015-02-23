@@ -8,7 +8,7 @@ var itemTimeout = 300000; // 5 minutes
 var app = angular.module('sikre', [
     'satellizer',
     'sikre.services',
-    'sikre.controllers',
+    //'sikre.controllers',
     'sikre.directives']);
 
 app.config(function($httpProvider, $authProvider) {
