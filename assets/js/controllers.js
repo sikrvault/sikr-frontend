@@ -20,8 +20,9 @@ angular.module('sikre.controllers', [])
   })
 
   .controller('LogoutCtrl', function ($scope, $auth) {
+
     $scope.logout = function () {
-        $auth.logout();
-        $.notify("You have been logged out", "error");
-      });
+      $auth.logout();
+      $.notify("You have been logged out", "error");
+    };
   });
