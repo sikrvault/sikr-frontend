@@ -42,32 +42,32 @@
     <body>
 
         <div class="row">
-            <div id="addItem" class="reveal-modal" ng-controller="addItem" data-reveal>
+            <div id="addItem" class="reveal-modal tiny" ng-controller="addItem" data-reveal>
                 <p class="lead">Create a new item</p>
                 <form id="add-item" method="post">
                     <div class="row">
-                        <div class="small-12 large-4 columns">
+                        <div class="small-12 large-12 columns">
                             <label>Name
                                 <input type="text" placeholder="Insert a name here" name="name" ng-model="item.name" />
                             </label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="small-12 large-4 columns">
+                        <div class="small-12 large-12 columns">
                             <label>Description
                                 <textarea rows="10" placeholder="Insert the description" name="description" ng-model="item.description"></textarea>
                             </label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="small-12 large-4 columns">
+                        <div class="small-12 large-12 columns">
                             <label>Group <span data-tooltip aria-haspopup="true" class="has-tip" title="Select the group that this item will belong to."><i class="fi-info"></i></span>
                                 <select ng-model="groups" ng-options="group.name for group in groupList"></select>
                             </label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="small-12 large-4 columns">
+                        <div class="small-12 large-12 columns">
                             <label>Tags
                                 <input type="text" placeholder="Insert your tags, separated by a comma with no spaces" name="tags" ng-model="item.tags" />
                             </label>
