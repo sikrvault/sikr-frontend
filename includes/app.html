@@ -77,12 +77,9 @@
                             <a href="/search/{{ tag.slug }}">{{ tag.name }}</a>
                         </li>-->
                     </ul>
-                </aside>
-
-                <aside class="right-off-canvas-menu" ng-controller="LogoutCtrl">
-                    <ul class="off-canvas-list">
+                    <ul class="off-canvas-list" ng-controller="LogoutCtrl">
                         <li><label>Me</label></li>
-                        <li><a href="#" ng-click="$auth.logout()">Logout</a></li>
+                        <li><a href="#" ng-click="logout">Logout</a></li>
                         <li><label>Actions</label></li>
                     </ul>
                     <div class="off-canvas-footer">
