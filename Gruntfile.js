@@ -31,7 +31,6 @@ module.exports = function(grunt) {
           '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.topbar.js',
           '<%= pkg.project_paths.bower_folder %>notifyjs/dist/notify-combined.min.js',
           '<%= pkg.project_paths.bower_folder %>satellizer/satellizer.min.js',
-          '<%= pkg.project_paths.bower_folder %>satellizer/pace.min.js',
         ],
         dest: '<%= pkg.dest_paths.js %>base.js'
       },
