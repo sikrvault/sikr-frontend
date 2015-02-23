@@ -79,11 +79,10 @@
                     </ul>
                 </aside>
 
-                <aside class="right-off-canvas-menu">
+                <aside class="right-off-canvas-menu" ng-controller="LogoutCtrl">
                     <ul class="off-canvas-list">
-                        <li><label>Oscar Carballal Prego</label></li>
-                        <li><a href="#">My settings</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><label>Me</label></li>
+                        <li><a href="#" ng-click="$auth.logout()">Logout</a></li>
                         <li><label>Actions</label></li>
                     </ul>
                     <div class="off-canvas-footer">

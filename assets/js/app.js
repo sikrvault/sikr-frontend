@@ -23,7 +23,7 @@ app.config(function ($httpProvider, $authProvider) {
   $authProvider.loginRedirect = '/';
   $authProvider.logoutRedirect = '/';
   $authProvider.signupRedirect = '/login';
-  $authProvider.loginUrl = mainAPIUrl + '/login';
+  $authProvider.loginUrl = '/login';
   $authProvider.signupUrl = '/login';
   $authProvider.loginRoute = '/login';
   $authProvider.signupRoute = '/login';
