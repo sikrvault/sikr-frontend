@@ -18,3 +18,13 @@ angular.module('sikre.controllers', [])
       $auth.authenticate(provider);
     };
   });
+
+  .controller('LogoutCtrl', function($auth) {
+    if (!$auth.isAuthenticated()) {
+        return;
+    }
+    $auth.logout()
+      .then(function() {
+        $.notify("You have been logged out", "error");
+      });
+  });
