@@ -43,7 +43,7 @@ angular.module('sikre.directives', [])
       controller: function($http, $scope) {
 
         $scope.getItem = function(groupId) {
-          $http.get(mainAPIUrl + 'items/' + groupId)
+          $http.get(mainAPIUrl + 'items?group=' + groupId)
           .success(function(data, status, headers, config) {
               $scope.services = data;
               $scope.locked = false;
