@@ -29,6 +29,10 @@ p {
     color: #FAFAFA;
 }
 
+.tabs .tab-title>a, .tabs dd>a {
+    padding: 0.5rem, 1rem;
+}
+
 .addmodal {
     margin-left: 14px;
 }
