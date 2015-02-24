@@ -44,59 +44,24 @@
             <div class="row">
                 <img class="logo" src="/static/images/logo.png" />
             </div>
-            <!-- <form method="post" ng-submit="login()"> -->
-<!--                 <div class="row">
-                    <div class="small-offset-2 small-8 columns">
-                        <div class="row collapse prefix-radius">
-                            <div class="small-2 columns">
-                                <span class="prefix"><i class="fi-at-sign"></i></span>
-                            </div>
-                            <div class="small-10 columns">
-                                <input type="text" name="email" ng-model="email" placeholder="E-Mail" autocomplete="off" />
-                            </div>
-                        </div>
-                    </div>
+            <div class="row center">
+                <strong>Login with...</strong>
+            </div>
+            <div class="row center">
+                <div class="panel callout radius">
+                    <h5>Please be aware!</h5>
+                    <p>If you use Twitter or LinkedIn as your provider, you must always login with them. <a href="/why.html">Why?</a></p>
                 </div>
-                <div class="row">
-                    <div class="small-offset-2 small-8 columns">
-                        <div class="row collapse prefix-radius">
-                            <div class="small-2 columns">
-                                <span class="prefix"><i class="fi-key"></i></span>
-                            </div>
-                            <div class="small-10 columns">
-                                <input type="password" name="password" ng-model="password" placeholder="Password" autocomplete="off" />
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="row center">
+                <div class="small-12 columns">
+                    <a href="#" ng-click="authenticate('facebook')" alt="Login with Facebook" title="Login with Facebook" class="facebook-login tiny radius"><i class="fi-social-facebook"></i></a>
+                    <a href="#" ng-click="authenticate('google')" alt="Login with Google Plus" title="Login with Google+" class="google-login tiny radius"><i class="fi-social-google-plus"></i></a>
+                    <a href="#" ng-click="authenticate('linkedin')" alt="Login with LinkedIn" title="Login with LinkedIn" class="linkedin-login tiny radius"><i class="fi-social-linkedin"></i></a>
+                    <a href="#" ng-click="authenticate('github')" alt="Login with GitHub" title="Login with GitHub" class="github-login tiny radius"><i class="fi-social-github"></i></a>
+                    <a href="#" ng-click="authenticate('twitter')" alt="Login with Twitter" title="Login with Twitter" class="twitter-login tiny radius"><i class="fi-social-twitter"></i></a>
                 </div>
-                <div class="small-offset-2 small-8 columns">
-                    <div class="row collapse">
-                        <div class="small-10 columns tinytext">
-                            <a href="#">forgot your password?</a>
-                        </div>
-                        <div class="small-2 columns">
-                            <button type="submit" class="button tiny radius">Go</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="row center"><br>
-                    <div class="small-12 columns login-title">
-                        <p>...or use a social login (it's safer! <a href="/safetyfirst.html">why?</a>)</p>
-                    </div>
-                </div> -->
-                <div class="row center">
-                    <strong>Login with...</strong>
-                </div>
-                <div class="row center">
-                    <div class="small-12 columns">
-                        <a href="#" ng-click="authenticate('facebook')" alt="Login with Facebook" title="Login with Facebook" class="facebook-login tiny radius"><i class="fi-social-facebook"></i></a>
-                        <a href="#" ng-click="authenticate('google')" alt="Login with Google Plus" title="Login with Google+" class="google-login tiny radius"><i class="fi-social-google-plus"></i></a>
-                        <a href="#" ng-click="authenticate('linkedin')" alt="Login with LinkedIn" title="Login with LinkedIn" class="linkedin-login tiny radius"><i class="fi-social-linkedin"></i></a>
-                        <a href="#" ng-click="authenticate('github')" alt="Login with GitHub" title="Login with GitHub" class="github-login tiny radius"><i class="fi-social-github"></i></a>
-                        <a href="#" ng-click="authenticate('twitter')" alt="Login with Twitter" title="Login with Twitter" class="twitter-login tiny radius"><i class="fi-social-twitter"></i></a>
-                    </div>
-                </div>
-            <!-- </form> -->
+            </div>
         </div>
 
         <div class="footer tinytext">
