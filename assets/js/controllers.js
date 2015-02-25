@@ -29,6 +29,11 @@ angular.module('sikre.controllers', [])
 
   .controller('addItem', function ($scope, sikreAPIservice) {
 
+    $scope.groupList = sikreAPIservice.getGroups()
+      .error(function () {
+        $.notify("Can't retrieve the groups", "error");
+      });
+
     $scope.update = function (item) {
       payload = {
         "name": item.name,
