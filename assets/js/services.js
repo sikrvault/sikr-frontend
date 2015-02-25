@@ -29,14 +29,14 @@ angular.module('sikre.services', [])
       return $http({
         method: "GET",
         url: mainAPIUrl + 'items/'
-      })
+      });
     };
 
     sikreAPI.getItem = function (itemId) {
       return $http({
         method: "GET",
         url: mainAPIUrl + 'items/' + itemId
-      })
+      });
     };
 
     sikreAPI.saveItem = function (data) {
@@ -51,14 +51,14 @@ angular.module('sikre.services', [])
       return $http({
         method: "GET",
         url: mainAPIUrl + 'services/'
-      })
+      });
     };
 
     sikreAPI.getService = function (serviceId) {
       return $http({
         method: "GET",
         url: mainAPIUrl + 'services/' + serviceId
-      })
+      });
     };
 
     sikreAPI.saveService = function (data) {
