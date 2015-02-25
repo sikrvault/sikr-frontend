@@ -43,43 +43,64 @@
 
         <div class="row">
             <div id="addItem" class="reveal-modal tiny" ng-controller="addItem" data-reveal>
-                <p class="lead">Create a new item</p>
-                <form id="add-item" method="post">
-                    <div class="row">
-                        <div class="small-12 large-12 columns">
-                            <label>Name
-                                <input type="text" placeholder="Insert a name here" name="name" ng-model="item.name" />
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-12 large-12 columns">
-                            <label>Description
-                                <textarea rows="5" placeholder="Insert the description" name="description" ng-model="item.description"></textarea>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-12 large-12 columns">
-                            <label>Group <span data-tooltip aria-haspopup="true" class="has-tip" title="Select the group that this item will belong to."><i class="fi-info"></i></span>
-                                <select ng-model="item.group">
-                                    <option value="{{ group.id }}" ng-repeat="group in groupList">{{ group.name }}</option>
-                                </select>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-12 large-12 columns">
-                            <label>Tags
-                                <input type="text" placeholder="Insert your tags, separated by a comma with no spaces" name="tags" ng-model="item.tags" />
-                            </label>
-                        </div>
-                    </div>
-                    <input type="submit" class="button tiny" ng-click="update(item)" value="Save" />
-                </form>
+                <p class="lead">Create new...</p>
+                <ul class="tabs addmodal" data-tab role="tablist">
+                    <li class="tab-title active" role="presentational" ><a href="#panel998-1" role="tab" tabindex="0" aria-selected="true" controls="panel998-1">Group</a></li>
+                    <li class="tab-title" role="presentational" ><a href="#panel998-2" role="tab" tabindex="0"aria-selected="false" controls="panel998-2">Item</a></li>
+                </ul>
+                <div class="tabs-content">
+                    <section role="tabpanel" aria-hidden="false" class="content active" id="panel998-1">
+                        <form ng-controller="GroupCtrl">
+                            <div class="row">
+                                <div class="small-12 large-12 columns">
+                                    <label>Name
+                                        <input type="text" placeholder="Insert a name here" name="name" ng-model="group.name" />
+                                    </label>
+                                </div>
+                            </div>
+                            <button class="button tiny" ng-click="addgroup(group)">Save</button>
+                        </form>
+                    </section>
+                    <section role="tabpanel" aria-hidden="true" class="content" id="panel998-2">
+                        <form ng-controller="ItemCtrl">
+                            <div class="row">
+                                <div class="small-12 large-12 columns">
+                                    <label>Name
+                                        <input type="text" placeholder="Insert a name here" name="name" ng-model="item.name" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="small-12 large-12 columns">
+                                    <label>Description
+                                        <textarea rows="5" placeholder="Insert the description" name="description" ng-model="item.description"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="small-12 large-12 columns">
+                                    <label>Group <span data-tooltip aria-haspopup="true" class="has-tip" title="Select the group that this item will belong to."><i class="fi-info"></i></span>
+                                        <select ng-model="item.group">
+                                            <option value="{{ group.id }}" ng-repeat="group in groupList">{{ group.name }}</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="small-12 large-12 columns">
+                                    <label>Tags
+                                        <input type="text" placeholder="Insert your tags, separated by a comma with no spaces" name="tags" ng-model="item.tags" />
+                                    </label>
+                                </div>
+                            </div>
+                            <input type="submit" class="button tiny" ng-click="additem(item)" value="Save" />
+                        </form>
+                    </section>
+                </div>
                 <a class="close-reveal-modal">&#215;</a>
             </div>
         </div>
+
         <div class="row">
             <div id="addObject" class="reveal-modal medium" data-reveal>
                 <p class="lead">Create a new service</p>
@@ -205,11 +226,11 @@
                 </nav>
 
                 <aside class="left-off-canvas-menu">
-                    <ul class="off-canvas-list" ng-controller="groupsController">
+                    <ul class="off-canvas-list" ng-controller="GroupsCtrl">
                         <!--<li><label>Filter by...</label></li>-->
                         <li><label>Groups</label></li>
                         <li ng-repeat="group in groupList">
-                            <a href="#" ng-click="getItem(group.id)">{{ group.name }}</a>
+                            <a href="#" ng-click="getItems(group.id)">{{ group.name }}</a>
                         </li>
                     </ul>
                     <ul class="off-canvas-list" ng-controller="LogoutCtrl">

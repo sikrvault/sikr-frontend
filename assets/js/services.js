@@ -20,8 +20,15 @@ angular.module('sikre.services', [])
 
     sikreAPI.saveGroup = function (data) {
       return $http({
-        method: "POST",
+        method: "PUT",
         url: mainAPIUrl + 'groups/'
+      });
+    };
+
+    sikreAPI.deleteGroup = function (groupId) {
+      return $http({
+        method: "DELETE",
+        url: mainAPIUrl + 'groups/' + groupId
       });
     };
 
@@ -29,6 +36,13 @@ angular.module('sikre.services', [])
       return $http({
         method: "GET",
         url: mainAPIUrl + 'items/'
+      });
+    };
+
+    sikreAPI.getItemsbyGroup = function (groupId) {
+      return $http({
+        method: "GET",
+        url: mainAPIUrl + 'items?group=' + groupId
       });
     };
 
@@ -41,9 +55,16 @@ angular.module('sikre.services', [])
 
     sikreAPI.saveItem = function (data) {
       return $http({
-        method: "POST",
+        method: "PUT",
         url: mainAPIUrl + 'items/',
         data: data
+      });
+    };
+
+    sikreAPI.deleteItem = function (itemId) {
+      return $http({
+        method: "DELETE",
+        url: mainAPIUrl + 'items/' + itemId,
       });
     };
 
@@ -63,9 +84,16 @@ angular.module('sikre.services', [])
 
     sikreAPI.saveService = function (data) {
       return $http({
-        method: "POST",
+        method: "PUT",
         url: mainAPIUrl + 'services/',
         data: data
+      });
+    };
+
+    sikreAPI.deleteService = function (serviceId) {
+      return $http({
+        method: "DELETE",
+        url: mainAPIUrl + 'services/' + serviceId
       });
     };
 

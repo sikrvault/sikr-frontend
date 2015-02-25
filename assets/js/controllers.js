@@ -1,6 +1,107 @@
 angular.module('sikre.controllers', [])
 
-  // We REALLY shouldn't be using rootScope for this...
+  .controller('AuthCtrl', function ($scope, $auth) {
+
+    $scope.authenticate = function (provider) {
+      $auth.authenticate(provider);
+    };
+
+    $scope.logout = function () {
+      $auth.logout();
+      $.notify("You have been logged out", "error");
+    };
+  })
+
+  .controller('GroupsCtrl', function ($scope, sikreAPIservice) {
+
+    sikreAPIservice.getGroups()
+      .success(function (response) {
+        $scope.groupList = response;
+      })
+      .error(function () {
+        $.notify("Can't access the API to get the groups.", "error");
+      });
+
+    $scope.getgroup = function (group) {
+      sikreAPIservice.getGroup(group)
+        .success(function (response) {
+          $scope.group = response;
+        })
+        .error(function () {
+          $.notify("Can't get the group", "error");
+        });
+    };
+
+    $scope.addgroup = function (group) {
+      sikreAPIservice.saveGroup(group)
+        .success(function () {
+          $.notify("Group saved", "success");
+        })
+        .error(function () {
+          $.notify("Can't save the group", "error");
+        });
+    };
+
+    $scope.deletegroup = function (group) {
+      sikreAPIservice.deleteGroup(group)
+        .success(function () {
+          $.notify("Group deleted", "success");
+        })
+        .error(function () {
+          $.notify("Can't delete group", "error");
+        });
+    };
+  })
+
+  .controller('ItemsCtrl', function ($scope, sikreAPIservice) {
+
+    sikreAPIservice.getItems()
+      .success(function (response) {
+        $scope.itemList = response;
+      })
+      .error(function () {
+        $.notify("Can't access the API to get the items.", "error");
+      });
+
+    sikreAPIservice.getGroups()
+      .success(function (response) {
+        $scope.groupList = response;
+      })
+      .error(function () {
+        $.notify("Can't access the API to get the groups.", "error");
+      });
+
+    $scope.getitem = function (item) {
+      sikreAPIservice.getItem(item)
+        .success(function (response) {
+          $scope.item = response;
+        })
+        .error(function () {
+          $.notify("Can't get the item", "error");
+        });
+    };
+
+    $scope.additem = function (item) {
+      sikreAPIservice.saveItem(item)
+        .success(function () {
+          $.notify("Item saved", "success");
+        })
+        .error(function () {
+          $.notify("Can't save the item", "error");
+        });
+    };
+
+    $scope.deleteitem = function (item) {
+      sikreAPIservice.deleteItem(item)
+        .success(function () {
+          $.notify("Item deleted", "success");
+        })
+        .error(function () {
+          $.notify("Can't delete item", "error");
+        });
+    };
+  })
+
   .controller('groupsController', function ($scope, sikreAPIservice) {
 
     sikreAPIservice.getGroups()
@@ -10,21 +111,6 @@ angular.module('sikre.controllers', [])
       .error(function () {
         $.notify("Can't access the API to get the groups.", "error");
       });
-  })
-
-  .controller('LoginCtrl', function ($scope, $auth) {
-
-    $scope.authenticate = function (provider) {
-      $auth.authenticate(provider);
-    };
-  })
-
-  .controller('LogoutCtrl', function ($scope, $auth) {
-
-    $scope.logout = function () {
-      $auth.logout();
-      $.notify("You have been logged out", "error");
-    };
   })
 
   .controller('addItem', function ($scope, sikreAPIservice) {

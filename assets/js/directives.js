@@ -40,10 +40,10 @@ angular.module('sikre.directives', [])
       template: "<ng-include src='getTemplateUrl()'/>",
       replace: true,
       controllerAs: 'items',
-      controller: function ($http, $scope) {
+      controller: function ($http, $scope, sikreAPIservice) {
 
-        $scope.getItem = function (groupId) {
-          $http.get(mainAPIUrl + 'items?group=' + groupId)
+        $scope.getItems = function (groupId) {
+          sikreAPIservice.getItemsbyGroup(groupId)
             .success(function (data, status) {
               $scope.items = data;
               $scope.lockedItem = false;
