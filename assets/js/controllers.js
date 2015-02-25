@@ -29,21 +29,20 @@ angular.module('sikre.controllers', [])
 
   .controller('addItem', function ($scope, sikreAPIservice) {
 
-    sikreAPIservice.getGroups()
-      .success(function (response) {
-        $scope.groupList = response;
-      })
-      .error(function () {
-        $.notify("Can't access the API to get the groups.", "error");
-      });
-
-    $scope.master = {};
-
     $scope.update = function (item) {
-      $scope.master = angular.copy(item);
-      sikreAPIservice.saveItem($scope.master)
+      payload = {
+        "name": item.name,
+        "description": item.description,
+        "group": item.group,
+        "tags": item.tags
+      }
+
+      sikreAPIservice.saveItem(payload)
         .success(function (response) {
           $.notify("Data saved successfully", "success");
+        });
+        .error(function () {
+          $.notify("Can't save the item", "error");
         });
     };
 
