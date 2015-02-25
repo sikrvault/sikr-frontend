@@ -14,7 +14,8 @@ angular.module('sikre.services', [])
     sikreAPI.saveItem = function (data) {
       return $http({
         method: "POST",
-        url: mainAPIUrl + 'items/'
+        url: mainAPIUrl + 'items/',
+        data: data
       });
     };
 
