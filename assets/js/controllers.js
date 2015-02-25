@@ -33,6 +33,16 @@ angular.module('sikre.controllers', [])
     };
 
     $scope.addgroup = function (group) {
+      sikreAPIservice.createGroup(group)
+        .success(function () {
+          $.notify("Group saved", "success");
+        })
+        .error(function () {
+          $.notify("Can't save the group", "error");
+        });
+    };
+
+    $scope.savegroup = function (group) {
       sikreAPIservice.saveGroup(group)
         .success(function () {
           $.notify("Group saved", "success");
@@ -82,6 +92,16 @@ angular.module('sikre.controllers', [])
     };
 
     $scope.additem = function (item) {
+      sikreAPIservice.createItem(item)
+        .success(function () {
+          $.notify("Item saved", "success");
+        })
+        .error(function () {
+          $.notify("Can't save the item", "error");
+        });
+    };
+
+    $scope.saveitem = function (item) {
       sikreAPIservice.saveItem(item)
         .success(function () {
           $.notify("Item saved", "success");

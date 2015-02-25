@@ -4,6 +4,7 @@ angular.module('sikre.services', [])
     //var mainAPIUrl = 'https://api.sikr.io/v1/';
     var sikreAPI = {};
 
+    /* GROUPS */
     sikreAPI.getGroups = function () {
       return $http({
         method: "GET",
@@ -18,10 +19,19 @@ angular.module('sikre.services', [])
       });
     };
 
-    sikreAPI.saveGroup = function (data) {
+    sikreAPI.createGroup = function (data) {
+      return $http({
+        method: "POST",
+        url: mainAPIUrl + 'groups/',
+        data: data
+      });
+    };
+
+    sikreAPI.saveGroup = function (data, groupId) {
       return $http({
         method: "PUT",
-        url: mainAPIUrl + 'groups/'
+        url: mainAPIUrl + 'groups/' + groupId,
+        data: data
       });
     };
 
@@ -32,17 +42,18 @@ angular.module('sikre.services', [])
       });
     };
 
-    sikreAPI.getItems = function () {
-      return $http({
-        method: "GET",
-        url: mainAPIUrl + 'items/'
-      });
-    };
-
+    /* ITEMS */
     sikreAPI.getItemsbyGroup = function (groupId) {
       return $http({
         method: "GET",
         url: mainAPIUrl + 'items?group=' + groupId
+      });
+    };
+
+    sikreAPI.getItems = function () {
+      return $http({
+        method: "GET",
+        url: mainAPIUrl + 'items/'
       });
     };
 
@@ -53,10 +64,18 @@ angular.module('sikre.services', [])
       });
     };
 
-    sikreAPI.saveItem = function (data) {
+    sikreAPI.createItem = function (data) {
+      return $http({
+        method: "POST",
+        url: mainAPIUrl + 'items/',
+        data: data
+      });
+    };
+
+    sikreAPI.saveItem = function (data, itemId) {
       return $http({
         method: "PUT",
-        url: mainAPIUrl + 'items/',
+        url: mainAPIUrl + 'items/' + itemId,
         data: data
       });
     };
@@ -68,6 +87,7 @@ angular.module('sikre.services', [])
       });
     };
 
+    /* SERVICES */
     sikreAPI.getServices = function () {
       return $http({
         method: "GET",
@@ -82,10 +102,18 @@ angular.module('sikre.services', [])
       });
     };
 
-    sikreAPI.saveService = function (data) {
+    sikreAPI.createService = function (data) {
+      return $http({
+        method: "POST",
+        url: mainAPIUrl + 'services/',
+        data: data
+      });
+    };
+
+    sikreAPI.saveService = function (data, serviceId) {
       return $http({
         method: "PUT",
-        url: mainAPIUrl + 'services/',
+        url: mainAPIUrl + 'services/' + serviceId,
         data: data
       });
     };
