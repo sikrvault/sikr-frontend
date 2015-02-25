@@ -35,12 +35,12 @@ angular.module('sikre.controllers', [])
         "description": item.description,
         "group": item.group,
         "tags": item.tags
-      }
+      };
 
       sikreAPIservice.saveItem(payload)
         .success(function (response) {
           $.notify("Data saved successfully", "success");
-        });
+        })
         .error(function () {
           $.notify("Can't save the item", "error");
         });
