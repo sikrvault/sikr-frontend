@@ -1,7 +1,7 @@
 <h3 style="margin:20px;">{{ item.group }}</h3>
 <div class="row">
     <dl class="accordion" data-accordion>
-        <dd class="accordion-navigation" ng-repeat="item in items">
+        <dd class="accordion-navigation" ng-repeat="item in items" ng-controller="ItemsCtrl">
             <a href="#panel{{$index}}">{{ item.name }}</a>
             <div class="toolbar">
                 <a href="#" class="button left toolbar-button addobject" data-reveal-id="addObject">
@@ -13,7 +13,7 @@
                 <a href="#" class="button left toolbar-button" data-reveal-id="addItem">
                     <i class="fi-pencil"></i>
                 </a>
-                <a href="#" class="button alert left toolbar-button" data-reveal-id="deleteObject">
+                <a href="#" class="button alert left toolbar-button" data-reveal-id="deleteObject" ng-click="deleteitem(item.id)">
                     <i class="fi-trash"></i>
                 </a>
             </div>
