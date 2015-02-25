@@ -28,6 +28,15 @@ angular.module('sikre.controllers', [])
   })
 
   .controller('addItem', function ($scope, sikreAPIservice) {
+
+    sikreAPIservice.getGroups()
+      .success(function (response) {
+        $scope.groupList = response;
+      })
+      .error(function () {
+        $.notify("Can't access the API to get the groups.", "error");
+      });
+
     $scope.master = {};
 
     $scope.update = function (item) {
