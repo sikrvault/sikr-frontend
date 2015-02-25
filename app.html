@@ -62,7 +62,9 @@
                     <div class="row">
                         <div class="small-12 large-12 columns">
                             <label>Group <span data-tooltip aria-haspopup="true" class="has-tip" title="Select the group that this item will belong to."><i class="fi-info"></i></span>
-                                <select ng-model="groups" ng-options="group.name for group in groupList"></select>
+                                <select>
+                                    <option value="{{ group.id }}" ng-repeat="group in groupList">{{ group.name }}</option>
+                                </select>
                             </label>
                         </div>
                     </div>
@@ -216,7 +218,7 @@
                         <li><label>Actions</label></li>
                     </ul>
                     <div class="off-canvas-footer">
-                        &copy; 2014<br>
+                        &copy; 2014-2015<br>
                         <a href="http://clione.io" target="_blank">Clione Software</a><br>
                         <a href="http://havasworldwide.co.uk" target="_blank">Havas Worldwide London</a>
                     </div>
