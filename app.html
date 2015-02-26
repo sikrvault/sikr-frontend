@@ -42,7 +42,7 @@
     <body>
 
         <div class="row">
-            <div id="addItem" class="reveal-modal tiny" ng-controller="addItem" data-reveal>
+            <div id="addItem" class="reveal-modal tiny" data-reveal>
                 <p class="lead">Create new...</p>
                 <ul class="tabs addmodal" data-tab role="tablist">
                     <li class="tab-title active" role="presentational" ><a href="#panel998-1" role="tab" tabindex="0" aria-selected="true" controls="panel998-1">Group</a></li>
@@ -210,11 +210,11 @@
             </div>
         </div>
 
-        <div class="off-canvas-wrap" data-offcanvas>
+        <div class="off-canvas-wrap" ng-controller="GroupsCtrl" data-offcanvas>
             <div class="inner-wrap">
                 <nav class="tab-bar">
                     <section class="left-small">
-                        <a class="left-off-canvas-toggle" href="#">
+                        <a class="left-off-canvas-toggle" href="#" ng-click="getgroups()">
                             <i class="fi-list-thumbnails"></i>
                         </a>
                     </section>
@@ -226,8 +226,7 @@
                 </nav>
 
                 <aside class="left-off-canvas-menu">
-                    <ul class="off-canvas-list" ng-controller="GroupsCtrl">
-                        <!--<li><label>Filter by...</label></li>-->
+                    <ul class="off-canvas-list">
                         <li><label>Groups</label></li>
                         <li ng-repeat="group in groupList">
                             <a href="#" ng-click="getItems(group.id)">{{ group.name }}</a>
