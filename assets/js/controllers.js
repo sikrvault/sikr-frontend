@@ -36,6 +36,8 @@ angular.module('sikre.controllers', [])
       sikreAPIservice.createGroup(group)
         .success(function () {
           $.notify("Group saved", "success");
+          group.$setPristine();
+          group.$setUntouched();
         })
         .error(function () {
           $.notify("Can't save the group", "error");

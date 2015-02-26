@@ -1,0 +1,17 @@
+/* TEAM */
+Magical All-In-Wonder Man: Oscar Carballal Prego
+Email: oscar.carballal@clione.io
+Twitter: @pizte
+Site: http://oscarcp.com / http://prg.bio
+Location: London, UK
+From: Pontevedra, Spain
+
+/* THANKS */
+Infinite frontend help: Max Barry
+From: London, UK
+
+/* SITE */
+Last update: Probably less than three days ago
+Standards: HTML5, CSS3
+Components: Foundation 5, AngularJS, jQuery, Satellizer
+Software: Sublime Text 3, VIM, Chrome
