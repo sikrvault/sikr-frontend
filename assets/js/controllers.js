@@ -22,6 +22,16 @@ angular.module('sikre.controllers', [])
         $.notify("Can't access the API to get the groups.", "error");
       });
 
+    $scope.update = function () {
+      sikreAPIservice.getGroups()
+        .success(function (response) {
+          $scope.groupList = response;
+        })
+        .error(function () {
+          $.notify("Can't access the API to get the groups.", "error");
+        });
+    };
+
     $scope.getgroup = function (group) {
       sikreAPIservice.getGroup(group)
         .success(function (response) {
@@ -36,8 +46,7 @@ angular.module('sikre.controllers', [])
       sikreAPIservice.createGroup(group)
         .success(function () {
           $.notify("Group saved", "success");
-          group.$setPristine();
-          group.$setUntouched();
+          $scope.update();
         })
         .error(function () {
           $.notify("Can't save the group", "error");
