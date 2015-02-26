@@ -46,7 +46,7 @@ angular.module('sikre.controllers', [])
       sikreAPIservice.createGroup(group)
         .success(function () {
           $.notify("Group saved", "success");
-          $scope.update();
+          $scope.group = null;
         })
         .error(function () {
           $.notify("Can't save the group", "error");
@@ -76,21 +76,23 @@ angular.module('sikre.controllers', [])
 
   .controller('ItemsCtrl', function ($scope, sikreAPIservice) {
 
-    sikreAPIservice.getItems()
-      .success(function (response) {
-        $scope.itemList = response;
-      })
-      .error(function () {
-        $.notify("Can't access the API to get the items.", "error");
-      });
+    // sikreAPIservice.getItems()
+    //   .success(function (response) {
+    //     $scope.itemList = response;
+    //   })
+    //   .error(function () {
+    //     $.notify("Can't access the API to get the items.", "error");
+    //   });
 
-    sikreAPIservice.getGroups()
-      .success(function (response) {
-        $scope.groupList = response;
-      })
-      .error(function () {
-        $.notify("Can't access the API to get the groups.", "error");
-      });
+    $scope.getitemgroups = function () {
+      sikreAPIservice.getGroups()
+        .success(function (response) {
+          $scope.groupList = response;
+        })
+        .error(function () {
+          $.notify("Can't access the API to get the groups.", "error");
+        });
+    }
 
     $scope.getitem = function (item) {
       sikreAPIservice.getItem(item)
@@ -106,6 +108,7 @@ angular.module('sikre.controllers', [])
       sikreAPIservice.createItem(item)
         .success(function () {
           $.notify("Item saved", "success");
+          $scope.item = null;
         })
         .error(function () {
           $.notify("Can't save the item", "error");
