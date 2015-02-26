@@ -229,6 +229,7 @@
                     <ul class="off-canvas-list">
                         <li><label>Groups</label></li>
                         <li ng-repeat="group in groupList">
+                            <a href="#" ng-click="deletegroup(group.id)" class="side-menu-delete"><i class="fi-trash"></i></a>
                             <a href="#" ng-click="getItems(group.id)">{{ group.name }}</a>
                         </li>
                     </ul>

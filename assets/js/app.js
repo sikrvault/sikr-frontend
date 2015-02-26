@@ -110,7 +110,7 @@ app.run(function ($timeout) {
         open_method: 'move',
         // Should the menu close when a menu link is clicked?
         // [ true | false ]
-        close_on_click : false
+        close_on_click : true
       }
     });
     $('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
