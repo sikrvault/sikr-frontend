@@ -92,7 +92,7 @@ angular.module('sikre.controllers', [])
         .error(function () {
           $.notify("Can't access the API to get the groups.", "error");
         });
-    }
+    };
 
     $scope.getitem = function (item) {
       sikreAPIservice.getItem(item)
