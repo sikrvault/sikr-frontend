@@ -125,16 +125,9 @@ angular.module('sikre.controllers', [])
     $scope.confirmdeleteitem = function (item) {
       $('#confirmItemDelete').foundation('reveal', 'open', {
           success: function(data, item) {
-              $("#deleteitem").attr("ng-click", "deleteitem(" + item + ")";
+              $("#deleteitem").attr("ng-click", "deleteitem(" + item + ")");
           },
       });
-      sikreAPIservice.deleteItem(item)
-        .success(function () {
-          $.notify("Item deleted", "success");
-        })
-        .error(function () {
-          $.notify("Can't delete item", "error");
-        });
     };
 
     $scope.deleteitem = function (item) {
