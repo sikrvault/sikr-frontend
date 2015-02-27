@@ -70,6 +70,7 @@ angular.module('sikre.controllers', [])
       sikreAPIservice.deleteGroup(group)
         .success(function () {
           $.notify("Group deleted", "success");
+          $('#confirmGroupDelete').foundation('reveal', 'close');
         })
         .error(function () {
           $.notify("Can't delete group", "error");
