@@ -1,8 +1,15 @@
 <div id="confirmGroupDelete" class="reveal-modal" data-reveal ng-controller="GroupsCtrl">
     <h2>Are you sure?</h2>
     <p class="lead">This will delete the group and it's contents</p>
-    <p>If you delete the group, it will delete all the items linked to it and all the services as well. You shoudl think about this twice.</p>
+    <p>If you delete the group, it will delete all the items linked to it and all the services as well. You should think about this twice.</p>
     <p><a href="#" class="radius button tiny">Cancel</a> <a href="#" ng-click="deletegroup(group_id)" class="alert button tiny">Go for it!</a></p>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="confirmItemDelete" class="reveal-modal" data-reveal ng-controller="ItemsCtrl">
+    <h2>Are you sure?</h2>
+    <p class="lead">This will delete the items and it's contents</p>
+    <p>If you delete the item, all services related to it will be deleted as well. You should think about this twice.</p>
+    <p><a href="#" class="radius button tiny">Cancel</a> <a id="deleteitem" href="#" class="alert button tiny">Go for it!</a></p>
     <a class="close-reveal-modal">&#215;</a>
 </div>
 <h3 style="margin:20px;" ng-if="group_name">{{ group_name }}
@@ -22,7 +29,7 @@
                 <a href="#" class="button left toolbar-button" data-reveal-id="addItem">
                     <i class="fi-pencil"></i>
                 </a>
-                <a href="#" class="button alert left toolbar-button" data-reveal-id="deleteObject" ng-click="deleteitem(item.id)">
+                <a href="#" class="button alert left toolbar-button" ng-click="confirmdeleteitem">
                     <i class="fi-trash"></i>
                 </a>
             </div>
