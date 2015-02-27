@@ -45,7 +45,8 @@ angular.module('sikre.directives', [])
         $scope.getItems = function (groupId) {
           sikreAPIservice.getItemsbyGroup(groupId)
             .success(function (data, status) {
-              $scope.items = data;
+              $scope.group = data.group;
+              $scope.items = data.items;
               $scope.lockedItem = false;
               $timeout(function () {
                 $scope.lockedItem = true;
@@ -61,7 +62,8 @@ angular.module('sikre.directives', [])
         $scope.getAllItems = function () {
           sikreAPIservice.getItems()
             .success(function (data) {
-              $scope.items = data;
+              $scope.group = data.group;
+              $scope.items = data.items;
               $scope.lockedItem = false;
               $timeout(function () {
                 $scope.lockedItem = true;
