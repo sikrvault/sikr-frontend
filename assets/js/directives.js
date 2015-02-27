@@ -58,6 +58,22 @@ angular.module('sikre.directives', [])
             });
         };
 
+        $scope.getAllItems = function () {
+          sikreAPIservice.getItems()
+            .success(function (data) {
+              $scope.items = data;
+              $scope.lockedItem = false;
+              $timeout(function () {
+                $scope.lockedItem = true;
+                $.notify("View time expired. Locking...", "info");
+                $scope.getTemplateUrl();
+              }, itemTimeout);
+            })
+            .error(function (data, status) {
+              $.notify("Couldn't get the item data", "error");
+            });
+        };
+
         $scope.getTemplateUrl = function () {
           if ($scope.lockedItem) {
             return '';

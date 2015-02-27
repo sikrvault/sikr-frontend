@@ -226,16 +226,17 @@
                 </nav>
 
                 <aside class="left-off-canvas-menu">
+                    <ul class="off-canvas-list" ng-controller="AuthCtrl">
+                        <li><label>Me</label></li>
+                        <li><a href="#" ng-click="logout()">Logout</a></li>
+                        <li><label>Actions</label></li>
+                    </ul>
                     <ul class="off-canvas-list">
                         <li ng-init="getgroups()"><label>Groups</label></li>
                         <li ng-repeat="group in groupList">
                             <a href="#" ng-click="getItems(group.id)">{{ group.name }}</a>
                         </li>
-                    </ul>
-                    <ul class="off-canvas-list" ng-controller="AuthCtrl">
-                        <li><label>Me</label></li>
-                        <li><a href="#" ng-click="logout()">Logout</a></li>
-                        <li><label>Actions</label></li>
+                        <li><a href="#" ng-click="getAllItems()">Show all items</a></li>
                     </ul>
                     <div class="off-canvas-footer">
                         &copy; 2014-2015<br>
