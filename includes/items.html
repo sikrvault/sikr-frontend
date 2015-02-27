@@ -1,5 +1,12 @@
+<div id="confirmGroupDelete" class="reveal-modal" data-reveal ng-controller="GroupsCtrl">
+    <h2>Are you sure?</h2>
+    <p class="lead">This will delete the group and it's contents</p>
+    <p>If you delete the group, it will delete all the items linked to it and all the services as well. You shoudl think about this twice.</p>
+    <p><a href="#" class="radius button close-reveal-modal">Cancel</a> <a href="#" ng-click="deletegroup(group_id)" class="alert button close-reveal-modal">Go for it!</a></p>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
 <h3 style="margin:20px;" ng-if="group_name">{{ group_name }}
-    <a href="#" ng-controller="GroupsCtrl" ng-click="deletegroup(group_id)"><i class="fi-trash"></i></a>
+    <a href="#" data-reveal-id="confirmGroupDelete"><i class="fi-trash"></i></a>
 </h3>
 <div class="row">
     <dl class="accordion" data-accordion>
