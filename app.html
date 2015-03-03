@@ -220,6 +220,9 @@
                     </section>
 
                     <section class="middle tab-bar-section">
+                        <div class="large-2 small-9 columns">
+                            <input type="text" class="radius" style="margin-top: 4px" placeholder="Search...">
+                        </div>
                         <h1 class="title">Sikre</h1>
                         <button href="#" class="button tiny right additem" data-reveal-id="addItem"><i class="fi-plus"></i></button>
                     </section>
@@ -228,8 +231,8 @@
                 <aside class="left-off-canvas-menu">
                     <ul class="off-canvas-list" ng-controller="AuthCtrl">
                         <li><label>Me</label></li>
+                        <li><a href="#">Profile</a></li>
                         <li><a href="#" ng-click="logout()">Logout</a></li>
-                        <li><label>Actions</label></li>
                     </ul>
                     <ul class="off-canvas-list">
                         <li ng-init="getgroups()"><label>Groups</label></li>

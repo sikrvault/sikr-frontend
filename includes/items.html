@@ -20,13 +20,13 @@
         <dd class="accordion-navigation" ng-repeat="item in items" ng-controller="ItemsCtrl">
             <a href="#panel{{$index}}">{{ item.name }}</a>
             <div class="toolbar">
-                <a href="#" class="button left toolbar-button addobject" data-reveal-id="addObject">
+                <a href="#" class="button left toolbar-button addobject" ng-click="createservice(item.id)">
                     <i class="fi-plus"></i>
                 </a>
                 <a href="#" class="button left toolbar-button">
                     <i class="fi-share"></i>
                 </a>
-                <a href="#" class="button left toolbar-button" data-reveal-id="addItem">
+                <a href="#" class="button left toolbar-button">
                     <i class="fi-pencil"></i>
                 </a>
                 <a href="#" class="button alert left toolbar-button" ng-click="confirmdeleteitem(item.id)">
