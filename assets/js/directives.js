@@ -5,10 +5,10 @@ angular.module('sikre.directives', [])
       template: "<ng-include src='getTemplateUrl()'/>",
       replace: true,
       controllerAs: 'services',
-      controller: function ($http, $scope) {
+      controller: function ($http, $scope, sikreAPIservice) {
 
         $scope.getService = function (serviceId) {
-          $http.get(mainAPIUrl + 'services/' + serviceId)
+          sikreAPIservice.getService(serviceId)
             .success(function (data, status) {
               $scope.services = data;
               $scope.lockedService = false;

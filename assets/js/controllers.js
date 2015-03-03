@@ -103,7 +103,7 @@ angular.module('sikre.controllers', [])
     $scope.additem = function (item) {
       sikreAPIservice.createItem(item)
         .success(function () {
-          $.notify("Item saved", "success");
+          $.notify("Item created", "success");
           $scope.item = null;
           $('#addItem').foundation('reveal', 'close');
         })
@@ -115,7 +115,7 @@ angular.module('sikre.controllers', [])
     $scope.saveitem = function (item) {
       sikreAPIservice.saveItem(item)
         .success(function () {
-          $.notify("Item saved", "success");
+          $.notify("Item updated", "success");
         })
         .error(function () {
           $.notify("Can't save the item", "error");
@@ -123,7 +123,67 @@ angular.module('sikre.controllers', [])
     };
 
     $scope.confirmdeleteitem = function (item) {
-      $('#confirmItemDelete').foundation('reveal', 'open', {
+      $('#confirmItemDelete').foundation('reveal', 'open');
+      $("#deleteitem").attr("ng-click", "deleteitem(" + item + ")");
+    };
+
+    $scope.deleteitem = function (item) {
+      sikreAPIservice.deleteItem(item)
+        .success(function () {
+          $.notify("Item deleted", "success");
+        })
+        .error(function () {
+          $.notify("Can't delete item", "error");
+        });
+    };
+  })
+
+  .controller('ServiceCtrl', function ($scope, sikreAPIservice) {
+
+    $scope.getservices = function () {
+      sikreAPIservice.getServices()
+        .success(function (response) {
+          $scope.serviceList = response;
+        })
+        .error(function () {
+          $.notify("Can't access the API to get the services.", "error");
+        });
+    };
+
+    $scope.getservice = function (service) {
+      sikreAPIservice.getService(service)
+        .success(function (response) {
+          $scope.service = response;
+        })
+        .error(function () {
+          $.notify("Can't get the service", "error");
+        });
+    };
+
+    $scope.addservice = function (service) {
+      sikreAPIservice.createService(service)
+        .success(function () {
+          $.notify("Service created", "success");
+          $scope.service = null;
+          $('#addService').foundation('reveal', 'close');
+        })
+        .error(function () {
+          $.notify("Can't save the service", "error");
+        });
+    };
+
+    $scope.saveservice = function (service) {
+      sikreAPIservice.saveService(service)
+        .success(function () {
+          $.notify("Service updated", "success");
+        })
+        .error(function () {
+          $.notify("Can't save the service", "error");
+        });
+    };
+
+    $scope.confirmdeleteservice = function (service) {
+      $('#confirmServiceDelete').foundation('reveal', 'open', {
           success: function(data, item) {
               $("#deleteitem").attr("ng-click", "deleteitem(" + item + ")");
           },

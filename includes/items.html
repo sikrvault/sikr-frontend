@@ -9,7 +9,7 @@
     <h2>Are you sure?</h2>
     <p class="lead">This will delete the items and it's contents</p>
     <p>If you delete the item, all services related to it will be deleted as well. You should think about this twice.</p>
-    <p><a href="#" class="radius button tiny">Cancel</a> <a id="deleteitem" href="#" class="alert button tiny">Go for it!</a></p>
+    <p><a href="#" class="radius button tiny">Cancel</a> <a id="deleteitem" href="#" class="alert button tiny" ng-click="deleteitem()">Go for it!</a></p>
     <a class="close-reveal-modal">&#215;</a>
 </div>
 <h3 style="margin:20px;" ng-if="group_name">{{ group_name }}
