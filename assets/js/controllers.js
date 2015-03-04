@@ -78,7 +78,7 @@ angular.module('sikre.controllers', [])
     };
   })
 
-  .controller('ItemsCtrl', function ($scope, sikreAPIservice) {
+  .controller('ItemsCtrl', function ($scope, $compile, sikreAPIservice) {
 
     $scope.getitemgroups = function () {
       sikreAPIservice.getGroups()
@@ -127,14 +127,13 @@ angular.module('sikre.controllers', [])
         });
     };
 
-    $scope.confirmdeleteitem = function ($compile, $event, itemId) {
+    $scope.confirmdeleteitem = function (itemId) {
       $('#confirmItemDelete').foundation('reveal', 'open');
       var html = "<a id='deleteitem' href='#' class='alert button tiny' ng-click='deleteitem(" + itemId + ")'>Go for it!</a>";
       var template = angular.element(html);
       var linkFn = $compile(template);
-      var element = linkFn(scope);
-      $("#itemDeleteButtons").appendChild(element);
-      //$("#deleteitem").attr("ng-click", "deleteitem(" + item + ")");
+      var element = linkFn($scope);
+      $("#itemDeleteButtons").append(element);
     };
 
     $scope.deleteitem = function (item) {
