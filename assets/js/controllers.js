@@ -127,7 +127,7 @@ angular.module('sikre.controllers', [])
         });
     };
 
-    $scope.confirmdeleteitem = function ($event, itemId) {
+    $scope.confirmdeleteitem = function ($compile, $event, itemId) {
       $('#confirmItemDelete').foundation('reveal', 'open');
       var html = "<a id='deleteitem' href='#' class='alert button tiny' ng-click='deleteitem(" + itemId + ")'>Go for it!</a>";
       var template = angular.element(html);
