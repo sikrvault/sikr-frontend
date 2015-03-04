@@ -13,7 +13,7 @@
     <a class="close-reveal-modal">&#215;</a>
 </div>
 <h3 style="margin:20px;" ng-if="group_name">{{ group_name }}
-    <div ng-switch on="group.name">
+    <div ng-switch on="group_name">
         <div ng-switch-when="All"></div>
         <div ng-switch-default>
             <a href="#" data-reveal-id="confirmGroupDelete"><i class="fi-trash"></i></a>
