@@ -90,6 +90,11 @@ angular.module('sikre.controllers', [])
         });
     };
 
+    $scope.createservice = function (itemId) {
+      $('#addObject').foundation('reveal', 'open');
+
+    };
+
     $scope.getitem = function (item) {
       sikreAPIservice.getItem(item)
         .success(function (response) {
@@ -122,9 +127,14 @@ angular.module('sikre.controllers', [])
         });
     };
 
-    $scope.confirmdeleteitem = function (item) {
+    $scope.confirmdeleteitem = function ($event, itemId) {
       $('#confirmItemDelete').foundation('reveal', 'open');
-      $("#deleteitem").attr("ng-click", "deleteitem(" + item + ")");
+      var html = "<a id='deleteitem' href='#' class='alert button tiny' ng-click='deleteitem(" + itemId + ")'>Go for it!</a>";
+      var template = angular.element(html);
+      var linkFn = $compile(template);
+      var element = linkFn(scope);
+      $("#itemDeleteButtons").appendChild(element);
+      //$("#deleteitem").attr("ng-click", "deleteitem(" + item + ")");
     };
 
     $scope.deleteitem = function (item) {
@@ -158,11 +168,6 @@ angular.module('sikre.controllers', [])
         .error(function () {
           $.notify("Can't get the service", "error");
         });
-    };
-
-    $scope.createservice = function (itemId) {
-      $('#addObject').foundation('reveal', 'open');
-
     };
 
     $scope.addservice = function (service) {
