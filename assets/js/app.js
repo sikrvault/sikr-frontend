@@ -114,5 +114,6 @@ app.run(function ($timeout) {
       }
     });
     $('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
+
   }, 500);
 });

@@ -42,7 +42,7 @@
     <body>
 
         <div class="row">
-            <div id="addItem" class="reveal-modal tiny" data-reveal>
+            <div id="addItem" class="reveal-modal medium" data-reveal>
                 <p class="lead">Create new...</p>
                 <ul class="tabs addmodal" data-tab role="tablist">
                     <li class="tab-title active" role="presentational" ><a href="#panel998-1" role="tab" tabindex="0" aria-selected="true" controls="panel998-1">Group</a></li>
@@ -104,53 +104,49 @@
         <div class="row">
             <div id="addObject" class="reveal-modal medium" data-reveal>
                 <p class="lead">Create a new service</p>
-                <form id="add-sshkey" method="post">
+                <form id="newService" ng-controller="ServiceCtrl">
                     <div class="row">
                         <div class="small-12 large-12 columns">
                             <label>Service name
-                                <input type="text" placeholder="Insert a name here (optional)" />
+                                <input type="text" placeholder="Insert a name here (optional)" ng-model="service.name" />
                             </label>
                         </div>
                     </div>
-                </form>
-                <ul class="tabs addmodal" data-tab role="tablist">
-                    <li class="tab-title active" role="presentational" ><a href="#panel99-1" role="tab" tabindex="0" aria-selected="true" controls="panel99-1">SSH Key</a></li>
-                    <li class="tab-title" role="presentational" ><a href="#panel99-2" role="tab" tabindex="0"aria-selected="false" controls="panel99-2">SSL file</a></li>
-                    <li class="tab-title" role="presentational"><a href="#panel99-3" role="tab" tabindex="0" aria-selected="false" controls="panel99-3">Password</a></li>
-                </ul>
-                <div class="tabs-content">
-                    <section role="tabpanel" aria-hidden="false" class="content active" id="panel99-1">
-                        <form id="add-sshkey" method="post">
+                    <ul class="tabs addmodal" data-tab role="tablist">
+                        <li class="tab-title active" role="presentational" ><a href="#panel99-1" role="tab" tabindex="0" aria-selected="true" controls="panel99-1">SSH Key</a></li>
+                        <li class="tab-title" role="presentational" ><a href="#panel99-2" role="tab" tabindex="0"aria-selected="false" controls="panel99-2">SSL file</a></li>
+                        <li class="tab-title" role="presentational"><a href="#panel99-3" role="tab" tabindex="0" aria-selected="false" controls="panel99-3">Password</a></li>
+                    </ul>
+                    <div class="tabs-content">
+                        <section role="tabpanel" aria-hidden="false" class="content active" id="panel99-1">
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Title
-                                        <input type="text" placeholder="Insert a name for your key here" />
+                                        <input type="text" placeholder="Insert a name for your key here" ng-model="service.ssh_title" />
                                     </label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Private Key
-                                        <textarea rows="5" placeholder="Insert the contents of your key files here"></textarea>
+                                        <textarea rows="5" placeholder="Insert the contents of your key files here" ng-model="service.ssh_private"></textarea>
                                     </label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Public Key
-                                        <textarea rows="5" placeholder="Insert the contents of your public key here"></textarea>
+                                        <textarea rows="5" placeholder="Insert the contents of your public key here" ng-model="service.ssh_public"></textarea>
                                     </label>
                                 </div>
                             </div>
                             <button class="button tiny">Save</button>
-                        </form>
-                    </section>
-                    <section role="tabpanel" aria-hidden="true" class="content" id="panel99-2">
-                        <form id="add-sslkey" method="post" enctype="multipart/form-data" >
+                        </section>
+                        <section role="tabpanel" aria-hidden="true" class="content" id="panel99-2">
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Title
-                                        <input type="text" placeholder="Insert a name for your SSL file here" />
+                                        <input type="text" placeholder="Insert a name for your SSL file here" ng-model="service.ssl_title"/>
                                     </label>
                                 </div>
                             </div>
@@ -162,20 +158,18 @@
                                 </div>
                             </div>
                             <button class="button tiny">Save</button>
-                        </form>
-                    </section>
-                    <section role="tabpanel" aria-hidden="true" class="content" id="panel99-3">
-                        <form id="add-sshkey" method="post">
+                        </section>
+                        <section role="tabpanel" aria-hidden="true" class="content" id="panel99-3">
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <div class="row collapse">
                                         <label>URL / IP / Hostname</label>
                                         <div class="small-9 columns">
-                                            <input type="text" placeholder="Insert an URL, IP address or hostname" />
+                                            <input type="text" placeholder="Insert an URL, IP address or hostname" ng-model="service.url" />
                                         </div>
                                         <div class="small-3 columns">
                                             <span class="postfix">
-                                                <input type="text" placeholder="Port" />
+                                                <input type="text" placeholder="Port" ng-model="service.port" />
                                             </span>
                                         </div>
                                     </div>
@@ -184,29 +178,29 @@
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Username
-                                        <input type="text" placeholder="Username" />
+                                        <input type="text" placeholder="Username" ng-model="service.username" />
                                     </label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Password
-                                        <input type="text" placeholder="Password" />
+                                        <input type="text" placeholder="Password" ng-model="service.password" />
                                     </label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Extra information
-                                        <textarea rows="5" placeholder="Write here any extra information that you want to add"></textarea>
+                                        <textarea rows="5" placeholder="Write here any extra information that you want to add" ng-model="service.extra"></textarea>
                                     </label>
                                 </div>
                             </div>
                             <button class="button tiny">Save</button>
-                        </form>
-                    </section>
-                </div>
-                <a class="close-reveal-modal">&#215;</a>
+                        </section>
+                    </div>
+                    <a class="close-reveal-modal">&#215;</a>
+                </form>
             </div>
         </div>
 
@@ -222,7 +216,7 @@
                     <section class="middle tab-bar-section">
                         <i class="fi-magnifying-glass" style="float:left;"></i>
                         <div class="large-2 small-9 columns">
-                            <input type="text" class="radius" style="margin-top: 4px" placeholder="Search...">
+                            <input type="text" class="radius" style="margin-top: 4px" ng-model="itemFilter" placeholder="Search...">
                         </div>
                         <h1 class="title">Sikre</h1>
                         <button href="#" class="button tiny right additem" data-reveal-id="addItem"><i class="fi-plus"></i></button>

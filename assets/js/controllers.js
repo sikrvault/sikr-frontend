@@ -162,6 +162,7 @@ angular.module('sikre.controllers', [])
 
     $scope.createservice = function (itemId) {
       $('#addObject').foundation('reveal', 'open');
+
     };
 
     $scope.addservice = function (service) {
