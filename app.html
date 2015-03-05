@@ -108,10 +108,10 @@
                     <div class="row">
                         <div class="small-12 large-12 columns">
                             <label>Service name
-                                <input type="text" placeholder="Insert a name here (optional)" ng-model="service.name" />
+                                <input type="text" placeholder="Insert a name here (optional)" name="name" ng-model="service.name" />
                             </label>
                         </div>
-                        <div id="addService"><input id="serviceItem" type="text" class="hidden" ng-model="service.item" /></div>
+                        <div id="addService"><input id="serviceItem" type="text" class="hidden" name="item" ng-model="service.item" /></div>
                     </div>
                     <ul class="tabs addmodal" data-tab role="tablist">
                         <li class="tab-title active" role="presentational" ><a href="#panel99-1" role="tab" tabindex="0" aria-selected="true" controls="panel99-1">SSH Key</a></li>
@@ -123,21 +123,21 @@
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Title
-                                        <input type="text" placeholder="Insert a name for your key here" ng-model="service.ssh_title" />
+                                        <input type="text" placeholder="Insert a name for your key here" name="ssh_title" ng-model="service.ssh_title" />
                                     </label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Private Key
-                                        <textarea rows="5" placeholder="Insert the contents of your key files here" ng-model="service.ssh_private"></textarea>
+                                        <textarea rows="5" placeholder="Insert the contents of your key files here" name="ssh_private" ng-model="service.ssh_private"></textarea>
                                     </label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Public Key
-                                        <textarea rows="5" placeholder="Insert the contents of your public key here" ng-model="service.ssh_public"></textarea>
+                                        <textarea rows="5" placeholder="Insert the contents of your public key here" name="ssh_public" ng-model="service.ssh_public"></textarea>
                                     </label>
                                 </div>
                             </div>
@@ -146,7 +146,7 @@
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Title
-                                        <input type="text" placeholder="Insert a name for your SSL file here" ng-model="service.ssl_title"/>
+                                        <input type="text" placeholder="Insert a name for your SSL file here" name="ssl_title" ng-model="service.ssl_title"/>
                                     </label>
                                 </div>
                             </div>
@@ -164,11 +164,11 @@
                                     <div class="row collapse">
                                         <label>URL / IP / Hostname</label>
                                         <div class="small-9 columns">
-                                            <input type="text" placeholder="Insert an URL, IP address or hostname" ng-model="service.url" />
+                                            <input type="text" placeholder="Insert an URL, IP address or hostname" name="url" ng-model="service.url" />
                                         </div>
                                         <div class="small-3 columns">
                                             <span class="postfix">
-                                                <input type="text" placeholder="Port" ng-model="service.port" />
+                                                <input type="text" placeholder="Port" name="port" ng-model="service.port" />
                                             </span>
                                         </div>
                                     </div>
@@ -177,21 +177,21 @@
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Username
-                                        <input type="text" placeholder="Username" ng-model="service.username" />
+                                        <input type="text" placeholder="Username" name="username" ng-model="service.username" />
                                     </label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Password
-                                        <input type="text" placeholder="Password" ng-model="service.password" />
+                                        <input type="text" placeholder="Password" name="password" ng-model="service.password" />
                                     </label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Extra information
-                                        <textarea rows="5" placeholder="Write here any extra information that you want to add" ng-model="service.extra"></textarea>
+                                        <textarea rows="5" placeholder="Write here any extra information that you want to add" name="extra" ng-model="service.extra"></textarea>
                                     </label>
                                 </div>
                             </div>
