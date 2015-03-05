@@ -92,14 +92,15 @@ angular.module('sikre.controllers', [])
 
     $scope.createservice = function (itemId) {
       $('#addObject').foundation('reveal', 'open');
-      if ($('#addService :input').length !== 0) {
-        $('#addService').empty();
-      }
-      var html = "<input type='hidden' ng-model='service.item' ng-value='" + itemId + "' />";
-      var template = angular.element(html);
-      var linkFn = $compile(template);
-      var element = linkFn($scope);
-      $("#addService").append(element);
+      $("addService :item").val(itemId);
+      // if ($('#addService :input').length !== 0) {\
+      //   $('#addService').empty();
+      // }
+      // var html = "<input type='hidden' ng-model='service.item' ng-value='" + itemId + "' />";
+      // var template = angular.element(html);
+      // var linkFn = $compile(template);
+      // var element = linkFn($scope);
+      // $("#addService").append(element);
     };
 
     $scope.getitem = function (item) {
