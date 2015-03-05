@@ -93,6 +93,7 @@ angular.module('sikre.controllers', [])
     $scope.createservice = function (itemId) {
       $('#addObject').foundation('reveal', 'open');
 
+
     };
 
     $scope.getitem = function (item) {
@@ -129,17 +130,21 @@ angular.module('sikre.controllers', [])
 
     $scope.confirmdeleteitem = function (itemId) {
       $('#confirmItemDelete').foundation('reveal', 'open');
-      var html = "<a id='deleteitem' href='#' class='alert button tiny' ng-click='deleteitem(" + itemId + ")'>Go for it!</a>";
-      var template = angular.element(html);
-      var linkFn = $compile(template);
-      var element = linkFn($scope);
-      $("#itemDeleteButtons").append(element);
+      if (!deletebtn_shown) {
+        var html = "<a id='deleteitem' href='#' class='alert button tiny' ng-click='deleteitem(" + itemId + ")'>Go for it!</a>";
+        var template = angular.element(html);
+        var linkFn = $compile(template);
+        var element = linkFn($scope);
+        $("#itemDeleteButtons").append(element);
+        var deletebtn_shown = true;
+      }
     };
 
     $scope.deleteitem = function (item) {
       sikreAPIservice.deleteItem(item)
         .success(function () {
           $.notify("Item deleted", "success");
+          $('#confirmItemDelete').foundation('reveal', 'close');
         })
         .error(function () {
           $.notify("Can't delete item", "error");
