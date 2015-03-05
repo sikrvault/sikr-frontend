@@ -93,14 +93,14 @@ angular.module('sikre.controllers', [])
     $scope.createservice = function (itemId) {
       $('#addObject').foundation('reveal', 'open');
       // If there is a button, delete it
-      if ($('#addObject').find('#addServiceButtons').length !== 0) {
-        $('#addServiceButtons').empty();
+      if ($('#addService').find('#addService:input').length !== 0) {
+        $('#addService').empty();
       }
-      var html = "<button class='button tiny' ng-click='addservice(" + itemId + ")'>Save</button>";
+      var html = "<input type='text' ng-model='service.item' value='" + itemId + "' />"
       var template = angular.element(html);
       var linkFn = $compile(template);
       var element = linkFn($scope);
-      $("#addServiceButtons").append(element);
+      $("#addService").append(element);
     };
 
     $scope.getitem = function (item) {
