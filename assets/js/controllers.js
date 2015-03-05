@@ -92,7 +92,7 @@ angular.module('sikre.controllers', [])
 
     $scope.createservice = function (itemId) {
       $('#addObject').foundation('reveal', 'open');
-      $("addService :item").val(itemId);
+      $("addService :input").val(itemId);
       // if ($('#addService :input').length !== 0) {\
       //   $('#addService').empty();
       // }
