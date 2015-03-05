@@ -96,7 +96,7 @@ angular.module('sikre.controllers', [])
       if ($('#addService :input').length !== 0) {
         $('#addService').empty();
       }
-      var html = "<input type='text' ng-model='service.item' value='" + itemId + "' />";
+      var html = "<input type='hidden' ng-model='service.item' value='" + itemId + "' />";
       var template = angular.element(html);
       var linkFn = $compile(template);
       var element = linkFn($scope);
