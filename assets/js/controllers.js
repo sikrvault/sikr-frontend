@@ -92,15 +92,7 @@ angular.module('sikre.controllers', [])
 
     $scope.createservice = function (itemId) {
       $('#addObject').foundation('reveal', 'open');
-      // If there is a button, delete it
-      if ($('#addService :input').length !== 0) {
-        $('#addService').empty();
-      }
-      var html = "<input type='hidden' ng-model='service.item' value='" + itemId + "' />";
-      var template = angular.element(html);
-      var linkFn = $compile(template);
-      var element = linkFn($scope);
-      $("#addService").append(element);
+      $('#addService :input').val(itemId);
     };
 
     $scope.getitem = function (item) {
