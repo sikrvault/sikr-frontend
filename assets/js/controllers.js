@@ -93,7 +93,7 @@ angular.module('sikre.controllers', [])
     $scope.createservice = function (itemId) {
       $('#addObject').foundation('reveal', 'open');
       // If there is a button, delete it
-      if ($('#addService:input').length !== 0) {
+      if ($('#addService :input').length !== 0) {
         $('#addService').empty();
       }
       var html = "<input type='text' ng-model='service.item' value='" + itemId + "' />";
