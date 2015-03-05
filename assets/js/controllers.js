@@ -137,13 +137,15 @@ angular.module('sikre.controllers', [])
 
     $scope.confirmdeleteitem = function (itemId) {
       $('#confirmItemDelete').foundation('reveal', 'open');
-      if ($('#confirmItemDelete').find('#deleteitem').length === 0) {
-        var html = "<a id='deleteitem' href='#' class='alert button tiny' ng-click='deleteitem(" + itemId + ")'>Go for it!</a>";
-        var template = angular.element(html);
-        var linkFn = $compile(template);
-        var element = linkFn($scope);
-        $("#itemDeleteButtons").append(element);
+      // If there is a button, delete it
+      if ($('#itemDeleteButtons').find('#deleteitem').length !== 0) {
+        $('#itemDeleteButtons').empty();
       }
+      var html = "<a id='deleteitem' href='#' class='alert button tiny' ng-click='deleteitem(" + itemId + ")'>Go for it!</a>";
+      var template = angular.element(html);
+      var linkFn = $compile(template);
+      var element = linkFn($scope);
+      $("#itemDeleteButtons").append(element);
     };
 
     $scope.deleteitem = function (item) {
