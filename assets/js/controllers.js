@@ -137,13 +137,12 @@ angular.module('sikre.controllers', [])
 
     $scope.confirmdeleteitem = function (itemId) {
       $('#confirmItemDelete').foundation('reveal', 'open');
-      if (!deletebtn_shown) {
+      if ($('#confirmItemDelete').find('#deleteitem').length === 0) {
         var html = "<a id='deleteitem' href='#' class='alert button tiny' ng-click='deleteitem(" + itemId + ")'>Go for it!</a>";
         var template = angular.element(html);
         var linkFn = $compile(template);
         var element = linkFn($scope);
         $("#itemDeleteButtons").append(element);
-        var deletebtn_shown = true;
       }
     };
 
@@ -205,9 +204,9 @@ angular.module('sikre.controllers', [])
 
     $scope.confirmdeleteservice = function (service) {
       $('#confirmServiceDelete').foundation('reveal', 'open', {
-          success: function(data, item) {
-              $("#deleteitem").attr("ng-click", "deleteitem(" + item + ")");
-          },
+        success: function (data, item) {
+          $("#deleteitem").attr("ng-click", "deleteitem(" + item + ")");
+        },
       });
     };
 
