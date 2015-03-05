@@ -92,15 +92,15 @@ angular.module('sikre.controllers', [])
 
     $scope.createservice = function (itemId) {
       $('#addObject').foundation('reveal', 'open');
-      // if (!deleteobj_shown) {
-      //   var html = "<a id='deleteitem' href='#' class='alert button tiny' ng-click='deleteitem(" + itemId + ")'>Go for it!</a>";
-      //   var template = angular.element(html);
-      //   var linkFn = $compile(template);
-      //   var element = linkFn($scope);
-      //   $("#itemDeleteButtons").append(element);
-      //   var deleteobj_shown = true;
-      // }
-
+      // If there is a button, delete it
+      if ($('#addObject').find('#addServiceButtons').length !== 0) {
+        $('#addServiceButtons').empty();
+      }
+      var html = "<button class='button tiny' ng-click='addservice(" + itemId + "'>Save</button>";
+      var template = angular.element(html);
+      var linkFn = $compile(template);
+      var element = linkFn($scope);
+      $("#addServiceButtons").append(element);
     };
 
     $scope.getitem = function (item) {
