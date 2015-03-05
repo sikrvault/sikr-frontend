@@ -96,7 +96,7 @@ angular.module('sikre.controllers', [])
       if ($('#addObject').find('#addServiceButtons').length !== 0) {
         $('#addServiceButtons').empty();
       }
-      var html = "<button class='button tiny' ng-click='addservice(" + itemId + "'>Save</button>";
+      var html = "<button class='button tiny' ng-click='addservice(" + itemId + ")'>Save</button>";
       var template = angular.element(html);
       var linkFn = $compile(template);
       var element = linkFn($scope);
