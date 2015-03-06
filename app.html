@@ -215,7 +215,7 @@
 
                     <section class="middle tab-bar-section">
                         <button href="#" class="button tiny additem" data-reveal-id="addItem"><i class="fi-plus"></i></button>
-                        <div class="large-2 small-9 columns">
+                        <div class="large-4 small-9 columns">
                             <input type="text" class="radius" style="margin-top: 4px" ng-model="itemFilter" ng-click="getAllItems()" placeholder="Search...">
                         </div>
                         <h1 class="title">Sikr.io</h1>
@@ -225,8 +225,9 @@
                 <aside class="left-off-canvas-menu">
                     <ul class="off-canvas-list" ng-controller="AuthCtrl">
                         <li><label>Me</label></li>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#" ng-click="logout()">Logout</a></li>
+                        <!-- <li><a href="#">Profile</a></li> -->
+                        <li ng-if="!isAuthenticated()"><a href="/login.html">Login</a></li>
+                        <li ng-if="isAuthenticated()"><a href="#" ng-click="logout()">Logout</a></li>
                     </ul>
                     <ul class="off-canvas-list">
                         <li ng-init="getgroups()"><label>Groups</label></li>
