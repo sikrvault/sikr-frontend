@@ -8,7 +8,7 @@ angular.module('sikre.controllers', [])
 
     $scope.authenticate = function (provider) {
       $auth.authenticate(provider).then(function () {
-        $location.path('/app.html');
+        window.location.href = '/app.html';
       });
     };
 
