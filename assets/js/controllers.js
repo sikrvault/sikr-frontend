@@ -188,7 +188,7 @@ angular.module('sikre.controllers', [])
         .success(function () {
           $.notify("Service created", "success");
           $scope.service = null;
-          $('#addService').foundation('reveal', 'close');
+          $('#newService').foundation('reveal', 'close');
         })
         .error(function () {
           $.notify("Can't save the service", "error");
