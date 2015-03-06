@@ -7,9 +7,9 @@ angular.module('sikre.controllers', [])
     };
 
     $scope.authenticate = function (provider) {
-      $auth.authenticate(provider).then() {
+      $auth.authenticate(provider).then(function () {
         $location.path('/app.html');
-      };
+      });
     };
 
     $scope.logout = function () {
