@@ -1,7 +1,7 @@
 // Load the angular application
 var mainAPIUrl = 'https://api.sikr.io/v1/';
 
-// Timeouts. When reached, the content dissapears.
+// Timeouts. When reached, the content disappears.
 var serviceTimeout = 30000; // 30 seconds
 var itemTimeout = 300000; // 5 minutes
 
