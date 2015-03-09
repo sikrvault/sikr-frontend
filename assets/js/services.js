@@ -8,14 +8,16 @@ angular.module('sikre.services', [])
     sikreAPI.getGroups = function () {
       return $http({
         method: "GET",
-        url: mainAPIUrl + 'groups/'
+        url: mainAPIUrl + 'groups/',
+        cache: false
       });
     };
 
     sikreAPI.getGroup = function (groupId) {
       return $http({
         method: "GET",
-        url: mainAPIUrl + 'groups/' + groupId
+        url: mainAPIUrl + 'groups/' + groupId,
+        cache: false
       });
     };
 
@@ -23,7 +25,8 @@ angular.module('sikre.services', [])
       return $http({
         method: "POST",
         url: mainAPIUrl + 'groups/',
-        data: data
+        data: data,
+        cache: false
       });
     };
 
@@ -31,14 +34,16 @@ angular.module('sikre.services', [])
       return $http({
         method: "PUT",
         url: mainAPIUrl + 'groups/' + groupId,
-        data: data
+        data: data,
+        cache: false
       });
     };
 
     sikreAPI.deleteGroup = function (groupId) {
       return $http({
         method: "DELETE",
-        url: mainAPIUrl + 'groups/' + groupId
+        url: mainAPIUrl + 'groups/' + groupId,
+        cache: false
       });
     };
 
@@ -46,21 +51,24 @@ angular.module('sikre.services', [])
     sikreAPI.getItemsbyGroup = function (groupId) {
       return $http({
         method: "GET",
-        url: mainAPIUrl + 'items?group=' + groupId
+        url: mainAPIUrl + 'items?group=' + groupId,
+        cache: false
       });
     };
 
     sikreAPI.getItems = function () {
       return $http({
         method: "GET",
-        url: mainAPIUrl + 'items/'
+        url: mainAPIUrl + 'items/',
+        cache: false
       });
     };
 
     sikreAPI.getItem = function (itemId) {
       return $http({
         method: "GET",
-        url: mainAPIUrl + 'items/' + itemId
+        url: mainAPIUrl + 'items/' + itemId,
+        cache: false
       });
     };
 
@@ -68,7 +76,8 @@ angular.module('sikre.services', [])
       return $http({
         method: "POST",
         url: mainAPIUrl + 'items/',
-        data: data
+        data: data,
+        cache: false
       });
     };
 
@@ -76,7 +85,8 @@ angular.module('sikre.services', [])
       return $http({
         method: "PUT",
         url: mainAPIUrl + 'items/' + itemId,
-        data: data
+        data: data,
+        cache: false
       });
     };
 
@@ -84,6 +94,7 @@ angular.module('sikre.services', [])
       return $http({
         method: "DELETE",
         url: mainAPIUrl + 'items/' + itemId,
+        cache: false
       });
     };
 
@@ -91,14 +102,16 @@ angular.module('sikre.services', [])
     sikreAPI.getServices = function () {
       return $http({
         method: "GET",
-        url: mainAPIUrl + 'services/'
+        url: mainAPIUrl + 'services/',
+        cache: false
       });
     };
 
     sikreAPI.getService = function (serviceId) {
       return $http({
         method: "GET",
-        url: mainAPIUrl + 'services/' + serviceId
+        url: mainAPIUrl + 'services/' + serviceId,
+        cache: false,
       });
     };
 
@@ -106,7 +119,8 @@ angular.module('sikre.services', [])
       return $http({
         method: "POST",
         url: mainAPIUrl + 'services/',
-        data: data
+        data: data,
+        cache: false
       });
     };
 
@@ -114,14 +128,16 @@ angular.module('sikre.services', [])
       return $http({
         method: "PUT",
         url: mainAPIUrl + 'services/' + serviceId,
-        data: data
+        data: data,
+        cache: false
       });
     };
 
     sikreAPI.deleteService = function (serviceId) {
       return $http({
         method: "DELETE",
-        url: mainAPIUrl + 'services/' + serviceId
+        url: mainAPIUrl + 'services/' + serviceId,
+        cache: false
       });
     };
 
