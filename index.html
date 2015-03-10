@@ -2,7 +2,7 @@
 <html ng-app="sikre">
     <head itemscope itemtype="//schema.org/WebPage">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
         <title>Sikre: The secure password tool</title>
         <meta name="description" content="Sikre is an online password vault for storing your passwords. It features high security encryption systems and it's open source." />
         <meta name="keywords" content="sikre, passwords, storing, security encryption, high security, security encryption systems, systems open, encryption systems, vault, online, open, systems, security, source, high, password, features, encryption" />
@@ -124,14 +124,17 @@
         </footer>
         <!-- Footer JS -->
         <script async src="/static/js/app.js"></script>
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        <script type="text/javascript">
 
-          ga('create', 'UA-43195813-4', 'auto');
-          ga('send', 'pageview');
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-43195813-4']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
 
         </script>
     </body>
