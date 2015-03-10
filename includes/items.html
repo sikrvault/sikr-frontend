@@ -37,10 +37,10 @@
                 </a>
             </div>
             <div id="panel{{$index}}" class="content">
-                <dl class="tabs" data-tab>
-                    <dd ng-repeat="service in item.services">
+                <ul class="tabs" data-tab>
+                    <li class="tab-title active" ng-repeat="service in item.services">
                         <a href="#panel{{$parent.$index}}-{{$index}}" ng-click="getService(service.id)">{{ service.name }}</a>
-                    </dd>
+                    </li>
                 </dl>
                 <div class="tabs-content" service-list></div>
                 <h3>Information</h3>
