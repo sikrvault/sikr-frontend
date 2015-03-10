@@ -38,7 +38,7 @@
             </div>
             <div id="panel{{$index}}" class="content">
                 <ul class="tabs" data-tab>
-                    <li class="tab-title active" ng-repeat="service in item.services">
+                    <li class="tab-title" ng-class="{active : $first}" ng-repeat="service in item.services">
                         <a href="#panel{{$parent.$index}}-{{$index}}" ng-click="getService(service.id)">{{ service.name }}</a>
                     </li>
                 </ul>
