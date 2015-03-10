@@ -36,9 +36,9 @@
                     <i class="fi-trash"></i>
                 </a>
             </div>
-            <div id="panel{{$index}}" class="content" ng-class="{active:$first}">
+            <div id="panel{{$index}}" class="content">
                 <dl class="tabs" data-tab>
-                    <dd ng-class="{active : $first}" ng-repeat="service in item.services">
+                    <dd ng-repeat="service in item.services">
                         <a href="#panel{{$parent.$index}}-{{$index}}" ng-click="getService(service.id)">{{ service.name }}</a>
                     </dd>
                 </dl>
