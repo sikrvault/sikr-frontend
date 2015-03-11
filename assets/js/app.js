@@ -101,7 +101,10 @@ $(document).foundation();
 // get along very well, so we have to fire again foundation after the angular
 // application is finished rendering. Otherwise the navigations and accordions
 // will stop working inside ng-repeat
-app.run(function ($timeout) {
+app.run(function ($timeout, $rootScope) {
+  $rootScope.$on('$routeChangeSuccess', function () {
+    $(document).foundation('reflow');
+  });
   $timeout(function () {
     $(document).foundation({
       offcanvas : {
