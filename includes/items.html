@@ -19,8 +19,8 @@
     </div>
 </h3>
 <div class="row">
-    <dl class="accordion" data-accordion>
-        <dd class="accordion-navigation" ng-repeat="item in items | filter: itemFilter" ng-controller="ItemsCtrl">
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation item-container" ng-repeat="item in items | filter: itemFilter" ng-controller="ItemsCtrl">
             <a href="#panel{{$index}}">{{ item.name }}</a>
             <div class="toolbar">
                 <a href="#" class="button left toolbar-button addobject" ng-click="createservice(item.id)">
@@ -46,6 +46,6 @@
                 <h3>Information</h3>
                 <p>{{ item.description }}</p>
             </div>
-        </dd>
-    </dl>
+        </li>
+    </ul>
 </div>
