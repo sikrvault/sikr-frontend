@@ -21,6 +21,7 @@ angular.module('sikre.directives', [])
             .error(function (data, status) {
               $.notify("Couldn't get the service data", "error");
             });
+          $(document).foundation('reflow');
         };
 
         $scope.getTemplateUrl = function () {
@@ -58,6 +59,7 @@ angular.module('sikre.directives', [])
             .error(function (data, status) {
               $.notify("Couldn't get the item data", "error");
             });
+          $(document).foundation('reflow');
         };
 
         $scope.getAllItems = function () {
@@ -76,6 +78,7 @@ angular.module('sikre.directives', [])
             .error(function (data, status) {
               $.notify("Couldn't get the item data", "error");
             });
+          $(document).foundation('reflow');
         };
 
         $scope.getTemplateUrl = function () {
