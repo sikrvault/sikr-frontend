@@ -30,6 +30,7 @@ angular.module('sikre.controllers', [])
         .error(function () {
           $.notify("Can't access the API to get the groups.", "error");
         });
+      $(document).foundation('reflow');
     };
 
     $scope.update = function () {
@@ -40,6 +41,7 @@ angular.module('sikre.controllers', [])
         .error(function () {
           $.notify("Can't access the API to get the groups.", "error");
         });
+      $(document).foundation('reflow');
     };
 
     $scope.getgroup = function (group) {
