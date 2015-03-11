@@ -1,13 +1,13 @@
 <div class="content" ng-class='{active:$first}' ng-repeat="service in services" id="panel{{$parent.$index}}-{{$index}}">
-    <p ng-if="service.url"><strong>URL:</strong> <a href="{{ service.url }}">{{ service.url }}</a></p>
-    <p ng-if="service.port"><strong>Port:</strong>{{ service.port }}</p>
-    <p ng-if="service.username"><strong>Username:</strong> {{ service.username }}</p>
-    <p ng-if="service.password"><strong>Password:</strong> {{ service.password }}</p>
-    <p ng-if="service.extra"><strong>Extra:</strong> {{ service.extra }}</p>
-    <p ng-if="service.ssh_title"><strong>SSH Title:</strong> {{ service.ssh_title }}</p>
-    <p ng-if="service.ssh_public"><strong>SSH Public:</strong> {{ service.ssh_public }}</p>
-    <p ng-if="service.ssh_private"><strong>SSH Private:</strong> {{ service.ssh_private }}</p>
-    <p ng-if="service.ssl_title"><strong>SSL Title:</strong> {{ service.ssl_title }}</p>
-    <p ng-if="service.ssl_filename"><strong>SSL Filename:</strong> <a href="{{ service.ssl_filename }}">{{ service.ssl_filename }}</a></p>
-    <p ng-if="service.other"><strong>Other:</strong> {{ service.other }}</p>
+    <p class="servicedata" ng-if="service.url"><strong>URL:</strong> <a href="{{ service.url }}">{{ service.url }}</a></p>
+    <p class="servicedata" ng-if="service.port"><strong>Port:</strong>{{ service.port }}</p>
+    <p class="servicedata" ng-if="service.username"><strong>Username:</strong> {{ service.username }}</p>
+    <p class="servicedata" ng-if="service.password"><strong>Password:</strong> {{ service.password }}</p>
+    <p class="servicedata" ng-if="service.extra"><strong>Extra:</strong> {{ service.extra }}</p>
+    <p class="servicedata" ng-if="service.ssh_title"><strong>SSH Title:</strong> {{ service.ssh_title }}</p>
+    <p class="servicedata" ng-if="service.ssh_public"><strong>SSH Public:</strong> {{ service.ssh_public }}</p>
+    <p class="servicedata" ng-if="service.ssh_private"><strong>SSH Private:</strong> {{ service.ssh_private }}</p>
+    <p class="servicedata" ng-if="service.ssl_title"><strong>SSL Title:</strong> {{ service.ssl_title }}</p>
+    <p class="servicedata" ng-if="service.ssl_filename"><strong>SSL Filename:</strong> <a href="{{ service.ssl_filename }}">{{ service.ssl_filename }}</a></p>
+    <p class="servicedata" ng-if="service.other"><strong>Other:</strong> {{ service.other }}</p>
 </div>
