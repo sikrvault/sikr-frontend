@@ -59,7 +59,6 @@ angular.module('sikre.directives', [])
             .error(function (data, status) {
               $.notify("Couldn't get the item data", "error");
             });
-          $(document).foundation('reflow');
         };
 
         $scope.getAllItems = function () {
@@ -78,14 +77,15 @@ angular.module('sikre.directives', [])
             .error(function (data, status) {
               $.notify("Couldn't get the item data", "error");
             });
-          $(document).foundation('reflow');
         };
 
         $scope.getTemplateUrl = function () {
           if ($scope.lockedItem) {
             return '';
+            $(document).foundation('reflow');
           } else {
             return 'includes/items.html';
+            $(document).foundation('reflow');
           }
         };
       },
