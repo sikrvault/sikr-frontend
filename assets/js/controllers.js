@@ -96,6 +96,7 @@ angular.module('sikre.controllers', [])
         .error(function () {
           $.notify("Can't access the API to get the groups.", "error");
         });
+      $(document).foundation('reflow');
     };
 
     $scope.createservice = function (itemId) {
@@ -111,6 +112,7 @@ angular.module('sikre.controllers', [])
         .error(function () {
           $.notify("Can't get the item", "error");
         });
+      $(document).foundation('reflow');
     };
 
     $scope.additem = function (item) {
@@ -170,6 +172,7 @@ angular.module('sikre.controllers', [])
         .error(function () {
           $.notify("Can't access the API to get the services.", "error");
         });
+      $(document).foundation('reflow');
     };
 
     $scope.getservice = function (service) {
@@ -180,6 +183,7 @@ angular.module('sikre.controllers', [])
         .error(function () {
           $.notify("Can't get the service", "error");
         });
+      $(document).foundation('reflow');
     };
 
     $scope.addservice = function (service) {
