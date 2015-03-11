@@ -82,11 +82,10 @@ angular.module('sikre.directives', [])
         $scope.getTemplateUrl = function () {
           if ($scope.lockedItem) {
             return '';
-            $(document).foundation('reflow');
           } else {
             return 'includes/items.html';
-            $(document).foundation('reflow');
           }
+          $(document).foundation('reflow');
         };
       },
     };
