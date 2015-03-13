@@ -49,6 +49,11 @@ angular.module('sikre.directives', [])
               $scope.group_name = data.group_name;
               $scope.group_id = data.group_id;
               $scope.items = data.items;
+              $scope.$watch('data.items', function (newVal, oldVal, scope) {
+                if(newVal) {
+                  scope.foo = newVal;
+                }
+              });
               $scope.lockedItem = false;
               $timeout(function () {
                 $scope.lockedItem = true;
