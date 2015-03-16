@@ -8,7 +8,7 @@
     "angular": "latest",
     "notifyjs": "latest",
     "satellizer": "latest",
-    "pace": "latest"
+    "uri.js": "latest"
   },
   "devDependencies": {
   }

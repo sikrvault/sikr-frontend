@@ -27,7 +27,8 @@
     "grunt-contrib-compass": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-contrib-copy": "latest",
-    "grunt-contrib-cssmin": "latest"
+    "grunt-contrib-cssmin": "latest",
+    "grunt-ng-annotate": "latest"
   },
   "devDependencies":{},
   "author": "Oscar Carballal Prego",

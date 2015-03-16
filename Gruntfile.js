@@ -14,61 +14,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    // Concatanation of JS
-    concat: {
-      options: {
-        separator: ';;\n\n'
-      },
-      dist: {
-        src: [
-          '<%= pkg.project_paths.bower_folder %>jquery/dist/jquery.min.js',
-          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.js',
-          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.accordion.js',
-          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.alert.js',
-          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.offcanvas.js',
-          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.tab.js',
-          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.reveal.js',
-          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.topbar.js',
-          '<%= pkg.project_paths.bower_folder %>notifyjs/dist/notify-combined.min.js',
-          '<%= pkg.project_paths.bower_folder %>satellizer/satellizer.min.js',
-        ],
-        dest: '<%= pkg.dest_paths.js %>base.js'
-      },
-      angular: {
-        src: [
-          '<%= pkg.project_paths.bower_folder %>angular/angular.min.js',
-          '<%= pkg.dest_paths.js %>base.js',
-          '<%= pkg.src_paths.js %>**/*.js',
-        ],
-        dest: '<%= pkg.dest_paths.js %>app.js'
-      }
-    },
-    // Minification of JS
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-      },
-      dist: {
-        files: {
-          '<%= pkg.dest_paths.js %>base.js': ['<%= concat.dist.dest %>'],
-        }
-      },
-      dev: {
-        files: {
-          '<%= pkg.dest_paths.js %>modernizr.min.js': ['<%= pkg.project_paths.bower_folder %>modernizr/modernizr.js']
-        }
-      }
-    },
-    // CSSmin to minify CSS on production
-    cssmin: {
-        minify:{
-        expand: true,
-        cwd: '<%= pkg.dest_paths.css %>',
-        src: ['*.css',],
-        dest: '<%= pkg.dest_paths.css %>',
-        ext: '.css'
-      }
-    },
+
     // JSHint to review JS code before build
     jshint: {
       files: [
@@ -86,6 +32,74 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    // Pre-minify angular application
+    ngAnnotate: {
+      options: {
+        remove: false, // Do not remove any annotations
+        singleQuotes: true,
+      },
+      dist: {
+        files: {
+          '<%= pkg.dest_paths.js %>ngproject.js': ['<%= pkg.src_paths.js %>**/*.js']
+        },
+      },
+    },
+
+    // Concatenation of JS
+    concat: {
+      options: {
+        separator: ';;\n\n'
+      },
+      dist: {
+        src: [
+          '<%= pkg.project_paths.bower_folder %>jquery/dist/jquery.min.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.accordion.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.alert.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.offcanvas.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.tab.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.reveal.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.topbar.js',
+          '<%= pkg.project_paths.bower_folder %>notifyjs/dist/notify-combined.min.js',
+          '<%= pkg.project_paths.bower_folder %>uri.js/URI.min.js',
+          '<%= pkg.project_paths.bower_folder %>angular/angular.min.js',
+          '<%= pkg.project_paths.bower_folder %>satellizer/satellizer.min.js',
+          '<%= pkg.dest_paths.js %>ngproject.js',
+        ],
+        dest: '<%= pkg.dest_paths.js %>app.js'
+      },
+    },
+
+    // Minification of JS
+    uglify: {
+      options: {
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+      },
+      dist: {
+        files: {
+          '<%= pkg.dest_paths.js %>app.js': ['<%= concat.dist.dest %>'],
+          //'<%= pkg.dest_paths.js %>base.js': ['<%= concat.dist.dest %>'],
+        }
+      },
+      dev: {
+        files: {
+          '<%= pkg.dest_paths.js %>modernizr.min.js': ['<%= pkg.project_paths.bower_folder %>modernizr/modernizr.js']
+        }
+      }
+    },
+
+    // CSSmin to minify CSS on production
+    cssmin: {
+        minify:{
+        expand: true,
+        cwd: '<%= pkg.dest_paths.css %>',
+        src: ['*.css',],
+        dest: '<%= pkg.dest_paths.css %>',
+        ext: '.css'
+      }
+    },
+
     // Compass to handle CSS compilation and concatanation
     compass: {
       dist: {
@@ -94,6 +108,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     // Copy fonts and images to build output directory
     copy: {
       dist: {
@@ -115,6 +130,7 @@ module.exports = function(grunt) {
         ]
       }
     },
+
     // Watch task to compile files live
     watch: {
       js:{
@@ -143,14 +159,6 @@ module.exports = function(grunt) {
         tasks: ['copy']
       }
     },
-    docco: {
-      debug: {
-        src: ['<%= pkg.src_paths.js %>**/*.js'],
-        options: {
-          output: 'docs/js/'
-        }
-      }
-    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -160,11 +168,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-docco');
+  grunt.loadNpmTasks('grunt-ng-annotate');
 
   grunt.registerTask('default', 'build');
-  grunt.registerTask('build', ['jshint', 'concat', 'uglify:dev', 'compass', 'copy']);
-  grunt.registerTask('dist', ['jshint', 'concat:dist', 'uglify', 'concat:angular', 'compass', 'cssmin', 'copy']);
-  grunt.registerTask('doc', 'docco');
-
+  grunt.registerTask('testangular', ['ngAnnotate:dist']);
+  //grunt.registerTask('build', ['jshint', 'concat', 'uglify:dev', 'compass', 'copy']);
+  grunt.registerTask('dist', ['jshint', 'ngAnnotate:dist', 'concat:dist', 'uglify', 'compass', 'cssmin', 'copy']);
 };
