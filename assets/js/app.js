@@ -1,10 +1,21 @@
-// Load the angular application
+// Set main API URL
 var mainAPIUrl = 'https://api.sikr.io/v1/';
 
 // Timeouts. When reached, the content disappears.
 var serviceTimeout = 30000; // 30 seconds
 var itemTimeout = 300000; // 5 minutes
 
+// Detect is teh share token is being passed, otherwise set empty string
+var uri = new URI();
+var qs = uri.search(true);
+
+if (qs.share_token) {
+  var token = '?share_token=' + qs.share_token;
+} else {
+  var token = '';
+}
+
+// Load the angular application
 var app = angular.module('sikre', [
   'satellizer',
   'sikre.services',
@@ -34,7 +45,7 @@ app.config(function ($httpProvider, $authProvider) {
   // Facebook
   $authProvider.facebook({
     clientId: '971498276209878',
-    url: 'https://api.sikr.io/v1/auth/facebook/login',
+    url: mainAPIUrl + 'auth/facebook/login' + token,
     authorizationEndpoint: 'https://www.facebook.com/dialog/oauth',
     redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
     scope: 'email',
@@ -48,7 +59,7 @@ app.config(function ($httpProvider, $authProvider) {
   // Google+
   $authProvider.google({
     clientId: '1075871883509-hgan7d0sa90kot6redk939t7dcbk8gqh.apps.googleusercontent.com',
-    url: 'https://api.sikr.io/v1/auth/google/login',
+    url: mainAPIUrl + 'auth/google/login' + token,
     authorizationEndpoint: 'https://accounts.google.com/o/oauth2/auth',
     redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
     scope: ['profile', 'email'],
@@ -63,7 +74,7 @@ app.config(function ($httpProvider, $authProvider) {
 
   // LinkedIn
   $authProvider.linkedin({
-    url: 'https://api.sikr.io/v1/auth/linkedin/login',
+    url: mainAPIUrl + 'auth/linkedin/login' + token,
     authorizationEndpoint: 'https://www.linkedin.com/uas/oauth2/authorization',
     redirectUri: window.location.origin,
     requiredUrlParams: ['state'],
@@ -76,7 +87,7 @@ app.config(function ($httpProvider, $authProvider) {
 
   // Twitter
   $authProvider.twitter({
-    url: 'https://api.sikr.io/v1/auth/twitter/login',
+    url: mainAPIUrl + 'auth/twitter/login' + token,
     type: '1.0',
     popupOptions: { width: 495, height: 645 }
   });
@@ -84,7 +95,7 @@ app.config(function ($httpProvider, $authProvider) {
   // GitHub
   $authProvider.github({
     clientId: '2d769d69d5106d8838ee',
-    url: 'https://api.sikr.io/v1/auth/github/login',
+    url: mainAPIUrl + 'auth/github/login' + token,
     authorizationEndpoint: 'https://github.com/login/oauth/authorize',
     redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
     scope: [],
@@ -101,7 +112,7 @@ $(document).foundation();
 // get along very well, so we have to fire again foundation after the angular
 // application is finished rendering. Otherwise the navigations and accordions
 // will stop working inside ng-repeat
-app.run(function ($timeout, $rootScope) {
+app.run(function ($timeout) {
   $timeout(function () {
     $(document).foundation({
       offcanvas : {
