@@ -43,11 +43,11 @@ angular.module('sikre.directives', [])
       controllerAs: 'items',
       controller: function ($http, $scope, sikreAPIservice) {
 
-        $scope.getItems = function (groupId) {
-          sikreAPIservice.getItemsbyGroup(groupId)
+        $scope.getItems = function (categoryId) {
+          sikreAPIservice.getItemsbyCategory(categoryId)
             .success(function (data, status) {
-              $scope.group_name = data.group_name;
-              $scope.group_id = data.group_id;
+              $scope.category_name = data.category_name;
+              $scope.category_id = data.category_id;
               $scope.items = data.items;
               $scope.lockedItem = false;
               $timeout(function () {
@@ -64,8 +64,8 @@ angular.module('sikre.directives', [])
         $scope.getAllItems = function () {
           sikreAPIservice.getItems()
             .success(function (data) {
-              $scope.group_name = data.group_name;
-              $scope.group_id = data.group_id;
+              $scope.category_name = data.category_name;
+              $scope.category_id = data.category_id;
               $scope.items = data.items;
               $scope.lockedItem = false;
               $timeout(function () {

@@ -5,53 +5,53 @@ angular.module('sikre.services', [])
     var sikreAPI = {};
 
     /* GROUPS */
-    sikreAPI.getGroups = function () {
+    sikreAPI.getCategories = function () {
       return $http({
         method: "GET",
-        url: mainAPIUrl + 'groups/',
+        url: mainAPIUrl + 'categories/',
         cache: false
       });
     };
 
-    sikreAPI.getGroup = function (groupId) {
+    sikreAPI.getCategory = function (categoryId) {
       return $http({
         method: "GET",
-        url: mainAPIUrl + 'groups/' + groupId,
+        url: mainAPIUrl + 'categories/' + categoryId,
         cache: false
       });
     };
 
-    sikreAPI.createGroup = function (data) {
+    sikreAPI.createCategory = function (data) {
       return $http({
         method: "POST",
-        url: mainAPIUrl + 'groups/',
+        url: mainAPIUrl + 'categories/',
         data: data,
         cache: false
       });
     };
 
-    sikreAPI.saveGroup = function (data, groupId) {
+    sikreAPI.saveCategory = function (data, categoryId) {
       return $http({
         method: "PUT",
-        url: mainAPIUrl + 'groups/' + groupId,
+        url: mainAPIUrl + 'categories/' + categoryId,
         data: data,
         cache: false
       });
     };
 
-    sikreAPI.deleteGroup = function (groupId) {
+    sikreAPI.deleteCategory = function (categoryId) {
       return $http({
         method: "DELETE",
-        url: mainAPIUrl + 'groups/' + groupId,
+        url: mainAPIUrl + 'categories/' + categoryId,
         cache: false
       });
     };
 
     /* ITEMS */
-    sikreAPI.getItemsbyGroup = function (groupId) {
+    sikreAPI.getItemsbyCategory = function (categoryId) {
       return $http({
         method: "GET",
-        url: mainAPIUrl + 'items?group=' + groupId,
+        url: mainAPIUrl + 'items?category=' + categoryId,
         cache: false
       });
     };

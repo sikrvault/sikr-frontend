@@ -20,83 +20,83 @@ angular.module('sikre.controllers', [])
     };
   })
 
-  .controller('GroupsCtrl', function ($scope, sikreAPIservice) {
+  .controller('CategoriesCtrl', function ($scope, sikreAPIservice) {
 
-    $scope.getgroups = function () {
-      sikreAPIservice.getGroups()
+    $scope.getcategories = function () {
+      sikreAPIservice.getCategories()
         .success(function (response) {
-          $scope.groupList = response;
+          $scope.categoryList = response;
         })
         .error(function () {
-          $.notify("Can't access the API to get the groups.", "error");
+          $.notify("Can't access the API to get the categorys.", "error");
         });
       $(document).foundation('reflow');
     };
 
     $scope.update = function () {
-      sikreAPIservice.getGroups()
+      sikreAPIservice.getCategories()
         .success(function (response) {
-          $scope.groupList = response;
+          $scope.categoryList = response;
         })
         .error(function () {
-          $.notify("Can't access the API to get the groups.", "error");
+          $.notify("Can't access the API to get the categorys.", "error");
         });
       $(document).foundation('reflow');
     };
 
-    $scope.getgroup = function (group) {
-      sikreAPIservice.getGroup(group)
+    $scope.getcategory = function (category) {
+      sikreAPIservice.getCategory(category)
         .success(function (response) {
-          $scope.group = response;
+          $scope.category = response;
         })
         .error(function () {
-          $.notify("Can't get the group", "error");
+          $.notify("Can't get the category", "error");
         });
     };
 
-    $scope.addgroup = function (group) {
-      sikreAPIservice.createGroup(group)
+    $scope.addcategory = function (category) {
+      sikreAPIservice.createCategory(category)
         .success(function () {
-          $.notify("Group saved", "success");
-          $scope.group = null;
+          $.notify("Category saved", "success");
+          $scope.category = null;
           $('#addItem').foundation('reveal', 'close');
         })
         .error(function () {
-          $.notify("Can't save the group", "error");
+          $.notify("Can't save the category", "error");
         });
     };
 
-    $scope.savegroup = function (group) {
-      sikreAPIservice.saveGroup(group)
+    $scope.savecategory = function (category) {
+      sikreAPIservice.saveCategory(category)
         .success(function () {
-          $.notify("Group saved", "success");
+          $.notify("Category saved", "success");
         })
         .error(function () {
-          $.notify("Can't save the group", "error");
+          $.notify("Can't save the category", "error");
         });
     };
 
-    $scope.deletegroup = function (group) {
-      sikreAPIservice.deleteGroup(group)
+    $scope.deletecategory = function (category) {
+      sikreAPIservice.deleteCategory(category)
         .success(function () {
-          $.notify("Group deleted", "success");
-          $('#confirmGroupDelete').foundation('reveal', 'close');
+          $.notify("Category deleted", "success");
+          $('#confirmCategoryDelete').foundation('reveal', 'close');
         })
         .error(function () {
-          $.notify("Can't delete group", "error");
+          $.notify("Can't delete category", "error");
         });
     };
   })
 
   .controller('ItemsCtrl', function ($scope, $compile, sikreAPIservice) {
 
-    $scope.getitemgroups = function () {
-      sikreAPIservice.getGroups()
+    $scope.getitemcategories = function () {
+      sikreAPIservice.getCategories()
         .success(function (response) {
-          $scope.groupList = response;
+          $scope.categoryList = response;
         })
         .error(function () {
-          $.notify("Can't access the API to get the groups.", "error");
+          $.notify("Can't access the API to get the categorys.", "error");
         });
       $(document).foundation('reflow');
     };
