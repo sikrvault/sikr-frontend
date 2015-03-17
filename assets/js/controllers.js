@@ -28,7 +28,7 @@ angular.module('sikre.controllers', [])
           $scope.categoryList = response;
         })
         .error(function () {
-          $.notify("Can't access the API to get the categorys.", "error");
+          $.notify("Can't access the API to get the categories.", "error");
         });
       $(document).foundation('reflow');
     };
@@ -39,7 +39,7 @@ angular.module('sikre.controllers', [])
           $scope.categoryList = response;
         })
         .error(function () {
-          $.notify("Can't access the API to get the categorys.", "error");
+          $.notify("Can't access the API to get the categories.", "error");
         });
       $(document).foundation('reflow');
     };
@@ -96,7 +96,7 @@ angular.module('sikre.controllers', [])
           $scope.categoryList = response;
         })
         .error(function () {
-          $.notify("Can't access the API to get the categorys.", "error");
+          $.notify("Can't access the API to get the categories.", "error");
         });
       $(document).foundation('reflow');
     };
