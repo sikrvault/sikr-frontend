@@ -12,10 +12,32 @@
     <p id="itemDeleteButtons"></p>
     <a class="close-reveal-modal">&#215;</a>
 </div>
+<div id="shareWith" class="reveal-modal" data-reveal ng-controller="ShareCtrl">
+    <h2>Share with...</h2>
+    <p class="lead">Please type the email address of the poerson you want to share this with</p>
+    <form name="newItem" ng-controller="ShareCtrl">
+        <div class="row">
+            <div class="small-12 large-12 columns">
+                <label>Email
+                    <input type="email" placeholder="Type email address here" name="email" ng-model="share.email" />
+                </label>
+            </div>
+        </div>
+    </form>
+    <p id="itemShareButtons"></p>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
 <h3 style="margin:20px;" ng-if="category_name">{{ category_name }}
     <div ng-switch on="category_name">
         <div ng-switch-when="All"></div>
-        <div ng-switch-default><a href="#" data-reveal-id="confirmCategoryDelete"><i class="fi-trash"></i></a></div>
+        <div ng-switch-default>
+            <a href="#" data-reveal-id="confirmCategoryDelete">
+                <i class="fi-trash"></i>
+            </a>
+            <a href="#" data-reveal-id="shareWith">
+                <i class="fi-share"></i>
+            </a>
+        </div>
     </div>
 </h3>
 <div class="row">
