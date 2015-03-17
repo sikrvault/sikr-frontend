@@ -13,10 +13,17 @@ angular.module('sikre.controllers', [])
     };
 
     $scope.logout = function () {
-      $auth.logout().then(function() {
+      $auth.logout().then(function () {
         $.notify("You have been logged out", "error");
         window.location.href = '/login.html';
       });
+    };
+  })
+
+  .controller('ShareCtrl', function ($scope, sikreAPIservice) {
+
+    $scope.addshare = function () {
+      alert("hey!");
     };
   })
 
