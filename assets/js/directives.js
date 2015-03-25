@@ -88,7 +88,7 @@ angular.module('sikre.directives', [])
           $(document).foundation('reflow');
         };
 
-        $rootScope.$on('updateItems', getItems());
+        $rootScope.$on('updateItems', $scope.getItems());
       },
     };
   });
