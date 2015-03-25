@@ -1,18 +1,18 @@
-<div id="confirmCategoryDelete" class="reveal-modal" data-reveal ng-controller="CategoriesCtrl">
+<div id="confirmCategoryDelete" class="reveal-modal medium" data-reveal ng-controller="CategoriesCtrl">
     <h2>Are you sure?</h2>
     <p class="lead">This will delete the category and it's contents</p>
     <p>If you delete the category, it will delete all the items linked to it and all the services as well. You should think about this twice.</p>
     <p><a href="#" class="radius button tiny">Cancel</a> <a href="#" ng-click="deletecategory(category_id)" class="alert button tiny">Go for it!</a></p>
     <a class="close-reveal-modal">&#215;</a>
 </div>
-<div id="confirmItemDelete" class="reveal-modal" data-reveal ng-controller="ItemsCtrl">
+<div id="confirmItemDelete" class="reveal-modal medium" data-reveal ng-controller="ItemsCtrl">
     <h2>Are you sure?</h2>
     <p class="lead">This will delete the items and it's contents</p>
     <p>If you delete the item, all services related to it will be deleted as well. You should think about this twice.</p>
     <p id="itemDeleteButtons"></p>
     <a class="close-reveal-modal">&#215;</a>
 </div>
-<div id="shareWith" class="reveal-modal" data-reveal ng-controller="ShareCtrl">
+<div id="shareWith" class="reveal-modal small" data-reveal ng-controller="ShareCtrl">
     <h2>Share with...</h2>
     <p class="lead">Please type the email address of the poerson you want to share this with</p>
     <form name="newItem" ng-controller="ShareCtrl">

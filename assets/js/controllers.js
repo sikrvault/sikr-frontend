@@ -95,7 +95,7 @@ angular.module('sikre.controllers', [])
     };
   })
 
-  .controller('ItemsCtrl', function ($scope, $compile, sikreAPIservice) {
+  .controller('ItemsCtrl', function ($scope, $compile, $rootScope, sikreAPIservice) {
 
     $scope.getitemcategories = function () {
       sikreAPIservice.getCategories()
@@ -130,6 +130,7 @@ angular.module('sikre.controllers', [])
           $.notify("Item created", "success");
           $scope.item = null;
           $('#addItem').foundation('reveal', 'close');
+          $rootScope.broadcast('updateItems');
         })
         .error(function () {
           $.notify("Can't save the item", "error");

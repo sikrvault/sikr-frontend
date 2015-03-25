@@ -41,7 +41,7 @@ angular.module('sikre.directives', [])
       template: "<ng-include src='getTemplateUrl()'/>",
       replace: true,
       controllerAs: 'items',
-      controller: function ($http, $scope, sikreAPIservice) {
+      controller: function ($http, $scope, $rootScope, sikreAPIservice) {
 
         $scope.getItems = function (categoryId) {
           sikreAPIservice.getItemsbyCategory(categoryId)
@@ -87,6 +87,8 @@ angular.module('sikre.directives', [])
           }
           $(document).foundation('reflow');
         };
+
+        $rootScope.$on('updateItems', getItems());
       },
     };
   });
