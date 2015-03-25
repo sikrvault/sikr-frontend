@@ -89,7 +89,7 @@ angular.module('sikre.directives', [])
         };
 
         $rootScope.$on('updateItems', function (event, data) {
-          $scope.getItems(data)
+          $scope.getItems(data);
         });
       },
     };
