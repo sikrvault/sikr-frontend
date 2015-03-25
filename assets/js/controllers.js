@@ -128,9 +128,9 @@ angular.module('sikre.controllers', [])
       sikreAPIservice.createItem(item)
         .success(function () {
           $.notify("Item created", "success");
-          $scope.item = null;
           $('#addItem').foundation('reveal', 'close');
-          $rootScope.broadcast('updateItems');
+          $rootScope.broadcast('updateItems', $scope.item.category);
+          $scope.item = null;
         })
         .error(function () {
           $.notify("Can't save the item", "error");

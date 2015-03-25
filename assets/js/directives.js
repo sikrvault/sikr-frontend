@@ -5,7 +5,7 @@ angular.module('sikre.directives', [])
       template: "<ng-include src='getTemplateUrl()'/>",
       replace: true,
       controllerAs: 'services',
-      controller: function ($http, $scope, sikreAPIservice) {
+      controller: function ($scope, sikreAPIservice) {
 
         $scope.getService = function (serviceId) {
           sikreAPIservice.getService(serviceId)
@@ -88,7 +88,9 @@ angular.module('sikre.directives', [])
           $(document).foundation('reflow');
         };
 
-        $rootScope.$on('updateItems', $scope.getItems());
+        $rootScope.$on('updateItems', function (event, data) {
+          $scope.getItems(data)
+        });
       },
     };
   });
