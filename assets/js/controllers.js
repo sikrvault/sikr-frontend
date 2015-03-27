@@ -40,7 +40,7 @@ angular.module('sikre.controllers', [])
 
     $scope.addshare = function (type, id) {
       $('#shareWith').foundation('reveal', 'open');
-      var html = "<input type='submit' class='button tiny' ng-click='confirmshare(" + type + ", " + id + ")' value='Send' />";
+      var html = "<input type='submit' class='button tiny' ng-click='confirmshare(share, " + type + ", " + id + ")' value='Send' />";
       var template = angular.element(html);
       var linkFn = $compile(template);
       var element = linkFn($scope);
