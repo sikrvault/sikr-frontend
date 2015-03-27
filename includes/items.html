@@ -43,7 +43,7 @@
 </h3>
 <div class="row">
     <ul class="accordion" data-accordion>
-        <li class="accordion-navigation item-container animate" ng-repeat="item in items | filter: itemFilter" ng-controller="ItemsCtrl">
+        <li class="accordion-navigation item-container item-animation" ng-repeat="item in items | filter: itemFilter" ng-controller="ItemsCtrl">
             <a href="#panel{{$index}}">{{ item.name }}</a>
             <div class="toolbar">
                 <a href="#" class="button left toolbar-button addobject" ng-click="createservice(item.id)">
