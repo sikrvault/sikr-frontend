@@ -4,6 +4,16 @@ angular.module('sikre.services', [])
     //var mainAPIUrl = 'https://api.sikr.io/v1/';
     var sikreAPI = {};
 
+    /* SHARING */
+    sikreAPI.shareThis = function (data) {
+      return $http({
+        method: "POST",
+        url: mainAPIUrl + 'share/',
+        data: data,
+        cache: false
+      });
+    };
+
     /* GROUPS */
     sikreAPI.getCategories = function () {
       return $http({

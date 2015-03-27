@@ -21,6 +21,7 @@
                 <label>Email
                     <input type="email" placeholder="Type email address here" name="email" ng-model="share.email" />
                 </label>
+                <p id="shareButton"></p>
             </div>
         </div>
     </form>
@@ -34,7 +35,7 @@
             <a href="#" data-reveal-id="confirmCategoryDelete">
                 <i class="fi-trash"></i>
             </a>
-            <a href="#" data-reveal-id="shareWith">
+            <a href="#" ng-controller="ShareCtrl" ng-click="addshare('category', category_id)">
                 <i class="fi-share"></i>
             </a>
         </div>

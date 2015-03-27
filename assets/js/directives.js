@@ -88,8 +88,8 @@ angular.module('sikre.directives', [])
           $(document).foundation('reflow');
         };
 
-        $rootScope.$on('updateItems', function (event, data) {
-          $scope.getItems(data);
+        $scope.$on('updateItems', function (event, data) {
+          $scope.getItems(data).fadeIn();
         });
       },
     };

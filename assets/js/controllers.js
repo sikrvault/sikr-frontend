@@ -22,8 +22,14 @@ angular.module('sikre.controllers', [])
 
   .controller('ShareCtrl', function ($scope, sikreAPIservice) {
 
-    $scope.addshare = function () {
-      alert("hey!");
+    $scope.addshare = function (type, id) {
+      sikreAPIservice.shareThis(type, id)
+        .success(function () {
+
+        })
+        .error()
+      console.log('type' + type);
+      console.log('id' + id);
     };
   })
 
@@ -129,7 +135,7 @@ angular.module('sikre.controllers', [])
         .success(function () {
           $.notify("Item created", "success");
           $('#addItem').foundation('reveal', 'close');
-          $rootScope.broadcast('updateItems', $scope.item.category);
+          $rootScope.$broadcast('updateItems', $scope.item.category);
           $scope.item = null;
         })
         .error(function () {
