@@ -21,7 +21,7 @@
                 <label>Email
                     <input type="email" placeholder="Type email address here" name="email" ng-model="share.email" />
                 </label>
-                <p id="shareButton"></p>
+                <input type="submit" class="button tiny" ng-click="additem(item)" value="Save" />
             </div>
         </div>
     </form>
@@ -35,7 +35,7 @@
             <a href="#" data-reveal-id="confirmCategoryDelete">
                 <i class="fi-trash"></i>
             </a>
-            <a href="#" ng-controller="ShareCtrl" ng-click="addshare('category', category_id)">
+            <a href="#" ng-controller="ShareCtrl" ng-click="addshare('0', category_id)">
                 <i class="fi-share"></i>
             </a>
         </div>
@@ -43,7 +43,7 @@
 </h3>
 <div class="row">
     <ul class="accordion" data-accordion>
-        <li class="accordion-navigation item-container" ng-repeat="item in items | filter: itemFilter" ng-controller="ItemsCtrl">
+        <li class="accordion-navigation item-container" ng-animate="'animate'" ng-repeat="item in items | filter: itemFilter" ng-controller="ItemsCtrl">
             <a href="#panel{{$index}}">{{ item.name }}</a>
             <div class="toolbar">
                 <a href="#" class="button left toolbar-button addobject" ng-click="createservice(item.id)">
