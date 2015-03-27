@@ -25,7 +25,7 @@ angular.module('sikre.controllers', [])
     $scope.confirmshare = function (share) {
       $scope.share.resource = type;
       $scope.share.resource_id = id;
-      sikreAPIservice.shareThis(type, id)
+      sikreAPIservice.shareThis(share)
         .success(function () {
           $scope.share = null;
           $('#shareWith').foundation('reveal', 'close');
