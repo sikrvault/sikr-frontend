@@ -27,7 +27,7 @@ angular.module('sikre.controllers', [])
         .success(function () {
 
         })
-        .error()
+        .error(function () {});
       console.log('type' + type);
       console.log('id' + id);
     };
