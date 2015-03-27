@@ -20,7 +20,7 @@ angular.module('sikre.controllers', [])
     };
   })
 
-  .controller('ShareCtrl', function ($scope, sikreAPIservice) {
+  .controller('ShareCtrl', function ($scope, $compile, sikreAPIservice) {
 
     $scope.confirmshare = function (share) {
       $scope.share.resource = type;
