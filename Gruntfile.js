@@ -65,6 +65,7 @@ module.exports = function(grunt) {
           '<%= pkg.project_paths.bower_folder %>uri.js/src/URI.min.js',
           '<%= pkg.project_paths.bower_folder %>angular/angular.min.js',
           '<%= pkg.project_paths.bower_folder %>satellizer/satellizer.min.js',
+          '<%= pkg.project_paths.bower_folder %>angular-animate/angular-animate.min.js',
           '<%= pkg.dest_paths.js %>ngproject.js',
         ],
         dest: '<%= pkg.dest_paths.js %>app.js'
