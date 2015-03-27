@@ -23,6 +23,8 @@ angular.module('sikre.controllers', [])
   .controller('ShareCtrl', function ($scope, sikreAPIservice) {
 
     $scope.confirmshare = function (share) {
+      $scope.share.resource = type;
+      $scope.share.resource_id = id;
       sikreAPIservice.shareThis(type, id)
         .success(function () {
           $scope.share = null;
@@ -38,8 +40,6 @@ angular.module('sikre.controllers', [])
 
     $scope.addshare = function (type, id) {
       $('#shareWith').foundation('reveal', 'open');
-      $scope.share.resource = type;
-      $scope.share.resource_id = id;
       var html = "<input type='submit' class='button tiny' ng-click='confirmshare(share)' value='Send' />";
       var template = angular.element(html);
       var linkFn = $compile(template);
