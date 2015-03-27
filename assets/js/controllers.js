@@ -22,14 +22,29 @@ angular.module('sikre.controllers', [])
 
   .controller('ShareCtrl', function ($scope, sikreAPIservice) {
 
-    $scope.addshare = function (type, id) {
+    $scope.confirmshare = function (share) {
       sikreAPIservice.shareThis(type, id)
         .success(function () {
-
+          $scope.share = null;
+          $('#shareWith').foundation('reveal', 'close');
+          $.notify("Notification sent", "success");
         })
-        .error(function () {});
+        .error(function () {
+          $.notify("ERROR", "error");
+        });
       console.log('type' + type);
       console.log('id' + id);
+    };
+
+    $scope.addshare = function (type, id) {
+      $('#shareWith').foundation('reveal', 'open');
+      $scope.share.resource = type;
+      $scope.share.resource_id = id;
+      var html = "<input type='submit' class='button tiny' ng-click='confirmshare(share)' value='Send' />";
+      var template = angular.element(html);
+      var linkFn = $compile(template);
+      var element = linkFn($scope);
+      $("#shareButton").append(element);
     };
   })
 

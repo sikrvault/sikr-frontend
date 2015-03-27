@@ -15,13 +15,13 @@
 <div id="shareWith" class="reveal-modal small" data-reveal ng-controller="ShareCtrl">
     <h2>Share with...</h2>
     <p class="lead">Please type the email address of the poerson you want to share this with</p>
-    <form name="newItem" ng-controller="ShareCtrl">
+    <form name="newShare" ng-controller="ShareCtrl">
         <div class="row">
             <div class="small-12 large-12 columns">
                 <label>Email
                     <input type="email" placeholder="Type email address here" name="email" ng-model="share.email" />
                 </label>
-                <input type="submit" class="button tiny" ng-click="additem(item)" value="Save" />
+                <p id="shareButton"></p>
             </div>
         </div>
     </form>
