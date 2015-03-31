@@ -82,7 +82,7 @@
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Category <span data-tooltip aria-haspopup="true" class="has-tip" title="Select the category that this item will belong to."><i class="fi-info"></i></span>
-                                        <select ng-model="item.category" ng-click="getitemcategories()" name="category" required>
+                                        <select ng-model="item.category" ng-init="getitemcategories()" name="category" required>
                                             <option value="{{ category.id }}" ng-repeat="category in categoryList">{{ category.name }}</option>
                                         </select>
                                     </label>
