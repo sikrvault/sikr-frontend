@@ -69,7 +69,7 @@
                                     <label>Name
                                         <input type="text" placeholder="Insert a name here" name="name" ng-model="item.name" required>
                                     </label>
-                                    <small class="error" ng-show="newItem.name.$dirty && newItem.name.$error.required">This field is required</small>
+                                    <small class="error">This field is required</small>
                                 </div>
                             </div>
                             <div class="row">
@@ -86,7 +86,7 @@
                                             <option value="{{ category.id }}" ng-repeat="category in categoryList">{{ category.name }}</option>
                                         </select>
                                     </label>
-                                    <small class="error" ng-show="newItem.category.$dirty && newItem.category.$error.required">Select a category where to put the item</small>
+                                    <small class="error">Select a category where to put the item</small>
                                 </div>
                             </div>
                             <div class="row">
@@ -107,12 +107,13 @@
         <div class="row">
             <div id="addObject" class="reveal-modal medium" data-reveal>
                 <p class="lead">Create a new service</p>
-                <form id="newService" ng-controller="ServiceCtrl">
+                <form id="newService" ng-controller="ServiceCtrl" data-abide>
                     <div class="row">
                         <div class="small-12 large-12 columns">
                             <label>Service name
-                                <input type="text" placeholder="Insert a name here (optional)" name="name" ng-model="service.name" />
+                                <input type="text" placeholder="Insert a name here (optional)" name="name" ng-model="service.name" required>
                             </label>
+                            <small class="error">This field is required</small>
                         </div>
                         <input id="serviceItem" type="text" class="hidden" name="item" ng-model="service.item" />
                     </div>
@@ -126,7 +127,7 @@
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Title
-                                        <input type="text" placeholder="Insert a name for your key here" name="ssh_title" ng-model="service.ssh_title" />
+                                        <input type="text" placeholder="Insert a name for your key here" name="ssh_title" ng-model="service.ssh_title">
                                     </label>
                                 </div>
                             </div>
@@ -149,7 +150,7 @@
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Title
-                                        <input type="text" placeholder="Insert a name for your SSL file here" name="ssl_title" ng-model="service.ssl_title"/>
+                                        <input type="text" placeholder="Insert a name for your SSL file here" name="ssl_title" ng-model="service.ssl_title">
                                     </label>
                                 </div>
                             </div>
@@ -241,7 +242,6 @@
                     </ul>
                     <div class="off-canvas-footer">
                         &copy; 2014-2015 <a href="http://clione.io" target="_blank">Clione Software</a><br>
-                        <!-- <a href="http://havasworldwide.co.uk" target="_blank">Havas Worldwide London</a> -->
                     </div>
                 </aside>
 
