@@ -50,20 +50,20 @@
                 </ul>
                 <div class="tabs-content">
                     <section role="tabpanel" aria-hidden="false" class="content active" id="panel998-1">
-                        <form name="newGroup" ng-controller="CategoriesCtrl">
+                        <form name="newGroup" ng-controller="CategoriesCtrl" data-abide>
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Name
                                         <input type="text" placeholder="Insert a name here" name="name" ng-model="category.name" required>
                                     </label>
-                                    <small class="error" ng-show="newGroup.name.$dirty && newGroup.name.$error.required">This field is required</small>
+                                    <small class="error">This field is required</small>
                                 </div>
                             </div>
                             <button class="button tiny" ng-click="addcategory(category)">Save</button>
                         </form>
                     </section>
                     <section role="tabpanel" aria-hidden="true" class="content" id="panel998-2">
-                        <form name="newItem" ng-controller="ItemsCtrl">
+                        <form name="newItem" ng-controller="ItemsCtrl" data-abide>
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Name
