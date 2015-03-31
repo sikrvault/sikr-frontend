@@ -2,7 +2,7 @@
 <html ng-app="sikre">
     <head itemscope itemtype="//schema.org/WebPage">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="initial-scale=1">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
         <title>Sikre: The secure password tool</title>
         <meta name="description" content="Sikre is an online password vault for storing your passwords. It features high security encryption systems and it's open source." />
         <meta name="keywords" content="sikre, passwords, storing, security encryption, high security, security encryption systems, systems open, encryption systems, vault, online, open, systems, security, source, high, password, features, encryption" />
@@ -56,7 +56,7 @@
                                     <label>Name
                                         <input type="text" placeholder="Insert a name here" name="name" ng-model="category.name" required>
                                     </label>
-                                    <small class="error" ng-show="newGroup.name.$error.required">This field is required</small>
+                                    <small class="error" ng-show="newGroup.name.$dirty && newGroup.name.$error.required">This field is required</small>
                                 </div>
                             </div>
                             <button class="button tiny" ng-click="addcategory(category)">Save</button>
@@ -67,8 +67,9 @@
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Name
-                                        <input type="text" placeholder="Insert a name here" name="name" ng-model="item.name" />
+                                        <input type="text" placeholder="Insert a name here" name="name" ng-model="item.name" required>
                                     </label>
+                                    <small class="error" ng-show="newItem.name.$dirty && newItem.name.$error.required">This field is required</small>
                                 </div>
                             </div>
                             <div class="row">
@@ -81,16 +82,17 @@
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Category <span data-tooltip aria-haspopup="true" class="has-tip" title="Select the category that this item will belong to."><i class="fi-info"></i></span>
-                                        <select ng-model="item.category" ng-click="getitemcategories()">
+                                        <select ng-model="item.category" ng-click="getitemcategories()" name="category" required>
                                             <option value="{{ category.id }}" ng-repeat="category in categoryList">{{ category.name }}</option>
                                         </select>
                                     </label>
+                                    <small class="error" ng-show="newItem.category.$dirty && newItem.category.$error.required">Select a category where to put the item</small>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Tags
-                                        <input type="text" placeholder="Insert your tags, separated by a comma with no spaces" name="tags" ng-model="item.tags" />
+                                        <input type="text" placeholder="Insert your tags, separated by a comma with no spaces" name="tags" ng-model="item.tags">
                                     </label>
                                 </div>
                             </div>
