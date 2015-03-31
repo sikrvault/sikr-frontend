@@ -18,7 +18,6 @@ if (qs.share_token) {
 // Load the angular application
 var app = angular.module('sikre', [
   'satellizer',
-  'ngAnimate',
   'sikre.services',
   'sikre.controllers',
   'sikre.directives']);

@@ -56,7 +56,7 @@
                                     <label>Name
                                         <input type="text" placeholder="Insert a name here" name="name" ng-model="category.name" required>
                                     </label>
-                                    <small class="error" ng-show="newGroup.input.$error.required">This field is required</small>
+                                    <small class="error" ng-show="newGroup.name.$error.required">This field is required</small>
                                 </div>
                             </div>
                             <button class="button tiny" ng-click="addcategory(category)">Save</button>

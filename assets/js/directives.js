@@ -1,5 +1,11 @@
 angular.module('sikre.directives', [])
   .directive("serviceList", function ($timeout) {
+    /*
+      serviceList [directive] - This directive populates the list of services
+      inside an item, sunch as SSH keys, SSL certificates and service passwords.
+      It works under the same premise as items. It shows the content with a
+      timeout and then it removes it from the DOM
+    */
     return {
       restrict: 'A',
       template: "<ng-include src='getTemplateUrl()'/>",
