@@ -61,6 +61,7 @@ module.exports = function(grunt) {
           '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.tab.js',
           '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.reveal.js',
           '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.topbar.js',
+          '<%= pkg.project_paths.bower_folder %>foundation/js/foundation/foundation.abide.js',
           '<%= pkg.project_paths.bower_folder %>notifyjs/dist/notify-combined.min.js',
           '<%= pkg.project_paths.bower_folder %>uri.js/src/URI.min.js',
           '<%= pkg.project_paths.bower_folder %>angular/angular.min.js',
