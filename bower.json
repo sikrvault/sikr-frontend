@@ -6,7 +6,6 @@
     "foundation": "latest",
     "foundation-icon-fonts": "latest",
     "angular": "latest",
-    "angular-animate": "latest",
     "notifyjs": "latest",
     "satellizer": "latest",
     "uri.js": "latest"

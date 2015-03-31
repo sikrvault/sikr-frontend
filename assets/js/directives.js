@@ -36,6 +36,18 @@ angular.module('sikre.directives', [])
   })
 
   .directive("itemList", function ($timeout) {
+
+    /*
+      itemsList [directive] - This directive populates the items list in the
+      main content of the site, it contains a function called getTemplateUrl()
+      that defines if the view is locked or not. After the itemTimeout timeout
+      is expired the elements are removed from the DOM until the directive
+      is called again.
+
+      This function connects with two rootScope broadcasts, one for when the
+      user creates a new item, and one for when the user deletes content,
+      both are necessary to update the content, since the scopes are different.
+    */
     return {
       restrict: 'A',
       template: "<ng-include src='getTemplateUrl()'/>",
@@ -44,6 +56,11 @@ angular.module('sikre.directives', [])
       controller: function ($http, $scope, $rootScope, sikreAPIservice) {
 
         $scope.getItems = function (categoryId) {
+          /*
+            getItems [directive scope] - This function queries the API through
+            the sikreAPIservice and returns the necessary data to show the
+            information, based on the category that the user wants to filter.
+          */
           sikreAPIservice.getItemsbyCategory(categoryId)
             .success(function (data, status) {
               $scope.category_name = data.category_name;
@@ -62,6 +79,11 @@ angular.module('sikre.directives', [])
         };
 
         $scope.getAllItems = function () {
+          /*
+            getAllItems [directive scope] - This function is a copy of getItems
+            but for when the user triggers the search. Instead of calling the
+            category filter, we get all the items and return them to the user.
+          */
           sikreAPIservice.getItems()
             .success(function (data) {
               $scope.category_name = data.category_name;
@@ -80,6 +102,11 @@ angular.module('sikre.directives', [])
         };
 
         $scope.getTemplateUrl = function () {
+          /*
+            getTemplateUrl [directive scope] - This funnction changes the
+            template being loaded in the DOM based on the lockedItem variable
+            that is set on the getItems and getAllItems timeout function.
+          */
           if ($scope.lockedItem) {
             return '';
           } else {
@@ -88,8 +115,13 @@ angular.module('sikre.directives', [])
           $(document).foundation('reflow');
         };
 
+        /* BROADCASTS */
         $scope.$on('updateItems', function (event, data) {
-          $scope.getItems(data).fadeIn();
+          $scope.getItems(data);
+        });
+
+        $scope.$on('deleteItem', function (event, data) {
+          $scope.getItems(data);
         });
       },
     };
