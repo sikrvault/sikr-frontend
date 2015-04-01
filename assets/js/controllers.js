@@ -22,9 +22,9 @@ angular.module('sikre.controllers', [])
 
   .controller('ShareCtrl', function ($scope, $compile, sikreAPIservice) {
 
-    $scope.confirmshare = function (share, type, id) {
-      $scope.share.resource = type;
-      $scope.share.resource_id = id;
+    $scope.confirmshare = function (share) {
+      $scope.share.resource = $('#shareResource').val();
+      $scope.share.resource_id = $('#shareResourceID').val();
       sikreAPIservice.shareThis(share)
         .success(function () {
           $scope.share = null;
@@ -34,17 +34,13 @@ angular.module('sikre.controllers', [])
         .error(function () {
           $.notify("ERROR", "error");
         });
-      console.log('type' + type);
-      console.log('id' + id);
+      console.log(share);
     };
 
     $scope.addshare = function (type, id) {
       $('#shareWith').foundation('reveal', 'open');
-      var html = "<input type='submit' class='button tiny' ng-click='confirmshare(share, " + type + ", " + id + ")' value='Send' />";
-      var template = angular.element(html);
-      var linkFn = $compile(template);
-      var element = linkFn($scope);
-      $("#shareButton").append(element);
+      $('#shareResource').val(type);
+      $('#shareResourceID').val(id);
     };
   })
 
@@ -185,6 +181,7 @@ angular.module('sikre.controllers', [])
       sikreAPIservice.deleteItem(item)
         .success(function () {
           $.notify("Item deleted", "success");
+          $rootScope.$broadcast('deleteItem', $scope.item.category);
           $('#confirmItemDelete').foundation('reveal', 'close');
         })
         .error(function () {

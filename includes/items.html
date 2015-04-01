@@ -19,11 +19,11 @@
         <div class="row">
             <div class="small-12 large-12 columns">
                 <label>Email
-                    <input type="email" placeholder="Type email address here" name="email" ng-model="share.email" />
-                    <input type="text" name="resource" ng-model="share.resource" />
-                    <input type="text" name="resource_id" ng-model="share.resource_id" />
+                    <input type="email" placeholder="Type email address here" name="email" ng-model="share.email">
+                    <input type="text" id="shareResource" class="hidden" name="resource" ng-model="share.resource">
+                    <input type="text" id="shareResourceID" class="hidden" name="resource_id" ng-model="share.resource_id">
                 </label>
-                <p id="shareButton"></p>
+                <button class="button tiny" ng-click="confirmshare(share)">Share!</button>
             </div>
         </div>
     </form>
