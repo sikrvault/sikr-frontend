@@ -124,7 +124,7 @@ app.run(function ($timeout) {
         close_on_click : true
       }
     });
-    $('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
+    $('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'overlap');
 
   }, 500);
 });
