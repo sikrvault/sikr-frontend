@@ -118,13 +118,13 @@ app.run(function ($timeout) {
       offcanvas : {
         // Sets method in which offcanvas opens.
         // [ move | overlap_single | overlap ]
-        open_method: 'overlap',
+        open_method: 'move',
         // Should the menu close when a menu link is clicked?
         // [ true | false ]
         close_on_click : true
       }
     });
-    $('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'offcanvas-overlap');
+    $('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
 
   }, 500);
 });
