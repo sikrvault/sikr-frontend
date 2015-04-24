@@ -106,25 +106,26 @@ app.config(function ($httpProvider, $authProvider) {
 });
 
 // Load foundation JS
-$(document).foundation();
-
-// Okay, this is a big pile of shit. Apparently foundation and angularjs don't
-// get along very well, so we have to fire again foundation after the angular
-// application is finished rendering. Otherwise the navigations and accordions
-// will stop working inside ng-repeat
+//$(document).foundation();
 app.run(function ($timeout) {
   $timeout(function () {
     $(document).foundation({
       offcanvas : {
-        // Sets method in which offcanvas opens.
-        // [ move | overlap_single | overlap ]
         open_method: 'move',
-        // Should the menu close when a menu link is clicked?
-        // [ true | false ]
         close_on_click : true
       }
     });
     $('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
 
   }, 500);
+
+  /* Security */
+  cfCryptoHttpInterceptor.base64KeyFunc = function () {
+    $("#askMstrPwd").foundation('reveal', 'open');
+    $("#submitPwd").click(function (event) {
+      event.preventDefault();
+      $("#askMstrPwd").foundation('reveal', 'close');
+      return $("#mstrPwdval").val();
+    });
+  };
 });

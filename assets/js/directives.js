@@ -131,4 +131,45 @@ angular.module('sikre.directives', [])
         });
       },
     };
+  })
+
+  .directive("profileEdit", function ($timeout) {
+    return {
+      restrict: 'A',
+      template: "<ng-include src='getTemplateUrl()'/>",
+      replace: true,
+      controllerAs: 'profile',
+      controller: function ($http, $scope, sikreAPIservice) {
+
+        $scope.getProfile = function () {
+          sikreAPIservice.getItemsbyCategory(categoryId)
+            .success(function (data) {
+              $scope.profile = data.profile;
+              $scope.lockedItem = false;
+              $timeout(function () {
+                $scope.lockedItem = true;
+                $.notify("View time expired. Locking...", "info");
+                $scope.getTemplateUrl();
+              }, itemTimeout);
+            })
+            .error(function (data, status) {
+              $.notify("Couldn't get the item data", "error");
+            });
+        };
+
+        $scope.getTemplateUrl = function () {
+          /*
+            getTemplateUrl [directive scope] - This funnction changes the
+            template being loaded in the DOM based on the lockedItem variable
+            that is set on the getItems and getAllItems timeout function.
+          */
+          if ($scope.lockedItem) {
+            return '';
+          } else {
+            return 'includes/items.html';
+          }
+          $(document).foundation('reflow');
+        };
+      },
+    };
   });

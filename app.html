@@ -42,6 +42,20 @@
     <body>
 
         <div class="row">
+            <div id="askMstrPwd" class="reveal-modal medium" data-reveal>
+                <form>
+                    <div class="row">
+                        <div class="small-12 large-12 columns">
+                            <input id="mstrPwdval" type="text" placeholder="Type your master password to unlock">
+                            <button id="submitPwd" class="button tiny">Authorize</button>
+                        </div>
+                    </div>
+                </form>
+                <a class="close-reveal-modal">&#215;</a>
+            </div>
+        </div>
+
+        <div class="row">
             <div id="addItem" class="reveal-modal medium" data-reveal>
                 <p class="lead">Create new...</p>
                 <ul class="tabs addmodal" data-tab role="tablist">
@@ -82,8 +96,8 @@
                             <div class="row">
                                 <div class="small-12 large-12 columns">
                                     <label>Category <span data-tooltip aria-haspopup="true" class="has-tip" title="Select the category that this item will belong to."><i class="fi-info"></i></span>
-                                        <select ng-model="item.category" ng-init="getitemcategories()" ng-click="getitemcategories()" name="category" required>
-                                            <option value="{{ category.id }}" ng-repeat="category in categoryList">{{ category.name }}</option>
+                                        <select ng-model="item.category" ng-options="category.name for category in categoryList track by category.id" ng-init="getitemcategories()" ng-click="getitemcategories()" name="category" required>
+                                            <option value="">-- choose category --</option>
                                         </select>
                                     </label>
                                     <small class="error">Select a category where to put the item</small>
@@ -229,7 +243,7 @@
                 <aside class="left-off-canvas-menu">
                     <ul class="off-canvas-list" ng-controller="AuthCtrl">
                         <li><label>Me</label></li>
-                        <li ng-if="isAuthenticated()"><a href="#">Profile</a></li>
+                        <li ng-if="isAuthenticated()"><a href="#" ng-click="getProfile()">Profile</a></li>
                         <li ng-if="!isAuthenticated()"><a href="/login.html">Login</a></li>
                         <li ng-if="isAuthenticated()"><a href="#" ng-click="logout()">Logout</a></li>
                     </ul>
@@ -246,6 +260,7 @@
                 </aside>
 
                 <section class="main-section" item-list></section>
+                <section class="main-section" profile-edit></section>
 
                 <a class="exit-off-canvas"></a>
             </div>
