@@ -18,6 +18,7 @@ if (qs.share_token) {
 // Load the angular application
 var app = angular.module('sikre', [
   'satellizer',
+  'angularjs-crypto',
   'sikre.services',
   'sikre.controllers',
   'sikre.directives']);
