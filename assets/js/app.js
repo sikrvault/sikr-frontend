@@ -18,7 +18,7 @@ if (qs.share_token) {
 // Load the angular application
 var app = angular.module('sikre', [
   'satellizer',
-  'angularjs-crypto',
+  //'angularjs-crypto',
   'sikre.services',
   'sikre.controllers',
   'sikre.directives']);
@@ -120,13 +120,13 @@ app.run(function ($timeout) {
 
   }, 500);
 
-  /* Security */
-  cfCryptoHttpInterceptor.base64KeyFunc = function () {
-    $("#askMstrPwd").foundation('reveal', 'open');
-    $("#submitPwd").click(function (event) {
-      event.preventDefault();
-      $("#askMstrPwd").foundation('reveal', 'close');
-      return $("#mstrPwdval").val();
-    });
-  };
+  // /* Security */
+  // cfCryptoHttpInterceptor.base64KeyFunc = function () {
+  //   $("#askMstrPwd").foundation('reveal', 'open');
+  //   $("#submitPwd").click(function (event) {
+  //     event.preventDefault();
+  //     $("#askMstrPwd").foundation('reveal', 'close');
+  //     return $("#mstrPwdval").val();
+  //   });
+  // };
 });
