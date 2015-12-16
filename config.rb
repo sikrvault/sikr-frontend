@@ -1,4 +1,4 @@
-# Copyright 2014 Clione Software and Havas Worldwide London
+# Copyright 2014-2016 Clione Software
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may not
 # use this file except in compliance with the License. You may obtain a copy
@@ -21,6 +21,7 @@ additional_import_paths = [
 #http_path = "static/"
 css_dir = "static/css"
 sass_dir = "assets/scss"
+scss_dir = "assets/scss"
 
 # output_style = :compressed
 

@@ -20,15 +20,19 @@
     "images": "assets/images/"
   },
   "dependencies": {
-    "grunt": "latest",
-    "grunt-contrib-jshint": "latest",
-    "grunt-contrib-uglify": "latest",
-    "grunt-contrib-concat": "latest",
-    "grunt-contrib-compass": "latest",
-    "grunt-contrib-watch": "latest",
-    "grunt-contrib-copy": "latest",
-    "grunt-contrib-cssmin": "latest",
-    "grunt-ng-annotate": "latest"
+    "gulp": "latest",
+    "gulp-uglify": "latest",
+    "gulp-jshint": "latest",
+    "gulp-concat": "latest",
+    "gulp-compass": "latest",
+    "gulp-cssmin": "latest",
+    "gulp-ng-annotate": "latest",
+    "gulp-util": "latest",
+    "jshint-stylish": "latest",
+    "del": "latest",
+    "run-sequence": "latest",
+    "gulp-imagemin": "latest",
+    "imagemin-pngquant": "latest"
   },
   "devDependencies":{},
   "author": "Oscar Carballal Prego",
