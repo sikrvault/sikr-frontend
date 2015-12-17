@@ -22,8 +22,8 @@ var gulp       = require('gulp'),
     stylish    = require('jshint-stylish'),
     runSequence= require('run-sequence'),
     fs         = require('fs'),
-    del        = require('del');
-    imagemin   = require('gulp-imagemin');
+    del        = require('del'),
+    imagemin   = require('gulp-imagemin'),
     pngquant   = require('imagemin-pngquant');
 
 // Read the package.json for variables
