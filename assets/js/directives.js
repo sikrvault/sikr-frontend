@@ -20,12 +20,12 @@ angular.module('sikre.directives', [])
               $scope.lockedService = false;
               $timeout(function () {
                 $scope.lockedService = true;
-                $.notify("View time expired. Locking...", "info");
+                jQuery.notify("View time expired. Locking...", "info");
                 $scope.getTemplateUrl();
               }, serviceTimeout);
             })
             .error(function (data, status) {
-              $.notify("Couldn't get the service data", "error");
+              jQuery.notify("Couldn't get the service data", "error");
             });
           $(document).foundation('reflow');
         };
@@ -75,12 +75,12 @@ angular.module('sikre.directives', [])
               $scope.lockedItem = false;
               $timeout(function () {
                 $scope.lockedItem = true;
-                $.notify("View time expired. Locking...", "info");
+                jQuery.notify("View time expired. Locking...", "info");
                 $scope.getTemplateUrl();
               }, itemTimeout);
             })
             .error(function (data, status) {
-              $.notify("Couldn't get the item data", "error");
+              jQuery.notify("Couldn't get the item data", "error");
             });
         };
 
@@ -98,12 +98,12 @@ angular.module('sikre.directives', [])
               $scope.lockedItem = false;
               $timeout(function () {
                 $scope.lockedItem = true;
-                $.notify("View time expired. Locking...", "info");
+                jQuery.notify("View time expired. Locking...", "info");
                 $scope.getTemplateUrl();
               }, itemTimeout);
             })
             .error(function (data, status) {
-              $.notify("Couldn't get the item data", "error");
+              jQuery.notify("Couldn't get the item data", "error");
             });
         };
 
@@ -148,12 +148,12 @@ angular.module('sikre.directives', [])
               $scope.lockedItem = false;
               $timeout(function () {
                 $scope.lockedItem = true;
-                $.notify("View time expired. Locking...", "info");
+                jQuery.notify("View time expired. Locking...", "info");
                 $scope.getTemplateUrl();
               }, itemTimeout);
             })
             .error(function (data, status) {
-              $.notify("Couldn't get the item data", "error");
+              jQuery.notify("Couldn't get the item data", "error");
             });
         };
 

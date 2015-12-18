@@ -14,7 +14,7 @@ We're assuming that before you start using this project you have the followind d
 - Ruby 1.9+
 - Bower
 - Compass
-- Grunt
+- Gulp
 
 How to install sikre-frontend
 -----------------------------

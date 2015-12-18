@@ -14,7 +14,7 @@ angular.module('sikre.controllers', [])
 
     $scope.logout = function () {
       $auth.logout().then(function () {
-        $.notify("You have been logged out", "error");
+        jQuery.notify("You have been logged out", "error");
         window.location.href = '/login.html';
       });
     };
@@ -29,10 +29,10 @@ angular.module('sikre.controllers', [])
         .success(function () {
           $scope.share = null;
           $('#shareWith').foundation('reveal', 'close');
-          $.notify("Notification sent", "success");
+          jQuery.notify("Notification sent", "success");
         })
         .error(function () {
-          $.notify("ERROR", "error");
+          jQuery.notify("ERROR", "error");
         });
       console.log(share);
     };
@@ -52,7 +52,7 @@ angular.module('sikre.controllers', [])
           $scope.categoryList = response;
         })
         .error(function () {
-          $.notify("Can't access the API to get the categories.", "error");
+          jQuery.notify("Can't access the API to get the categories.", "error");
         });
       $(document).foundation('reflow');
     };
@@ -63,7 +63,7 @@ angular.module('sikre.controllers', [])
           $scope.categoryList = response;
         })
         .error(function () {
-          $.notify("Can't access the API to get the categories.", "error");
+          jQuery.notify("Can't access the API to get the categories.", "error");
         });
       $(document).foundation('reflow');
     };
@@ -74,40 +74,40 @@ angular.module('sikre.controllers', [])
           $scope.category = response;
         })
         .error(function () {
-          $.notify("Can't get the category", "error");
+          jQuery.notify("Can't get the category", "error");
         });
     };
 
     $scope.addcategory = function (category) {
       sikreAPIservice.createCategory(category)
         .success(function () {
-          $.notify("Category saved", "success");
+          jQuery.notify("Category saved", "success");
           $scope.category = null;
           $('#addItem').foundation('reveal', 'close');
         })
         .error(function () {
-          $.notify("Can't save the category", "error");
+          jQuery.notify("Can't save the category", "error");
         });
     };
 
     $scope.savecategory = function (category) {
       sikreAPIservice.saveCategory(category)
         .success(function () {
-          $.notify("Category saved", "success");
+          jQuery.notify("Category saved", "success");
         })
         .error(function () {
-          $.notify("Can't save the category", "error");
+          jQuery.notify("Can't save the category", "error");
         });
     };
 
     $scope.deletecategory = function (category) {
       sikreAPIservice.deleteCategory(category)
         .success(function () {
-          $.notify("Category deleted", "success");
+          jQuery.notify("Category deleted", "success");
           $('#confirmCategoryDelete').foundation('reveal', 'close');
         })
         .error(function () {
-          $.notify("Can't delete category", "error");
+          jQuery.notify("Can't delete category", "error");
         });
     };
   })
@@ -120,7 +120,7 @@ angular.module('sikre.controllers', [])
           $scope.categoryList = response;
         })
         .error(function () {
-          $.notify("Can't access the API to get the categories.", "error");
+          jQuery.notify("Can't access the API to get the categories.", "error");
         });
       $(document).foundation('reflow');
     };
@@ -136,7 +136,7 @@ angular.module('sikre.controllers', [])
           $scope.item = response;
         })
         .error(function () {
-          $.notify("Can't get the item", "error");
+          jQuery.notify("Can't get the item", "error");
         });
       $(document).foundation('reflow');
     };
@@ -144,23 +144,23 @@ angular.module('sikre.controllers', [])
     $scope.additem = function (item) {
       sikreAPIservice.createItem(item)
         .success(function () {
-          $.notify("Item created", "success");
+          jQuery.notify("Item created", "success");
           $('#addItem').foundation('reveal', 'close');
           $rootScope.$broadcast('updateItems', $scope.item.category);
           $scope.item = null;
         })
         .error(function () {
-          $.notify("Can't save the item", "error");
+          jQuery.notify("Can't save the item", "error");
         });
     };
 
     $scope.saveitem = function (item) {
       sikreAPIservice.saveItem(item)
         .success(function () {
-          $.notify("Item updated", "success");
+          jQuery.notify("Item updated", "success");
         })
         .error(function () {
-          $.notify("Can't save the item", "error");
+          jQuery.notify("Can't save the item", "error");
         });
     };
 
@@ -180,12 +180,12 @@ angular.module('sikre.controllers', [])
     $scope.deleteitem = function (item) {
       sikreAPIservice.deleteItem(item)
         .success(function () {
-          $.notify("Item deleted", "success");
+          jQuery.notify("Item deleted", "success");
           $rootScope.$broadcast('deleteItem', $scope.item.category);
           $('#confirmItemDelete').foundation('reveal', 'close');
         })
         .error(function () {
-          $.notify("Can't delete item", "error");
+          jQuery.notify("Can't delete item", "error");
         });
     };
   })
@@ -198,7 +198,7 @@ angular.module('sikre.controllers', [])
           $scope.serviceList = response;
         })
         .error(function () {
-          $.notify("Can't access the API to get the services.", "error");
+          jQuery.notify("Can't access the API to get the services.", "error");
         });
       $(document).foundation('reflow');
     };
@@ -209,7 +209,7 @@ angular.module('sikre.controllers', [])
           $scope.service = response;
         })
         .error(function () {
-          $.notify("Can't get the service", "error");
+          jQuery.notify("Can't get the service", "error");
         });
       $(document).foundation('reflow');
     };
@@ -218,22 +218,22 @@ angular.module('sikre.controllers', [])
       $scope.service.item = $("#serviceItem").val();
       sikreAPIservice.createService(service)
         .success(function () {
-          $.notify("Service created", "success");
+          jQuery.notify("Service created", "success");
           $scope.service = null;
           $('#newService').foundation('reveal', 'close');
         })
         .error(function () {
-          $.notify("Can't save the service", "error");
+          jQuery.notify("Can't save the service", "error");
         });
     };
 
     $scope.saveservice = function (service) {
       sikreAPIservice.saveService(service)
         .success(function () {
-          $.notify("Service updated", "success");
+          jQuery.notify("Service updated", "success");
         })
         .error(function () {
-          $.notify("Can't save the service", "error");
+          jQuery.notify("Can't save the service", "error");
         });
     };
 
@@ -248,10 +248,10 @@ angular.module('sikre.controllers', [])
     $scope.deleteitem = function (item) {
       sikreAPIservice.deleteItem(item)
         .success(function () {
-          $.notify("Item deleted", "success");
+          jQuery.notify("Item deleted", "success");
         })
         .error(function () {
-          $.notify("Can't delete item", "error");
+          jQuery.notify("Can't delete item", "error");
         });
     };
   });
