@@ -95,7 +95,7 @@ app.config(function ($httpProvider, $authProvider) {
 
   // GitHub
   $authProvider.github({
-    clientId: '2d769d69d5106d8838ee',
+    clientId: '58afb6b2e191c0f9b475',
     url: mainAPIUrl + 'auth/github/login' + token,
     authorizationEndpoint: 'https://github.com/login/oauth/authorize',
     redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
